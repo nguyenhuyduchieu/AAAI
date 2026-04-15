@@ -1,0 +1,13 @@
+.DS_Store
+.cache/
+.venv/
+__pycache__/
+*.pyc
+
+# avoid committing nested cloned repositories as broken gitlinks
+external/
+
+# optional heavy/generated artifacts
+data/raw/long_horizon/
+notebooks/data/raw/long_horizon/
+outputs/logs/
