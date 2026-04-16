@@ -1,0 +1,176 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alain and Bengio(2017)]{alain2017probing}
+Guillaume Alain and Yoshua Bengio.
+\newblock Understanding intermediate layers using linear classifier probes.
+\newblock In \emph{Proceedings of the 5th International Conference on Learning
+  Representations Workshop}, 2017.
+
+\bibitem[Ansari et~al.(2024)Ansari, Stella, Turkmen, Zhang, Mercado, Shen,
+  Shchur, Rangapuram, Pineda~Arango, Kapoor, et~al.]{ansari2024chronos}
+Abdul~Fatir Ansari, Lorenzo Stella, Caner Turkmen, Xiyuan Zhang, Pedro Mercado,
+  Huibin Shen, Oleksandr Shchur, Syama~Sundar Rangapuram, Sebastian
+  Pineda~Arango, Shubham Kapoor, et~al.
+\newblock Chronos: Learning the language of time series.
+\newblock \emph{arXiv preprint arXiv:2403.07815}, 2024.
+
+\bibitem[Ansuini et~al.(2019)Ansuini, Laio, Macke, and
+  Zoccolan]{ansuini2019intrinsic}
+Alessio Ansuini, Alessandro Laio, Jakob~H Macke, and Davide Zoccolan.
+\newblock Intrinsic dimensionality of data representations in deep neural
+  networks.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~32, 2019.
+
+\bibitem[Birdal et~al.(2021)Birdal, Lou, Guibas, and
+  {\c{S}}im{\c{s}}ekli]{birdal2021intrinsic}
+Tolga Birdal, Aaron Lou, Leonidas~J Guibas, and Umut {\c{S}}im{\c{s}}ekli.
+\newblock Intrinsic dimensionality explains the effectiveness of language model
+  fine-tuning.
+\newblock In \emph{Proceedings of the 59th Annual Meeting of the Association
+  for Computational Linguistics and the 11th International Joint Conference on
+  Natural Language Processing}, pages 7319--7329, 2021.
+\newblock \doi{10.18653/v1/2021.acl-long.568}.
+
+\bibitem[Cleveland et~al.(1990)Cleveland, Cleveland, McRae, and
+  Terpenning]{cleveland1990stl}
+Robert~B Cleveland, William~S Cleveland, Jean~E McRae, and Irma Terpenning.
+\newblock {STL}: A seasonal-trend decomposition procedure based on {Loess}.
+\newblock \emph{Journal of Official Statistics}, 6\penalty0 (1):\penalty0
+  3--73, 1990.
+
+\bibitem[Das et~al.(2024)Das, Kong, Sen, and Zhou]{das2024timesfm}
+Abhimanyu Das, Weihao Kong, Rajat Sen, and Yichen Zhou.
+\newblock A decoder-only foundation model for time-series forecasting.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning}, volume 235 of \emph{Proceedings of Machine Learning Research},
+  pages 10025--10043. PMLR, 2024.
+
+\bibitem[Facco et~al.(2017)Facco, d'Errico, Rodriguez, and
+  Laio]{facco2017estimating}
+Elena Facco, Maria d'Errico, Alex Rodriguez, and Alessandro Laio.
+\newblock Estimating the intrinsic dimension of datasets by a minimal
+  neighborhood information.
+\newblock \emph{Scientific Reports}, 7\penalty0 (1):\penalty0 12140, 2017.
+\newblock \doi{10.1038/s41598-017-11873-y}.
+
+\bibitem[Goswami et~al.(2024)Goswami, Szafer, Choudhry, Cai, Li, and
+  Dubrawski]{goswami2024moment}
+Mononito Goswami, Konrad Szafer, Arjun Choudhry, Yifu Cai, Shuo Li, and Artur
+  Dubrawski.
+\newblock {MOMENT}: A family of open time-series foundation models.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning}, volume 235 of \emph{Proceedings of Machine Learning Research}.
+  PMLR, 2024.
+
+\bibitem[Ismail et~al.(2020)Ismail, Gunady, Bravo, and
+  Feizi]{ismail2020benchmarking}
+Aya~Abdelsalam Ismail, Mohamed Gunady, Hector~Corrada Bravo, and Soheil Feizi.
+\newblock Benchmarking deep learning interpretability in time series
+  predictions.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~33, pages 6603--6615, 2020.
+
+\bibitem[Jin et~al.(2023)Jin, Wen, Liang, Zhang, Xue, Wang, Zhang, Wang, Chen,
+  Li, et~al.]{jin2023large}
+Ming Jin, Qingsong Wen, Yuxuan Liang, Chaoli Zhang, Jintao Xue, Xue Wang, James
+  Zhang, Yi~Wang, Haifeng Chen, Xiaoli Li, et~al.
+\newblock Large models for time series and spatio-temporal data: A survey and
+  outlook.
+\newblock \emph{arXiv preprint arXiv:2310.10716}, 2023.
+
+\bibitem[Kornblith et~al.(2019)Kornblith, Norouzi, Lee, and
+  Hinton]{kornblith2019similarity}
+Simon Kornblith, Mohammad Norouzi, Honglak Lee, and Geoffrey Hinton.
+\newblock Similarity of neural network representations revisited.
+\newblock In \emph{Proceedings of the 36th International Conference on Machine
+  Learning}, volume~97 of \emph{Proceedings of Machine Learning Research},
+  pages 3519--3529. PMLR, 2019.
+
+\bibitem[Liang et~al.(2024)Liang, Wen, Nie, Jiang, Jin, Song, Pan, and
+  Wen]{liang2024foundation}
+Yuxuan Liang, Haomin Wen, Yuqi Nie, Yushan Jiang, Ming Jin, Dongjin Song,
+  Shirui Pan, and Qingsong Wen.
+\newblock Foundation models for time series analysis: A tutorial and survey.
+\newblock \emph{arXiv preprint arXiv:2403.14735}, 2024.
+
+\bibitem[Liu et~al.(2024)Liu, Hu, Zhang, Li, Wang, Long, and
+  Wang]{liu2024timer}
+Yong Liu, Haoran Hu, Mingyue Zhang, Chenyu Li, Yuqi Wang, Mingsheng Long, and
+  Jianmin Wang.
+\newblock Timer: Generative pre-trained transformers are large time series
+  models.
+\newblock \emph{arXiv preprint arXiv:2402.02368}, 2024.
+
+\bibitem[Raffel et~al.(2020)Raffel, Shazeer, Roberts, Lee, Narang, Matena,
+  Zhou, Li, and Liu]{raffel2020t5}
+Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael
+  Matena, Yanqi Zhou, Wei Li, and Peter~J Liu.
+\newblock Exploring the limits of transfer learning with a unified text-to-text
+  transformer.
+\newblock \emph{Journal of Machine Learning Research}, 21\penalty0
+  (140):\penalty0 1--67, 2020.
+
+\bibitem[Raghu et~al.(2017)Raghu, Gilmer, Yosinski, and
+  Sohl-Dickstein]{raghu2017svcca}
+Maithra Raghu, Justin Gilmer, Jason Yosinski, and Jascha Sohl-Dickstein.
+\newblock {SVCCA}: Singular vector canonical correlation analysis for deep
+  learning dynamics and interpretability.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~30, 2017.
+
+\bibitem[Rasul et~al.(2024)Rasul, Ashok, Williams, Khorasani, Adamopoulos,
+  Bhagwatkar, Bilo\v{s}, Ghonia, Hassen, Schneider, et~al.]{rasul2024lagllama}
+Kashif Rasul, Arjun Ashok, Andrew~Robert Williams, Arian Khorasani, George
+  Adamopoulos, Rishika Bhagwatkar, Marin Bilo\v{s}, Hena Ghonia, Nadhir Hassen,
+  Anderson Schneider, et~al.
+\newblock Lag-{Llama}: Towards foundation models for probabilistic time series
+  forecasting.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~37, 2024.
+
+\bibitem[Reif et~al.(2019)Reif, Yuan, Wattenberg, Viegas, Coenen, Pearce, and
+  Kim]{reif2019visualizing}
+Emily Reif, Ann Yuan, Martin Wattenberg, Fernanda~B Viegas, Andy Coenen, Adam
+  Pearce, and Been Kim.
+\newblock Visualizing and measuring the geometry of {BERT}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~32, 2019.
+
+\bibitem[Takens(1981)]{takens1981detecting}
+Floris Takens.
+\newblock Detecting strange attractors in turbulence.
+\newblock In \emph{Dynamical Systems and Turbulence, Warwick 1980}, volume 898
+  of \emph{Lecture Notes in Mathematics}, pages 366--381. Springer, 1981.
+\newblock \doi{10.1007/BFb0091924}.
+
+\bibitem[Theissler et~al.(2022)Theissler, Spinnato, Schlegel, and
+  Guidotti]{theissler2022explainable}
+Andreas Theissler, Francesco Spinnato, Udo Schlegel, and Riccardo Guidotti.
+\newblock Explainable {AI} for time series classification: A review, taxonomy
+  and research directions.
+\newblock \emph{IEEE Access}, 10:\penalty0 100700--100724, 2022.
+\newblock \doi{10.1109/ACCESS.2022.3207765}.
+
+\bibitem[Woo et~al.(2024)Woo, Liu, Kumar, Xiong, Salehi, and
+  Sahoo]{woo2024moirai}
+Gerald Woo, Chenghao Liu, Akshat Kumar, Caiming Xiong, Silvio Salehi, and Doyen
+  Sahoo.
+\newblock Unified training of universal time series forecasting transformers.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning}, volume 235 of \emph{Proceedings of Machine Learning Research}.
+  PMLR, 2024.
+
+\bibitem[Zeng et~al.(2023)Zeng, Chen, Zhang, and Xu]{zeng2023transformers}
+Ailing Zeng, Muxi Chen, Lei Zhang, and Qiang Xu.
+\newblock Are transformers effective for time series forecasting?
+\newblock In \emph{Proceedings of the Thirty-Seventh AAAI Conference on
+  Artificial Intelligence}, volume~37, pages 11121--11128, 2023.
+\newblock \doi{10.1609/aaai.v37i9.26317}.
+
+\end{thebibliography}

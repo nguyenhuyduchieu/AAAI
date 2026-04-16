@@ -16,3 +16,4 @@ h5py
 jupyter
 pyyaml
 tqdm
+statsmodels

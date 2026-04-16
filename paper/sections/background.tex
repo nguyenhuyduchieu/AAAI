@@ -1,0 +1,141 @@
+% =============================================================
+% Section 2: Background and Related Work
+% Target: ~1.5 columns (~750 words in 2-col AAAI format)
+% =============================================================
+
+\section{Background and Related Work}
+\label{sec:background}
+
+\subsection{Time Series Foundation Models}
+\label{sec:bg_tsfm}
+
+The past two years have produced a distinct class of models trained on large,
+heterogeneous collections of time series with the aim of zero-shot or few-shot
+transfer across domains.
+These models vary along two architectural axes: tokenisation strategy and
+sequence-to-sequence objective.
+
+\textbf{Patch-based encoder-decoder models.}
+MOMENT~\cite{goswami2024moment} applies masked patch modelling to sub-series
+segments, learning a representation that can be adapted to forecasting,
+classification, and anomaly detection.
+Moirai~\cite{woo2024moirai} extends this with a multi-patch-size architecture
+that trains a single model to handle variable frequencies.
+
+\textbf{Decoder-only models.}
+TimesFM~\cite{das2024timesfm} treats forecasting as next-patch prediction,
+training a 500M-parameter decoder-only model on a corpus spanning Google
+Trends, Wikipedia pageviews, and synthetic series.
+Timer~\cite{liu2024timer} follows a similar autoregressive design at smaller scale.
+
+\textbf{Language-model-inspired models.}
+Chronos~\cite{ansari2024chronos} quantises time series values into discrete tokens
+and fine-tunes T5~\cite{raffel2020t5} encoder-decoder architectures on a curated
+public corpus, treating forecasting as a sequence-to-sequence language task.
+Lag-Llama~\cite{rasul2024lagllama} adapts LLaMA with lag features as covariates.
+
+Comprehensive surveys of this space are provided by
+\citet{jin2023large} and \citet{liang2024foundation}.
+Despite broad empirical coverage, neither survey addresses the internal geometric
+structure of learned representations---the question this paper targets.
+
+\textbf{The case against complexity.}
+Before attributing zero-shot transfer to any internal property of TSFMs,
+a direct challenge must be addressed.
+\citet{zeng2023transformers} demonstrated that a simple one-layer linear model
+matches or outperforms Transformer-based forecasters on five standard long-horizon
+benchmarks, including ETT and Weather.
+This result does not directly refute TSFMs---linear models were not tested in
+zero-shot settings, and the comparison is against models trained per-dataset---but
+it establishes that Transformer complexity is neither necessary nor sufficient for
+forecasting quality in supervised settings.
+Our geometric analysis is designed with this sceptical position in mind:
+rather than asserting TSFMs are better, we ask whether their latent representations
+are geometrically distinct from supervised baselines trained on the same data,
+and whether any such distinction correlates with forecast reliability.
+
+\subsection{Geometric Analysis of Neural Representations}
+\label{sec:bg_geometry}
+
+The internal geometry of neural network representations has been studied
+systematically in vision and language models, establishing a set of
+analytical tools directly applicable to our setting.
+
+\textbf{Intrinsic dimensionality.}
+\citet{ansuini2019intrinsic} showed that deep image classifiers exhibit a
+characteristic ID profile: representations expand to high effective
+dimensionality in early layers and compress toward a low-dimensional manifold
+in the final layers, with compression correlating with generalisation quality.
+\citet{birdal2021intrinsic} extended this to language models, finding that
+low intrinsic dimensionality of the fine-tuning landscape explains why
+large pretrained models are efficiently adapted with few parameters.
+We apply the same analysis to TSFMs, where the relevant question is whether
+the compression pattern reflects meaningful temporal abstraction or merely
+the inductive bias of the Transformer architecture.
+
+\textbf{Geometry of language model representations.}
+\citet{reif2019visualizing} applied geometric analysis to BERT, finding that
+contextual embeddings form geometrically separable clusters corresponding to
+syntactic and semantic categories.
+\citet{kornblith2019similarity} introduced Centred Kernel Alignment (CKA) to
+compare representation geometry across architectures, showing that wider and
+deeper networks converge to similar representations in intermediate layers.
+No equivalent geometric analysis exists for time series models.
+
+\textbf{Representational similarity.}
+\citet{raghu2017svcca} introduced SVCCA to track representation geometry through
+training, demonstrating that lower layers stabilise early while upper layers
+continue evolving---a pattern relevant to our layer-wise ID profile analysis.
+
+\subsection{Explainability for Time Series}
+\label{sec:bg_xai_ts}
+
+Existing XAI methods for time series fall into two categories:
+attribution methods that assign importance scores to input timesteps
+(LIME, SHAP, integrated gradients), and perturbation-based methods that
+measure model sensitivity to input modifications~\cite{ismail2020benchmarking,
+theissler2022explainable}.
+Both categories operate at the input level and produce post-hoc explanations
+for individual predictions.
+Neither provides a structural account of what a model has learned to encode.
+
+Our approach is fundamentally different: we analyse the \emph{representation space}
+itself---its dimensionality, stability, and semantic organisation---rather than
+attributing individual predictions.
+This distinction aligns GEF with mechanistic analysis rather than attribution-based
+XAI, and the two approaches are complementary rather than competing.
+
+\subsection{Linear Probing and Temporal Primitives}
+\label{sec:bg_probing}
+
+Linear probing~\cite{alain2017probing} tests whether a target property is linearly
+decodable from frozen intermediate representations, providing a controlled
+measure of what information is encoded without confounds from end-to-end training.
+In NLP, probing has revealed that BERT encodes syntactic structure in intermediate
+layers and semantic structure in upper layers~\cite{reif2019visualizing}.
+We apply this methodology to test whether TSFM embeddings encode three
+interpretable temporal primitives: trend direction, volatility regime, and
+seasonality---properties that are trivially computable from the input but
+non-trivially encoded if the representation space organises them as separable
+geometric subspaces.
+
+\subsection{Theoretical Motivation}
+\label{sec:bg_theory}
+
+A classical result in dynamical systems theory offers an intuitive lens.
+Takens' embedding theorem~\cite{takens1981detecting} states that delay embeddings
+of scalar observations from a smooth deterministic dynamical system reconstruct
+the system's attractor manifold, up to diffeomorphism.
+In other words, finite windows of a time series generated by a dynamical system
+already lie on a low-dimensional manifold in delay-embedding space.
+
+We invoke this result as \emph{motivating intuition only}.
+The theorem's conditions---smooth, noise-free, deterministic dynamics---are not
+satisfied by the heterogeneous real-world series (electricity consumption, traffic
+speed, meteorological observations) studied here.
+Our hypothesis, stated without claiming the theorem's authority, is that TSFMs
+trained on diverse corpora have learned to approximate the manifold structure of
+temporal data in their latent space, and that this approximation is measurable
+via the geometric tools described in Section~\ref{sec:framework}.
+Whether this constitutes genuine manifold learning or a looser form of
+distributional compression is precisely what our experiments test.

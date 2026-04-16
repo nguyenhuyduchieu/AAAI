@@ -1,0 +1,222 @@
+% =============================================================
+% Section 3: Latent Geometry Framework (LGF)
+% Target: ~1.5 columns (~750 words in 2-col AAAI format)
+% =============================================================
+
+\section{Latent Geometry Framework}
+\label{sec:framework}
+
+\subsection{Problem Formulation}
+\label{sec:formulation}
+
+Let $f_\theta: \mathbb{R}^L \to \mathbb{R}^D$ denote the mapping from an input
+context window $w \in \mathbb{R}^L$ to a sequence embedding
+$z = f_\theta(w) \in \mathbb{R}^D$ produced by a frozen pretrained TSFM.
+For a TSFM with $\mathcal{L}$ transformer layers, we additionally denote
+the intermediate mapping at layer $\ell$ as
+$f_\theta^\ell: \mathbb{R}^L \to \mathbb{R}^{T \times D_\ell}$,
+where $T = L/P$ is the number of patch tokens and $D_\ell$ is the hidden
+dimension at layer $\ell$.
+The sequence embedding is obtained by mean-pooling over tokens:
+$z^\ell = \frac{1}{T}\sum_{t=1}^T f_\theta^\ell(w)_t$.
+
+Given a dataset $\mathcal{W} = \{w_i\}_{i=1}^N$ of windows drawn from a
+target time series and the corresponding forecast errors
+$\mathcal{E} = \{e_i\}_{i=1}^N$ produced by the TSFM at a fixed horizon $H$,
+GEF addresses three questions:
+
+\begin{enumerate}
+  \item \textbf{Structure:} Does the embedding set
+        $\mathcal{Z} = \{z_i\}_{i=1}^N$ form a low-dimensional, geometrically
+        regular manifold, and does this regularity differ from that of supervised
+        baseline models?
+  \item \textbf{Semantics:} Do geometric clusters in $\mathcal{Z}$ correspond
+        to interpretable temporal properties of the input windows?
+  \item \textbf{Reliability:} Does proximity in $\mathcal{Z}$, measured along
+        the manifold, predict forecast error magnitude?
+\end{enumerate}
+
+\subsection{Temporal Representation Manifold}
+\label{sec:trm}
+
+\begin{definition}[Temporal Representation Manifold]
+\label{def:trm}
+Let $\mathcal{P}$ be a probability distribution over time series windows of length
+$L$. The \emph{Temporal Representation Manifold} (TRM) of a TSFM $f_\theta$ with
+respect to $\mathcal{P}$ is the image
+$\mathcal{M}_\theta = f_\theta(\mathrm{supp}(\mathcal{P})) \subset \mathbb{R}^D$.
+\end{definition}
+
+The TRM is not assumed to be a smooth manifold in the differential-geometric sense;
+Definition~\ref{def:trm} is a set-theoretic statement about the image of the encoder.
+Whether $\mathcal{M}_\theta$ has low intrinsic dimensionality, smooth local geometry,
+and semantically organised cluster structure are \emph{empirical questions} that
+GEF is designed to answer.
+In practice, $\mathcal{M}_\theta$ is approximated by the finite embedding set
+$\mathcal{Z}$ extracted from a sample $\mathcal{W} \sim \mathcal{P}$.
+
+\subsection{Geometric Regularity Metrics}
+\label{sec:regularity}
+
+We quantify three aspects of TRM regularity using perturbation-grounded metrics.
+These metrics apply established geometric machinery to a domain that has not
+previously been characterised through this lens; we do not claim the underlying
+methods (silhouette scoring, cosine stability) as contributions.
+
+\paragraph{Semantic labels.}
+A cohesion metric is only as meaningful as the labels it operates on.
+For each window $w_i$ we derive a trend label
+$y_i \in \{\mathrm{up}, \mathrm{flat}, \mathrm{down}\}$ from STL
+decomposition~\cite{cleveland1990stl}: extract the trend component,
+compute the OLS slope $\hat\beta_i$, and assign
+\begin{equation}
+  y_i =
+  \begin{cases}
+    \mathrm{up}   & \hat\beta_i >  \,\delta \cdot \sigma_{w_i} \\
+    \mathrm{down} & \hat\beta_i < -\delta \cdot \sigma_{w_i} \\
+    \mathrm{flat} & \text{otherwise,}
+  \end{cases}
+  \label{eq:stl_label}
+\end{equation}
+where $\sigma_{w_i} = \mathrm{std}(w_i)$ and $\delta = 0.05$ (sensitivity to
+$\delta \in \{0.02, 0.05, 0.10\}$ is assessed in Section~\ref{sec:ablation}).
+Labels are derived entirely from window values, independently of any model.
+
+\paragraph{Latent Cohesion Score (LCS).}
+\lcs\ measures whether embeddings from windows sharing the same trend label
+cluster together in $\mathbb{R}^D$:
+\begin{equation}
+  \lcs(\mathcal{Z}, \mathbf{y}) = \frac{1}{N} \sum_{i=1}^{N}
+  \frac{b(i) - a(i)}{\max\!\bigl(a(i),\, b(i)\bigr)},
+  \label{eq:lcs}
+\end{equation}
+where $a(i)$ is the mean intra-cluster distance and $b(i)$ the mean
+nearest-cluster distance for $z_i$ under labels $\mathbf{y}$.
+$\lcs \in [-1,1]$; values near $+1$ indicate tight, well-separated clusters.
+
+\paragraph{Temporal Stability Index (TSI).}
+For perturbation type $\mathcal{P}$, \tsi\ measures how much the embedding
+of a window changes when its input is corrupted:
+\begin{equation}
+  \tsi_{\mathcal{P}}(\mathcal{Z}) = \frac{1}{N} \sum_{i=1}^{N}
+  \frac{z_i \cdot \tilde{z}_i}{\|z_i\|\,\|\tilde{z}_i\|},
+  \quad \tilde{z}_i = f_\theta(\mathcal{P}(w_i)).
+  \label{eq:tsi}
+\end{equation}
+$\tsi \in [-1,1]$; values near $+1$ indicate a geometrically stable TRM under
+realistic input corruption.
+We evaluate three perturbation types:
+$\mathcal{P} \in \{\mathrm{AddNoise}(\sigma{=}0.02),\,
+\mathrm{Dropout}(p{=}0.05),\, \mathrm{TimeWarp}(k{=}3)\}$.
+
+\paragraph{Generalised Stability under Perturbation (GSP).}
+\begin{equation}
+  \gsp_{\mathcal{P}} = \lcs_{\mathrm{clean}} - \lcs_{\mathcal{P}},
+  \label{eq:gsp}
+\end{equation}
+where $\lcs_{\mathcal{P}}$ is computed on perturbed embeddings
+$\{\tilde{z}_i\}$.
+Low \gsp\ (near zero) means the semantic cluster structure of the TRM is
+preserved after input perturbation.
+
+\subsection{Intrinsic Dimensionality Profile}
+\label{sec:id_method}
+
+The TwoNN estimator~\cite{facco2017estimating} estimates the local intrinsic
+dimensionality of a point cloud from the ratio of first and second nearest-neighbour
+distances, without assuming a global parametric form:
+\begin{equation}
+  \id = \frac{-N}{\displaystyle\sum_{i=1}^{N} \ln \mu_i},
+  \qquad
+  \mu_i = \frac{\|z_i - z_i^{(2)}\|_2}{\|z_i - z_i^{(1)}\|_2},
+  \label{eq:twonn}
+\end{equation}
+where $z_i^{(1)}, z_i^{(2)}$ are the first and second nearest neighbours of
+$z_i$ in Euclidean distance.
+We compute $\id^\ell$ at every layer $\ell \in \{0,\ldots,\mathcal{L}\}$
+to obtain the \emph{ID profile}---the evolution of effective dimensionality
+through the network.
+The \emph{compression ratio} $\id^0 / \id^{\mathcal{L}}$ summarises how much
+the terminal layer has reduced the effective dimension relative to the embedding
+layer.
+
+\subsection{Geodesic Reliability Protocol}
+\label{sec:geodesic_method}
+
+Let $G = (V, E, w)$ be the $k$-nearest-neighbour graph on
+$\mathcal{Z}$ with edge weights equal to Euclidean distances.
+The geodesic distance between windows $w_i$ and $w_j$ is the shortest-path
+distance $d_G(i,j)$ on $G$ (computed via Dijkstra's algorithm), approximating
+the geodesic distance along $\mathcal{M}_\theta$.
+
+For each window $w_i$, let $j_i^* = \arg\min_{j \neq i} d_G(i,j)$ be its
+nearest manifold neighbour, and let $e_i$ be the TSFM's per-window forecast MAE.
+We measure the Spearman rank correlation:
+\begin{equation}
+  \rspear = \mathrm{Spearman}\!\left(
+    d_G(i, j_i^*),\; |e_i - e_{j_i^*}|
+  \right)_{i=1}^N.
+  \label{eq:geodesic_corr}
+\end{equation}
+A positive $\rspear$ means windows that are close on the TRM produce similar
+forecast errors---the TRM is geometrically consistent with forecast quality.
+This provides a \textbf{label-free reliability signal}: given a new window,
+its geodesic distance to the nearest in-distribution window in $\mathcal{Z}$
+indicates how much to trust the forecast.
+
+We report $\rspear$, its 95\% confidence interval (Fisher's $z$-transform),
+and the two-tailed $p$-value for the null hypothesis $\rspear = 0$.
+
+\subsection{Theoretical Framing}
+\label{sec:proposition}
+
+The following proposition motivates why a low-dimensional, stable TRM
+should correlate with forecast consistency.
+It is stated as a conjecture grounded in the geometry of smooth functions
+and is tested empirically in Section~\ref{sec:geodesic}.
+
+\begin{proposition}[Manifold Consistency, informal]
+\label{prop:consistency}
+Let $f_\theta$ be a Lipschitz-continuous encoder with Lipschitz constant $K$.
+If two windows $w_i, w_j$ satisfy $\|w_i - w_j\|_2 \leq \varepsilon$,
+then $\|z_i - z_j\|_2 \leq K\varepsilon$.
+If the forecast head $g_\theta$ is similarly Lipschitz with constant $K'$,
+then the expected absolute forecast difference satisfies
+$\mathbb{E}[|e_i - e_j|] \leq (K + K')\varepsilon + \eta$,
+where $\eta$ accounts for aleatoric noise.
+\end{proposition}
+
+Proposition~\ref{prop:consistency} is not novel---it follows from elementary
+Lipschitz composition---but it makes the geometric claim precise:
+if the TRM is smooth (embeddings of similar windows are close), then similar
+windows receive similar forecasts, and forecast errors co-vary.
+The empirical question is whether the \emph{manifold metric} $d_G$ is a better
+predictor of forecast-error similarity than Euclidean distance in input space,
+which would indicate that the TRM encodes more than a trivial proximity
+structure.
+
+\subsection{LGF Summary}
+\label{sec:lgf_summary}
+
+Figure~\ref{fig:gef_pipeline} illustrates the LGF analysis pipeline.
+Given a frozen TSFM and a set of windows from a target dataset, GEF
+proceeds through three stages: (1) extraction of layer-wise hidden states
+and computation of the ID profile; (2) computation of \lcs, \tsi, and \gsp\
+under STL-derived semantic labels and three perturbation types; and
+(3) construction of the geodesic reliability protocol via the $k$-NN graph
+and Spearman correlation with forecast error.
+All stages require only frozen inference---no retraining or gradient access.
+
+\begin{figure}[h]
+  \centering
+  % Replace with actual TikZ or generated figure
+  \fbox{\parbox{0.9\columnwidth}{\centering\vspace{1.5cm}
+    \textit{[Figure: GEF three-stage pipeline diagram]}\\
+    \textit{Extraction $\to$ Regularity (LCS/TSI/GSP/ID) $\to$ Reliability ($\rspear$)}
+    \vspace{1.5cm}}}
+  \caption{The Latent Geometry Framework (LGF) operates on frozen
+           TSFM weights across three stages: latent extraction and ID profiling,
+           geometric regularity measurement, and geodesic reliability correlation.
+           No fine-tuning or label access is required at inference time.}
+  \label{fig:gef_pipeline}
+\end{figure}

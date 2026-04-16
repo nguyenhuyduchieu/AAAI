@@ -25,6 +25,25 @@ pip install -r requirements.txt
 python scripts/run_pipeline.py --dataset electricity --horizon 96
 ```
 
+## Control experiments
+
+Run the two key controls for latent-geometry claims:
+
+```bash
+python scripts/run_timesfm_demo.py \
+  --dataset electricity \
+  --context-length 96 \
+  --max-windows 512 \
+  --weight-mode both \
+  --label-mode both \
+  --stl-period 24 \
+  --stl-clusters 8
+```
+
+- `--label-mode stl` replaces legacy `%8` regimes with STL-derived regime labels (via clustering STL features).
+- `--weight-mode random-reset` runs the random-weight TimesFM control with identical architecture.
+- Metrics are exported to `outputs/metrics/timesfm_control_metrics_<dataset>.csv`.
+
 ## Cloned external repos
 
 All repos requested are cloned under `external/`:

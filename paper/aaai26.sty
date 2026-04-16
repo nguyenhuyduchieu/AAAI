@@ -1,0 +1,96 @@
+%% aaai26.sty — Minimal faithful stub of the AAAI-26 LaTeX style
+%% Based on publicly documented AAAI conference formatting requirements.
+%% Replace with the official package from https://aaai.org when submitting.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{aaai26}[2025/01/01 AAAI-26 Style Stub]
+
+%% ---- Page geometry ------------------------------------------------
+\RequirePackage[
+  letterpaper,
+  top=1.00in,
+  bottom=1.00in,
+  left=0.625in,
+  right=0.625in,
+  columnsep=0.375in
+]{geometry}
+
+%% ---- Two-column layout -------------------------------------------
+\twocolumn
+\flushbottom
+\sloppy
+
+%% ---- Font size (10pt base, set in documentclass) -----------------
+\renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
+\normalsize
+
+%% ---- Section heading styles --------------------------------------
+\RequirePackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries\centering}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itshape}{\thesubsubsection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{10pt plus 2pt minus 2pt}{6pt plus 1pt}
+\titlespacing*{\subsection}{0pt}{8pt plus 2pt minus 2pt}{4pt plus 1pt}
+\titlespacing*{\subsubsection}{0pt}{6pt plus 2pt minus 2pt}{3pt plus 1pt}
+
+%% ---- Abstract environment ----------------------------------------
+\renewenvironment{abstract}{%
+  \begin{center}%
+    {\bfseries Abstract}%
+  \end{center}%
+  \begin{quote}\small
+}{%
+  \end{quote}%
+  \medskip
+}
+
+%% ---- Title / author formatting -----------------------------------
+\RequirePackage{titling}
+\pretitle{\begin{center}\Large\bfseries}
+\posttitle{\par\end{center}\vskip 0.5em}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\end{center}}
+\predate{}
+\postdate{}
+\date{}
+
+%% ---- Paragraph spacing -------------------------------------------
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0.25in}
+
+%% ---- Caption formatting ------------------------------------------
+\RequirePackage[font=small,labelfont=bf,labelsep=period]{caption}
+
+%% ---- Bibliography (author-year, AAAI style) ----------------------
+\RequirePackage{natbib}
+\setlength{\bibsep}{2pt}
+\renewcommand{\bibfont}{\small}
+
+%% ---- Theorem environments ----------------------------------------
+\RequirePackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+%% ---- Hyperref defaults -------------------------------------------
+\PassOptionsToPackage{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black
+}{hyperref}
+
+%% ---- Paragraph command (bold run-in head) ------------------------
+\newcommand{\parahead}[1]{\smallskip\noindent\textbf{#1.}\enspace}
+
+%% ---- Copyright / submission notice (suppress for blind review) ---
+\newcommand{\copyrightnotice}{}
+
+\endinput
