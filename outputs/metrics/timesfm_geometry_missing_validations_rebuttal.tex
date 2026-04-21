@@ -1,0 +1,60 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Missing-validation extensions across datasets: OOD MCS/PDS, TSFM-vs-baseline geometry comparison, and best layer-wise CSS.}
+\label{tab:missing_validations_cross_dataset}
+\begin{tabular}{l l c c c c}
+\toprule
+dataset & metric & lstm & tcn & transformer & tsfm_pretrained \\
+\midrule
+electricity & FSS_baseline_cmp & -0.9791 & -0.9744 & -0.9641 & -0.0349 \\
+electricity & FSS_baseline_cmp_pvalue & 0.0000 & 0.0000 & 0.0000 & 0.0593 \\
+electricity & LTC_dir_baseline_cmp & -0.6348 & -0.6665 & -0.6803 & -0.5216 \\
+electricity & LTC_step_baseline_cmp & 0.1129 & 0.9201 & 11.5192 & 4.1248 \\
+electricity & MCS_in & - & - & - & 0.9870 \\
+electricity & MCS_ood & - & - & - & 0.9870 \\
+electricity & PDS_baseline_cmp & -0.0361 & -0.1273 & -0.3372 & 0.1018 \\
+electricity & PDS_baseline_cmp_pvalue & 0.7550 & 0.2699 & 0.0027 & 0.3784 \\
+electricity & PDS_in_pvalue & - & - & - & 0.3784 \\
+electricity & PDS_in_spearman & - & - & - & 0.1018 \\
+electricity & PDS_ood_pvalue & - & - & - & 0.9064 \\
+electricity & PDS_ood_spearman & - & - & - & 0.0136 \\
+ett & FSS_baseline_cmp & -0.9931 & -0.7715 & -0.9338 & -0.0714 \\
+ett & FSS_baseline_cmp_pvalue & 0.0000 & 0.0000 & 0.0000 & 0.0001 \\
+ett & LTC_dir_baseline_cmp & -0.1653 & -0.2625 & -0.1670 & -0.3883 \\
+ett & LTC_step_baseline_cmp & 0.1185 & 0.7032 & 9.4555 & 5.5944 \\
+ett & MCS_in & - & - & - & 1.0000 \\
+ett & MCS_ood & - & - & - & 1.0000 \\
+ett & PDS_baseline_cmp & 0.2572 & -0.0435 & -0.2029 & 0.0704 \\
+ett & PDS_baseline_cmp_pvalue & 0.0240 & 0.7073 & 0.0768 & 0.5432 \\
+ett & PDS_in_pvalue & - & - & - & 0.5432 \\
+ett & PDS_in_spearman & - & - & - & 0.0704 \\
+ett & PDS_ood_pvalue & - & - & - & 0.0863 \\
+ett & PDS_ood_spearman & - & - & - & -0.1968 \\
+traffic & FSS_baseline_cmp & -0.9633 & -0.9810 & -0.9858 & -0.1163 \\
+traffic & FSS_baseline_cmp_pvalue & 0.0000 & 0.0000 & 0.0000 & 0.0000 \\
+traffic & LTC_dir_baseline_cmp & 0.0355 & -0.1312 & -0.0267 & -0.3452 \\
+traffic & LTC_step_baseline_cmp & 0.0879 & 0.6435 & 7.2632 & 4.2965 \\
+traffic & MCS_in & - & - & - & 1.0000 \\
+traffic & MCS_ood & - & - & - & 0.9870 \\
+traffic & PDS_baseline_cmp & -0.1686 & 0.1372 & -0.2685 & 0.0018 \\
+traffic & PDS_baseline_cmp_pvalue & 0.1427 & 0.2340 & 0.0182 & 0.9879 \\
+traffic & PDS_in_pvalue & - & - & - & 0.9879 \\
+traffic & PDS_in_spearman & - & - & - & 0.0018 \\
+traffic & PDS_ood_pvalue & - & - & - & 0.4886 \\
+traffic & PDS_ood_spearman & - & - & - & 0.0801 \\
+weather & FSS_baseline_cmp & -0.9957 & -0.9566 & -0.7532 & -0.0757 \\
+weather & FSS_baseline_cmp_pvalue & 0.0000 & 0.0000 & 0.0000 & 0.0000 \\
+weather & LTC_dir_baseline_cmp & -0.2408 & -0.2515 & -0.2993 & -0.4251 \\
+weather & LTC_step_baseline_cmp & 0.1207 & 0.7191 & 8.8567 & 5.6154 \\
+weather & MCS_in & - & - & - & 0.9870 \\
+weather & MCS_ood & - & - & - & 0.9870 \\
+weather & PDS_baseline_cmp & -0.0134 & 0.0319 & -0.1352 & 0.0893 \\
+weather & PDS_baseline_cmp_pvalue & 0.9079 & 0.7831 & 0.2411 & 0.4398 \\
+weather & PDS_in_pvalue & - & - & - & 0.4398 \\
+weather & PDS_in_spearman & - & - & - & 0.0893 \\
+weather & PDS_ood_pvalue & - & - & - & 0.5137 \\
+weather & PDS_ood_spearman & - & - & - & 0.0756 \\
+\bottomrule
+\end{tabular}
+\end{table*}

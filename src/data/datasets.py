@@ -42,7 +42,7 @@ def _load_long_horizon(dataset_name: str) -> Optional[DatasetBundle]:
     name_map = {
         "electricity": "ECL",
         "ecl": "ECL",
-        "traffic": "Traffic",
+        "traffic": "TrafficL",
         "weather": "Weather",
         "ettm1": "ETTm1",
         "ettm2": "ETTm2",
@@ -56,7 +56,7 @@ def _load_long_horizon(dataset_name: str) -> Optional[DatasetBundle]:
     try:
         from datasetsforecast.long_horizon import LongHorizon  # type: ignore
 
-        Y_df, *_ = LongHorizon.load(directory="data/raw/long_horizon", group=group)
+        Y_df, *_ = LongHorizon.load(directory="data/raw/long_horizon", group=group, cache=False)
         cols = {"ds": "ds", "y": "y", "unique_id": "unique_id"}
         if not all(c in Y_df.columns for c in cols):
             return _canonicalize(Y_df, dataset_name)
