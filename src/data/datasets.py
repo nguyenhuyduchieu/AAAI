@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
+import numpy as np
 import pandas as pd
 
 
@@ -109,6 +110,105 @@ def _load_metr_la(data_root: Path) -> Optional[DatasetBundle]:
     return None
 
 
+def _load_plain_csv(dataset_name: str, data_root: Path) -> Optional[DatasetBundle]:
+    candidates = [
+        data_root / f"{dataset_name}.csv",
+        Path("external/MASTER/data") / f"{dataset_name}.csv",
+    ]
+    for p in candidates:
+        if p.exists():
+            df = pd.read_csv(p)
+            # MASTER market CSV uses datetime under column "Unnamed: 0".
+            if "Unnamed: 0" in df.columns and "datetime" not in df.columns:
+                df = df.rename(columns={"Unnamed: 0": "datetime"})
+            target = "y" if "y" in df.columns else None
+            return _canonicalize(df, dataset_name, target_col=target)
+    return None
+
+
+def _load_master_pkl(dataset_name: str, data_root: Path) -> Optional[DatasetBundle]:
+    lower = dataset_name.lower()
+    aliases = {
+        "csi300": "csi300",
+        "master_csi300": "csi300",
+        "csi800": "csi800",
+        "master_csi800": "csi800",
+    }
+    family = aliases.get(lower)
+    if family is None:
+        return None
+
+    roots = [
+        data_root / "master_data" / "opensource",
+        data_root / "master_data" / "original",
+    ]
+    split_paths: list[Path] = []
+    for split in ("train", "valid", "test"):
+        found = None
+        for root in roots:
+            candidate = root / f"{family}_dl_{split}.pkl"
+            if candidate.exists():
+                found = candidate
+                break
+        if found is not None:
+            split_paths.append(found)
+    if not split_paths:
+        return None
+
+    try:
+        import pickle
+    except Exception:
+        return None
+
+    rows: list[pd.DataFrame] = []
+    for p in split_paths:
+        try:
+            with p.open("rb") as fh:
+                sampler = pickle.load(fh)
+        except Exception:
+            continue
+
+        data_index = getattr(sampler, "data_index", None)
+        data_arr = getattr(sampler, "data_arr", None)
+        if data_index is None or data_arr is None:
+            continue
+
+        idx = pd.MultiIndex.from_tuples(list(data_index), names=["datetime", "instrument"])
+        arr = np.asarray(data_arr)
+        if arr.ndim != 2:
+            continue
+
+        # TSDataSampler can carry one extra padded row in front.
+        if arr.shape[0] == len(idx) + 1:
+            arr = arr[1:]
+        elif arr.shape[0] != len(idx):
+            n = min(arr.shape[0], len(idx))
+            arr = arr[:n]
+            idx = idx[:n]
+
+        if arr.shape[1] == 0:
+            continue
+
+        target_col = arr.shape[1] - 1
+        frame = pd.DataFrame(
+            {
+                "ds": pd.to_datetime(idx.get_level_values("datetime")),
+                "y": arr[:, target_col].astype(np.float32),
+            }
+        )
+        rows.append(frame)
+
+    if not rows:
+        return None
+
+    merged = pd.concat(rows, ignore_index=True).dropna(subset=["ds", "y"])
+    # Keep one market-level univariate series to match current experiment scripts.
+    merged = merged.groupby("ds", as_index=False)["y"].mean()
+    merged = merged.sort_values("ds").drop_duplicates(subset=["ds"], keep="last").reset_index(drop=True)
+    merged.insert(0, "unique_id", family)
+    return DatasetBundle(name=dataset_name, frame=merged[["unique_id", "ds", "y"]], target_col="y")
+
+
 def load_dataset(name: str, data_root: Path = Path("data/raw")) -> DatasetBundle:
     dataset_name = name.lower()
 
@@ -125,7 +225,15 @@ def load_dataset(name: str, data_root: Path = Path("data/raw")) -> DatasetBundle
     if long_horizon_bundle is not None:
         return long_horizon_bundle
 
+    master_pkl_bundle = _load_master_pkl(dataset_name, data_root)
+    if master_pkl_bundle is not None:
+        return master_pkl_bundle
+
+    plain_csv_bundle = _load_plain_csv(dataset_name, data_root)
+    if plain_csv_bundle is not None:
+        return plain_csv_bundle
+
     raise FileNotFoundError(
         f"Could not load dataset '{name}'. Supported direct sources: "
-        "datasetsforecast.LongHorizon, ETDataset CSVs, DCRNN metr-la.h5, or data/raw/<name>.csv"
+        "datasetsforecast.LongHorizon, ETDataset CSVs, DCRNN metr-la.h5, MASTER pkl, or data/raw/<name>.csv"
     )
