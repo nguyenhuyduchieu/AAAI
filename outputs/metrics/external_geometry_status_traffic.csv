@@ -1,0 +1,11 @@
+dataset,model,status,adapter
+traffic,LightGTS,ok,lightgts_forecast
+traffic,NeurIPS2023-One-Fits-All,ok,gpt4ts_forecast
+traffic,Sundial,ok,hf_hidden_state
+traffic,Time-MoE,ok,hf_hidden_state
+traffic,UniTime,ok,unitime_forecast
+traffic,VisionTS,ok,visionts_forecast
+traffic,moment,ok,moment_embed
+traffic,tirex,ok,tirex_forecast
+traffic,uni2ts,ok,moirai2_forecast
+traffic,chronos-forecasting,ok,chronos_embed

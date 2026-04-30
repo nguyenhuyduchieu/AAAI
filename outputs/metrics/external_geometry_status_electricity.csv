@@ -1,0 +1,11 @@
+dataset,model,status,adapter
+electricity,LightGTS,ok,lightgts_forecast
+electricity,NeurIPS2023-One-Fits-All,ok,gpt4ts_forecast
+electricity,Sundial,ok,hf_hidden_state
+electricity,Time-MoE,ok,hf_hidden_state
+electricity,UniTime,ok,unitime_forecast
+electricity,VisionTS,ok,visionts_forecast
+electricity,moment,ok,moment_embed
+electricity,tirex,ok,tirex_forecast
+electricity,uni2ts,ok,moirai2_forecast
+electricity,chronos-forecasting,ok,chronos_embed

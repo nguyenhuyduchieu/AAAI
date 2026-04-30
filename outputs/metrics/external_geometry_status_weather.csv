@@ -1,0 +1,11 @@
+dataset,model,status,adapter
+weather,LightGTS,ok,lightgts_forecast
+weather,NeurIPS2023-One-Fits-All,ok,gpt4ts_forecast
+weather,Sundial,ok,hf_hidden_state
+weather,Time-MoE,ok,hf_hidden_state
+weather,UniTime,ok,unitime_forecast
+weather,VisionTS,ok,visionts_forecast
+weather,moment,ok,moment_embed
+weather,tirex,ok,tirex_forecast
+weather,uni2ts,ok,moirai2_forecast
+weather,chronos-forecasting,ok,chronos_embed

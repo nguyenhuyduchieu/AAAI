@@ -1,0 +1,11 @@
+dataset,model,status,adapter
+csi800,LightGTS,ok,lightgts_forecast
+csi800,NeurIPS2023-One-Fits-All,ok,gpt4ts_forecast
+csi800,Sundial,ok,hf_hidden_state
+csi800,Time-MoE,ok,hf_hidden_state
+csi800,UniTime,ok,unitime_forecast
+csi800,VisionTS,ok,visionts_forecast
+csi800,moment,ok,moment_embed
+csi800,tirex,ok,tirex_forecast
+csi800,uni2ts,ok,moirai2_forecast
+csi800,chronos-forecasting,ok,chronos_embed
