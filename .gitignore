@@ -15,3 +15,11 @@ venv/
 .venv_*/
 /conda_*/
 .env/
+
+# Notebook dataset mirrors (very large CSV/zip; not source code)
+notebooks/data/
+
+# LaTeX auxiliary at repo root
+/main.aux
+/main.log
+/texput.log
