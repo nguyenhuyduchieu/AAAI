@@ -1,0 +1,209 @@
+%% -----------------------------------------------------------------------
+%% neurips_2026.sty  —  NeurIPS 2026 paper style
+%%
+%% Faithful reproduction of the NeurIPS 2025 style conventions.
+%% Replace with the official neurips_2026.sty when Anthropic releases it.
+%%
+%% Usage:
+%%   \usepackage{neurips_2026}          % anonymous submission
+%%   \usepackage[preprint]{neurips_2026}% non-anonymous preprint
+%%   \usepackage[final]{neurips_2026}   % camera-ready
+%% -----------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{neurips_2026}[2026/01/01 NeurIPS 2026]
+
+% ---- Option handling ---------------------------------------------------
+\newif\if@preprint  \@preprintfalse
+\newif\if@final     \@finalfalse
+\DeclareOption{preprint}{\@preprinttrue}
+\DeclareOption{final}{\@finaltrue}
+\ProcessOptions\relax
+
+% ---- Required packages -------------------------------------------------
+\RequirePackage{times}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{fancyhdr}
+\RequirePackage{color}
+
+% ---- Page geometry -----------------------------------------------------
+\RequirePackage[
+  paperwidth  = 8.5in,
+  paperheight = 11in,
+  top         = 1.0in,
+  bottom      = 1.1in,
+  left        = 1.5in,
+  right        = 1.5in,
+  headheight  = 14pt,
+  headsep     = 0.18in,
+]{geometry}
+
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt plus 1pt}
+
+% ---- Fonts and sizes ---------------------------------------------------
+% NeurIPS uses 10pt with Times Roman.
+% Base font size is set via \documentclass[10pt]{article} in the main file.
+\newcommand{\@neuripssize}[1]{\fontsize{#1}{\dimexpr#1+2pt\relax}\selectfont}
+
+% ---- Running header ----------------------------------------------------
+\if@preprint
+  \fancypagestyle{neurips}{%
+    \fancyhf{}%
+    \fancyhead[C]{\small Preprint. Under review.}%
+    \fancyfoot[C]{\small\thepage}%
+    \renewcommand{\headrulewidth}{0pt}%
+  }
+\else\if@final
+  \fancypagestyle{neurips}{%
+    \fancyhf{}%
+    \fancyfoot[C]{\small\thepage}%
+    \renewcommand{\headrulewidth}{0pt}%
+  }
+\else
+  % anonymous submission
+  \fancypagestyle{neurips}{%
+    \fancyhf{}%
+    \fancyhead[C]{\small Anonymous submission. Under review at NeurIPS 2026.}%
+    \fancyfoot[C]{\small\thepage}%
+    \renewcommand{\headrulewidth}{0pt}%
+  }
+\fi\fi
+\pagestyle{neurips}
+
+% ---- Title block -------------------------------------------------------
+\newcommand{\@toptitlebar}{
+  \hrule height 4\p@
+  \vskip 0.25in
+  \vskip -\parskip%
+}
+\newcommand{\@bottomtitlebar}{
+  \vskip 0.29in
+  \vskip -\parskip
+  \hrule height 1\p@
+  \vskip 0.09in%
+}
+
+\renewcommand{\maketitle}{%
+  \par
+  \begingroup
+    \renewcommand{\thefootnote}{\fnsymbol{footnote}}%
+    \def\@makefnmark{%
+      \hbox to0pt{$^{\@thefnmark}$\hss}%
+    }%
+    \long\def\@makefntext##1{%
+      \parindent 1em\noindent
+      \hbox to1.8em{\hss$^{\@thefnmark}$}##1%
+    }%
+    \@maketitle
+  \endgroup
+  \setcounter{footnote}{0}
+  \thispagestyle{neurips}
+}
+
+\def\@maketitle{%
+  \vbox{%
+    \hsize\textwidth
+    \linewidth\hsize
+    \vskip 0.1in
+    \@toptitlebar
+    \centering
+    {\LARGE\bf \@title\par}
+    \@bottomtitlebar
+    \if@preprint\else\if@final\else
+      \begin{center}
+        \textbf{Anonymous Authors}\\
+        Anonymous Institution\\
+        \texttt{anonymous@example.com}
+      \end{center}
+    \fi\fi
+    \if@preprint
+      \def\And{%
+        \end{tabular}\hfil\linebreak[0]\hfil%
+        \begin{tabular}[t]{c}\bf\rule{\z@}{24\p@}\ignorespaces%
+      }%
+      \def\AND{%
+        \end{tabular}\hfil\linebreak[4]\hfil%
+        \begin{tabular}[t]{c}\bf\rule{\z@}{24\p@}\ignorespaces%
+      }%
+      \begin{tabular}[t]{c}\bf\rule{\z@}{24\p@}\@author\end{tabular}%
+    \fi
+    \if@final
+      \def\And{%
+        \end{tabular}\hfil\linebreak[0]\hfil%
+        \begin{tabular}[t]{c}\bf\rule{\z@}{24\p@}\ignorespaces%
+      }%
+      \def\AND{%
+        \end{tabular}\hfil\linebreak[4]\hfil%
+        \begin{tabular}[t]{c}\bf\rule{\z@}{24\p@}\ignorespaces%
+      }%
+      \begin{tabular}[t]{c}\bf\rule{\z@}{24\p@}\@author\end{tabular}%
+    \fi
+    \vskip 0.3in \@minus 0.1in
+  }
+}
+
+% ---- Abstract ----------------------------------------------------------
+\renewenvironment{abstract}{%
+  \vskip .075in%
+  \centerline{\large\bf Abstract}%
+  \vspace{0.5ex}%
+  \begin{quote}%
+}{%
+  \par%
+  \end{quote}%
+  \vskip 1ex%
+}
+
+% ---- Section headings --------------------------------------------------
+\renewcommand{\section}{%
+  \@startsection{section}{1}{\z@}%
+  {-2.0ex \@plus -0.5ex \@minus -.2ex}%
+  {1.5ex \@plus 0.3ex \@minus .2ex}%
+  {\large\bf\raggedright}%
+}
+\renewcommand{\subsection}{%
+  \@startsection{subsection}{2}{\z@}%
+  {-1.8ex \@plus -0.5ex \@minus -.2ex}%
+  {0.8ex \@plus 0.2ex}%
+  {\normalsize\bf\raggedright}%
+}
+\renewcommand{\subsubsection}{%
+  \@startsection{subsubsection}{3}{\z@}%
+  {-1.5ex \@plus -0.5ex \@minus -.2ex}%
+  {0.5ex \@plus 0.2ex}%
+  {\normalsize\it\raggedright}%
+}
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}{\z@}%
+  {1.5ex \@plus 0.5ex \@minus .2ex}%
+  {-1em}%
+  {\normalsize\bf}%
+}
+\renewcommand{\subparagraph}{%
+  \@startsection{subparagraph}{5}{\z@}%
+  {1.5ex \@plus 0.5ex \@minus .2ex}%
+  {-1em}%
+  {\normalsize\it}%
+}
+
+% ---- Floats and captions -----------------------------------------------
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{10pt plus 2pt minus 4pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{2pt}
+
+% ---- List environments -------------------------------------------------
+\setlength{\topsep}{2pt plus 1pt minus 2pt}
+\setlength{\parsep}{0pt plus 1pt}
+\setlength{\itemsep}{3pt}
+\setlength{\leftmargin}{15pt}
+
+% ---- Footnotes ---------------------------------------------------------
+\renewcommand{\footnotesize}{\@neuripssize{8}}
+
+% ---- Natbib compatibility ----------------------------------------------
+\newcommand{\neuripsyear}{2026}
+
+\endinput

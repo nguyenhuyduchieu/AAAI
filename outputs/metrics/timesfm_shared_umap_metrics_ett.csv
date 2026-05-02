@@ -1,0 +1,5 @@
+dataset,metric,value
+ett,ltc_pretrained,8.735672950744629
+ett,ltc_random_reset,8.134617805480957
+ett,ltc_delta_pre_minus_random,0.6010551452636719
+ett,expectation_pre_gt_random,1.0

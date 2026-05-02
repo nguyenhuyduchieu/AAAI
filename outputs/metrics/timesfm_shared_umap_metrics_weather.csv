@@ -1,0 +1,5 @@
+dataset,metric,value
+weather,ltc_pretrained,9.876443862915039
+weather,ltc_random_reset,9.003153800964355
+weather,ltc_delta_pre_minus_random,0.8732900619506836
+weather,expectation_pre_gt_random,1.0

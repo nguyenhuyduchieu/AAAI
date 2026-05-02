@@ -1,0 +1,5 @@
+dataset,metric,value
+electricity,ltc_pretrained,0.5683679580688477
+electricity,ltc_random_reset,1.5329420566558838
+electricity,ltc_delta_pre_minus_random,-0.9645740985870361
+electricity,expectation_pre_gt_random,0.0

@@ -1,0 +1,5 @@
+dataset,metric,value
+traffic,ltc_pretrained,5.776063919067383
+traffic,ltc_random_reset,6.417862415313721
+traffic,ltc_delta_pre_minus_random,-0.6417984962463379
+traffic,expectation_pre_gt_random,0.0

@@ -1,0 +1,149 @@
+% =============================================================
+% Section 2: Preliminaries and Related Work
+% =============================================================
+
+\section{Preliminaries and Related Work}
+\label{sec:related}
+
+\subsection{Time Series Foundation Models}
+\label{sec:rel_tsfm}
+
+The past two years have produced a generation of models pretrained on large,
+heterogeneous time series corpora with the goal of zero-shot or few-shot
+transfer~\cite{jin2023large,liang2024foundation}.
+These models differ along two design axes: how input data is divided into
+tokens and what prediction target guides training.
+
+\textbf{Patch-based encoder-decoder models} divide the context window into
+fixed-length patches and learn representations via masked modelling.
+MOMENT~\cite{goswami2024moment} applies this to sub-series segments,
+supporting forecasting, classification, and anomaly detection.
+Moirai~\cite{woo2024moirai} extends it with a multi-patch-size architecture
+that accommodates variable-frequency series.
+
+\textbf{Decoder-only autoregressive models} treat forecasting as next-patch
+prediction.
+TimesFM~\cite{das2024timesfm} trains a 500M-parameter model on a corpus
+spanning Google Trends, Wikipedia pageviews, and synthetic series.
+Timer~\cite{liu2024timer} follows the same autoregressive design at smaller
+scale.
+
+\textbf{Language-model-inspired models} convert continuous series values into
+discrete tokens---treating numerical forecasting as a text-prediction problem---and
+fine-tune sequence-to-sequence architectures.
+Chronos~\cite{ansari2024chronos} builds on T5~\cite{raffel2020t5}, casting
+forecasting as a sequence-to-sequence language task.
+Lag-Llama~\cite{rasul2024lagllama} adapts LLaMA by appending lagged copies of
+the input series as additional context features.
+Concurrent work has also explored prompting general-purpose LLMs directly for
+zero-shot forecasting~\cite{gruver2023llmts}, with mixed results that further illustrate the gap between raw performance and
+what the model has actually learned to represent.
+
+\subsection{The Performance Debate: Promise vs.\ Reality}
+\label{sec:rel_debate}
+
+The rapid proliferation of TSFMs has been accompanied by an equally rapid
+accumulation of contradictory evidence about their practical utility.
+Understanding this debate is essential context for our geometric analysis.
+
+\textbf{The sceptical challenge.}
+\citet{zeng2023transformers} delivered the most influential critique:
+a one-layer linear model (DLinear) matches or outperforms every major
+Transformer-based forecaster of its era on five standard long-horizon benchmarks,
+including ETT and Weather.
+The implication is stark: if a model with no representational capacity matches a
+deeply stacked Transformer, either the Transformer is learning something irrelevant
+to the task, or the benchmarks are not measuring what matters.
+This result reframed the research agenda from ``which Transformer is best'' to
+``does Transformer complexity help at all''.
+
+\textbf{The zero-shot argument.}
+Proponents of TSFMs respond that the comparison is unfair: DLinear is trained
+per-dataset, while TSFMs operate zero-shot.
+The Chronos~\cite{ansari2024chronos} and TimesFM~\cite{das2024timesfm}
+evaluations both show zero-shot performance competitive with, and sometimes
+exceeding, supervised per-dataset models---a capability that linear models
+cannot replicate by definition.
+Moirai~\cite{woo2024moirai} further demonstrates that a single foundation model
+can handle variable frequencies and multivariate series within a unified
+architecture.
+
+\textbf{The unresolved tension.}
+Despite this back-and-forth, several uncomfortable facts remain.
+First, the zero-shot superiority of TSFMs is not universal: on standard
+long-horizon benchmarks with sufficient training data, supervised patch-based
+models like PatchTST~\cite{nie2023patchtst} remain highly competitive at a
+fraction of the parameter count.
+Second, TSFM evaluations are not standardised: reported results vary
+significantly across evaluation protocols, preprocessing choices, and
+prediction horizons~\cite{woo2024moirai}, making apples-to-apples comparison
+difficult.
+Third, and most importantly for our work: \emph{the debate is conducted
+entirely at the output level}.
+Neither proponents nor sceptics have systematically examined what these models
+actually store in their internal representations.
+
+\textbf{The missing question.}
+A model that achieves competitive zero-shot MAE on ETTh1 could do so by
+(a)~building a rich, transferable internal representation of temporal
+patterns, or (b)~memorising statistical properties of the pretraining data
+that happen to generalise.
+These two mechanisms have radically different implications for when TSFMs
+generalise, when they fail, and how they should be used.
+Performance metrics cannot distinguish them.
+Geometric analysis of representations can.
+This is the contribution of the present paper.
+
+\subsection{Geometric Analysis of Neural Representations}
+\label{sec:rel_geometry}
+
+The internal geometry of learned representations has been studied systematically
+in vision and language, providing the methodological toolkit we adapt to
+time series.
+
+\textbf{Intrinsic dimensionality.}
+\citet{ansuini2019intrinsic} showed that deep image classifiers exhibit a
+characteristic layer-wise intrinsic dimensionality (ID) profile: expansion in
+early layers, compression to a low-dimensional manifold in terminal layers, with
+the compression ratio correlating with generalisation.
+\citet{birdal2021intrinsic} extended this to language models, showing that low
+intrinsic dimensionality of the fine-tuning landscape explains why large
+pretrained models adapt efficiently with few parameters.
+The TwoNN estimator~\cite{facco2017estimating} provides a non-parametric method
+for estimating this dimension from nearest-neighbour distance ratios---part of
+the geometric toolkit we adapt to time series representations.
+
+\textbf{Representational geometry in language models.}
+\citet{reif2019visualizing} demonstrated that BERT organises contextual
+embeddings into geometrically separable clusters corresponding to syntactic and
+semantic categories---a structural finding invisible to accuracy benchmarks alone.
+\citet{raghu2017svcca} used SVCCA to show that lower layers stabilise early
+in training while upper layers continue evolving, showing how representations form layer by layer and motivating the analysis
+of what learned representations store.
+
+\textbf{The time series gap.}
+No equivalent geometric characterisation exists for time series models.
+We do not know whether TSFMs organise their embedding spaces around temporal
+patterns, whether their internal structure is stable under small input changes,
+or whether proximity in embedding space predicts forecast reliability.
+These are the questions LGF is designed to answer.
+
+\subsection{Explainability for Time Series}
+\label{sec:rel_xai}
+
+Existing XAI approaches for time series assign importance scores to input
+timesteps---via LIME, SHAP, or integrated gradients---or measure model
+sensitivity to input perturbations~\cite{ismail2020benchmarking,
+theissler2022explainable}.
+Both classes operate at the input level and explain individual predictions.
+Neither provides any account of what a model has learned to encode in its
+representation space.
+
+Linear probing~\cite{alain2017probing} bridges this gap: it tests whether a
+target property can be read out of frozen intermediate representations using
+a linear classifier, revealing what information is stored without the
+confounds of end-to-end training.
+In NLP, probing revealed that BERT encodes syntactic structure in intermediate
+layers and semantic structure in upper layers~\cite{reif2019visualizing}.
+We apply this approach to provide the first direct account of what temporal
+information is stored in pretrained TSFM representations.

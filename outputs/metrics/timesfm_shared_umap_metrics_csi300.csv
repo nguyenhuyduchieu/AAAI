@@ -1,0 +1,5 @@
+dataset,metric,value
+csi300,ltc_pretrained,4.078106880187988
+csi300,ltc_random_reset,5.955741882324219
+csi300,ltc_delta_pre_minus_random,-1.8776350021362305
+csi300,expectation_pre_gt_random,0.0
