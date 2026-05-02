@@ -97,6 +97,12 @@ def parse_args() -> argparse.Namespace:
         default=20000,
         help="Max random pairs for FSS computation to control runtime.",
     )
+    parser.add_argument(
+        "--metrics-dir",
+        type=str,
+        default="outputs/metrics",
+        help="Directory for timesfm_control_metrics_*.csv and summaries (default: outputs/metrics).",
+    )
     return parser.parse_args()
 
 
@@ -285,7 +291,7 @@ def main() -> None:
 
     out_dir = Path("outputs/figures")
     out_dir.mkdir(parents=True, exist_ok=True)
-    metrics_dir = Path("outputs/metrics")
+    metrics_dir = Path(args.metrics_dir)
     metrics_dir.mkdir(parents=True, exist_ok=True)
 
     metrics_rows: list[dict[str, float | int | str]] = []

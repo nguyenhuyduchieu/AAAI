@@ -2,6 +2,15 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import sys
+
+_d = Path(__file__).resolve().parent
+if str(_d) not in sys.path:
+    sys.path.insert(0, str(_d))
+import paper_style
+from paper_style import C
+
+paper_style.apply_paper_style()
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -71,21 +80,53 @@ def main() -> None:
 
     x = np.arange(len(labels))
     w = 0.2
-    fig, ax = plt.subplots(figsize=(10.5, 4.2))
+    fig, ax = plt.subplots(figsize=(12, 4.8))
 
-    ax.bar(x - 1.5 * w, pre_pds, w, color="steelblue", label="Pre PDS", yerr=np.array(pre_pds_err).T, capsize=2)
-    ax.bar(x - 0.5 * w, pre_fss, w, color="lightsteelblue", label="Pre FSS", yerr=np.array(pre_fss_err).T, capsize=2)
-    ax.bar(x + 0.5 * w, rnd_pds, w, color="tomato", label="Rand PDS", yerr=np.array(rnd_pds_err).T, capsize=2)
-    ax.bar(x + 1.5 * w, rnd_fss, w, color="lightsalmon", label="Rand FSS", yerr=np.array(rnd_fss_err).T, capsize=2)
-    ax.axhline(0.0, color="black", linestyle="--", linewidth=0.8)
+    ax.bar(
+        x - 1.5 * w,
+        pre_pds,
+        w,
+        label="Pre PDS",
+        yerr=np.array(pre_pds_err).T,
+        capsize=2,
+        color=C.blue_dark,
+    )
+    ax.bar(
+        x - 0.5 * w,
+        pre_fss,
+        w,
+        label="Pre FSS",
+        yerr=np.array(pre_fss_err).T,
+        capsize=2,
+        color=C.blue,
+    )
+    ax.bar(
+        x + 0.5 * w,
+        rnd_pds,
+        w,
+        label="Rand PDS",
+        yerr=np.array(rnd_pds_err).T,
+        capsize=2,
+        color=C.red,
+    )
+    ax.bar(
+        x + 1.5 * w,
+        rnd_fss,
+        w,
+        label="Rand FSS",
+        yerr=np.array(rnd_fss_err).T,
+        capsize=2,
+        color=C.orange,
+    )
+    ax.axhline(0.0, color=C.gray, linestyle="--", linewidth=0.9)
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
     ax.set_ylabel("Spearman raw correlation")
     ax.set_title("Geodesic reliability: PDS vs FSS")
-    ax.legend(ncol=2, fontsize=8)
+    ax.legend(ncol=2, fontsize=10)
 
     fig.tight_layout()
-    fig.savefig(out_dir / "fig_geodesic_reliability.pdf", bbox_inches="tight")
+    paper_style.save_paper_figure(fig, out_dir / "fig_geodesic_reliability.pdf")
     plt.close(fig)
 
 

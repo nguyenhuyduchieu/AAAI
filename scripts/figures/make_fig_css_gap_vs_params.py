@@ -1,6 +1,15 @@
 from __future__ import annotations
 
 from pathlib import Path
+import sys
+
+_d = Path(__file__).resolve().parent
+if str(_d) not in sys.path:
+    sys.path.insert(0, str(_d))
+import paper_style
+from paper_style import C
+
+paper_style.apply_paper_style()
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -34,23 +43,23 @@ def main() -> None:
     gap_season = [None, None, None, gap_season_tsfm, None]
     gap_vol = [None, None, None, gap_vol_tsfm, None]
 
-    fig, ax = plt.subplots(figsize=(7, 4))
+    fig, ax = plt.subplots(figsize=(8.5, 4.8))
     x = np.log10(params_m)
     for i, (m, gs, gv) in enumerate(zip(models, gap_season, gap_vol)):
         if gs is not None:
-            ax.scatter(x[i], gs, marker="o", s=100, color="#2980b9", zorder=5, label="Season" if i == 3 else "")
-            ax.scatter(x[i], gv, marker="s", s=100, color="#e67e22", zorder=5, label="Volatility" if i == 3 else "")
-            ax.annotate(m, (x[i], gs + 0.4), fontsize=8)
+            ax.scatter(x[i], gs, marker="o", s=110, c=C.blue, zorder=5, edgecolors="black", linewidths=0.6, label="Season" if i == 3 else "")
+            ax.scatter(x[i], gv, marker="s", s=110, c=C.gold, zorder=5, edgecolors="black", linewidths=0.6, label="Volatility" if i == 3 else "")
+            ax.annotate(m, (x[i], gs + 0.4), fontsize=10)
         else:
-            ax.scatter(x[i], 0, marker="x", s=80, color="grey", zorder=5)
-            ax.annotate(f"{m}\n(planned)", (x[i], 0.6), fontsize=7, color="grey", ha="center")
+            ax.scatter(x[i], 0, marker="x", s=80, color=C.gray, zorder=5)
+            ax.annotate(f"{m}\n(planned)", (x[i], 0.6), fontsize=9, color=C.gray_dark, ha="center")
     ax.set_xlabel("log10(Parameters)")
     ax.set_ylabel("CSS gap (Pre - Rand, pp)")
-    ax.axhline(0, color="grey", linestyle=":", lw=0.9)
+    ax.axhline(0, color=C.gray, linestyle=":", lw=0.9)
     ax.set_title("CSS gap vs. model scale")
     ax.legend()
     fig.tight_layout()
-    fig.savefig(out, bbox_inches="tight")
+    paper_style.save_paper_figure(fig, out)
     plt.close(fig)
 
 

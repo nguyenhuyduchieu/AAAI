@@ -1,6 +1,14 @@
 from __future__ import annotations
 
 from pathlib import Path
+import sys
+
+_d = Path(__file__).resolve().parent
+if str(_d) not in sys.path:
+    sys.path.insert(0, str(_d))
+import paper_style
+
+paper_style.apply_paper_style()
 
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
@@ -31,16 +39,16 @@ def main() -> None:
     ltc_pre = _ltc("electricity", "pretrained")
     ltc_rand = _ltc("electricity", "random-reset")
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
-    ax1.imshow(mpimg.imread(pre_img))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12.5, 5))
+    ax1.imshow(mpimg.imread(pre_img), interpolation="bilinear")
     ax1.set_title(f"Pretrained  LTC_step={ltc_pre:.2f}")
     ax1.axis("off")
-    ax2.imshow(mpimg.imread(rnd_img))
+    ax2.imshow(mpimg.imread(rnd_img), interpolation="bilinear")
     ax2.set_title(f"Random      LTC_step={ltc_rand:.2f}")
     ax2.axis("off")
     fig.suptitle("Shared-view UMAP comparison (Electricity)")
     fig.tight_layout()
-    fig.savefig(out, bbox_inches="tight")
+    paper_style.save_paper_figure(fig, out)
     plt.close(fig)
 
 

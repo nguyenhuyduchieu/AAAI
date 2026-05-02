@@ -2,6 +2,15 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import sys
+
+_d = Path(__file__).resolve().parent
+if str(_d) not in sys.path:
+    sys.path.insert(0, str(_d))
+import paper_style
+from paper_style import C
+
+paper_style.apply_paper_style()
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -38,19 +47,19 @@ def main() -> None:
         for m in values:
             values[m].append(rows[m])
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4.2))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13.5, 4.8))
 
     x = np.arange(len(pretty))
     w = 0.22
-    ax1.bar(x - 1.5 * w, values["tsfm_pretrained"], w, label="TimesFM (pre)", color="#2980b9")
-    ax1.bar(x - 0.5 * w, values["lstm"], w, label="LSTM", color="#95a5a6")
-    ax1.bar(x + 0.5 * w, values["tcn"], w, label="TCN", color="#7f8c8d")
-    ax1.bar(x + 1.5 * w, values["transformer"], w, label="Transformer", color="#e67e22")
+    ax1.bar(x - 1.5 * w, values["tsfm_pretrained"], w, label="TimesFM (pre)", color=C.blue)
+    ax1.bar(x - 0.5 * w, values["lstm"], w, label="LSTM", color=C.gray)
+    ax1.bar(x + 0.5 * w, values["tcn"], w, label="TCN", color=C.gray_dark)
+    ax1.bar(x + 1.5 * w, values["transformer"], w, label="Transformer", color=C.gold)
     ax1.set_xticks(x)
     ax1.set_xticklabels(pretty)
     ax1.set_ylabel("LTC_step")
     ax1.set_title("Across datasets")
-    ax1.legend(fontsize=8)
+    ax1.legend(fontsize=10)
 
     elec_vals = [
         values["tsfm_pretrained"][0],
@@ -59,14 +68,14 @@ def main() -> None:
         values["transformer"][0],
     ]
     names = ["TimesFM (pre)", "LSTM", "TCN", "Transformer"]
-    colors = ["#2980b9", "#95a5a6", "#7f8c8d", "#e67e22"]
+    colors = [C.blue, C.gray, C.gray_dark, C.gold]
     ax2.bar(names, elec_vals, color=colors)
     ax2.set_title("Electricity (all models)")
     ax2.set_ylabel("LTC_step")
     ax2.tick_params(axis="x", labelrotation=20)
 
     fig.tight_layout()
-    fig.savefig(out_dir / "fig_ltc_profile.pdf", bbox_inches="tight")
+    paper_style.save_paper_figure(fig, out_dir / "fig_ltc_profile.pdf")
     plt.close(fig)
 
 

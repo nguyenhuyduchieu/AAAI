@@ -1,6 +1,14 @@
 from __future__ import annotations
 
 from pathlib import Path
+import sys
+
+_d = Path(__file__).resolve().parent
+if str(_d) not in sys.path:
+    sys.path.insert(0, str(_d))
+import paper_style
+
+paper_style.apply_paper_style()
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -45,7 +53,7 @@ def main() -> None:
             pre_sig[i, j] = _pick(df, "pretrained", m_pv) < 0.05
             rnd_sig[i, j] = _pick(df, "random-reset", m_pv) < 0.05
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10.8, 3.8), sharey=True)
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12.5, 4.4), sharey=True)
 
     for ax, data, sig, title in [
         (ax1, pre_data, pre_sig, "Pretrained"),
@@ -62,17 +70,19 @@ def main() -> None:
             xticklabels=ds_labels,
             yticklabels=concept_labels,
             cbar=(ax is ax2),
+            linewidths=0.6,
+            linecolor="white",
         )
         for i in range(data.shape[0]):
             for j in range(data.shape[1]):
                 txt = f"{data[i, j]:.1f}"
                 if not sig[i, j]:
                     txt += "†"
-                ax.text(j + 0.5, i + 0.5, txt, ha="center", va="center", fontsize=8.5, fontweight="bold" if sig[i, j] else "normal")
+                ax.text(j + 0.5, i + 0.5, txt, ha="center", va="center", fontsize=11, fontweight="bold" if sig[i, j] else "normal")
         ax.set_title(title)
 
     fig.tight_layout()
-    fig.savefig(out_dir / "fig_probing_heatmap.pdf", bbox_inches="tight")
+    paper_style.save_paper_figure(fig, out_dir / "fig_probing_heatmap.pdf")
     plt.close(fig)
 
 

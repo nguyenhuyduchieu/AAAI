@@ -2,6 +2,15 @@ from __future__ import annotations
 
 from pathlib import Path
 import re
+import sys
+
+_d = Path(__file__).resolve().parent
+if str(_d) not in sys.path:
+    sys.path.insert(0, str(_d))
+import paper_style
+from paper_style import C
+
+paper_style.apply_paper_style()
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -33,16 +42,16 @@ def main() -> None:
     rand_mean = float(np.mean(rand_vals))
     rand = pd.Series([rand_mean] * len(pre), index=pre.index)
 
-    fig, ax = plt.subplots(figsize=(7, 4))
-    ax.plot(pre.index, pre.values, "o-", label="Pretrained (layer-wise CSS proxy)", color="#2980b9")
-    ax.plot(rand.index, rand.values, "s--", label="Random (global baseline)", color="#e74c3c")
-    ax.fill_between(pre.index, rand.values, pre.values, alpha=0.15, color="#2980b9")
+    fig, ax = plt.subplots(figsize=(8.5, 4.8))
+    ax.plot(pre.index, pre.values, "o-", label="Pretrained (layer-wise CSS proxy)", color=C.blue, lw=2.2, markersize=7, markeredgecolor="black", markeredgewidth=0.4)
+    ax.plot(rand.index, rand.values, "s--", label="Random (global baseline)", color=C.orange, lw=2.0, markersize=6, markeredgecolor="black", markeredgewidth=0.35)
+    ax.fill_between(pre.index, rand.values, pre.values, alpha=0.22, color=C.blue)
     ax.set_xlabel("Transformer layer index")
     ax.set_ylabel("Score")
     ax.set_title("Layer-wise representation dynamics (CSS proxy)")
     ax.legend()
     fig.tight_layout()
-    fig.savefig(out, bbox_inches="tight")
+    paper_style.save_paper_figure(fig, out)
     plt.close(fig)
 
 

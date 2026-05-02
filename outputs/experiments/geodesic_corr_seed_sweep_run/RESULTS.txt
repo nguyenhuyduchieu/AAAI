@@ -1,0 +1,21 @@
+Geodesic PDS/FSS correlation sweep — output layout
+==================================================
+
+electricity/seed_0/
+  timesfm_control_metrics_electricity.csv
+  → Snapshot copied from outputs/metrics/ after a full demo run (not from an in-progress GPU sweep).
+    Folder name seed_0 is only for the aggregator; the original run may have used a different --seed.
+
+electricity/geodesic_corr_seed_summary_k20.csv
+  → Table built by: python scripts/geodesic_corr_seed_sweep.py --dataset electricity --aggregate-only --sweep-root outputs/experiments/geodesic_corr_seed_sweep_run --k 20
+
+Full multi-seed sweep (slow; needs GPU recommended)
+-----------------------------------------------------
+  cd repo && PYTHONPATH=. python scripts/geodesic_corr_seed_sweep.py \
+    --dataset electricity --seed-start 0 --seed-end 9 --fast-dev \
+    --sweep-root outputs/experiments/geodesic_corr_seed_sweep_run \
+    --extra-demo-args "--max-windows 256"
+
+Each seed writes metrics under: <sweep-root>/<dataset>/seed_<n>/
+
+Note: A live sweep was started here but did not finish within the agent time limit (TimesFM load/inference is heavy on CPU).

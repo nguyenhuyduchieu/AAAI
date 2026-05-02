@@ -1,6 +1,15 @@
 from __future__ import annotations
 
 from pathlib import Path
+import sys
+
+_d = Path(__file__).resolve().parent
+if str(_d) not in sys.path:
+    sys.path.insert(0, str(_d))
+import paper_style
+from paper_style import C
+
+paper_style.apply_paper_style()
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,22 +18,22 @@ import numpy as np
 def _grouped(ax, labels: list[str], pre: list[float], rnd: list[float], ylabel: str, add_zero: bool = False, add_chance: bool = False) -> None:
     x = np.arange(len(labels))
     w = 0.35
-    ax.bar(x - w / 2, pre, w, color="#2980b9", label="Pre")
-    ax.bar(x + w / 2, rnd, w, color="#e74c3c", label="Rand")
+    ax.bar(x - w / 2, pre, w, label="Pre", color=C.blue)
+    ax.bar(x + w / 2, rnd, w, label="Rand", color=C.orange)
     ax.set_xticks(x)
-    ax.set_xticklabels(labels, fontsize=8)
-    ax.set_ylabel(ylabel, fontsize=8)
+    ax.set_xticklabels(labels, fontsize=10)
+    ax.set_ylabel(ylabel, fontsize=11)
     if add_zero:
-        ax.axhline(0, color="black", linestyle="--", lw=1.0)
+        ax.axhline(0, color=C.gray, linestyle="--", lw=1.0)
     if add_chance:
-        ax.axhline(50, color="grey", linestyle=":", lw=0.9)
+        ax.axhline(50, color=C.gray, linestyle=":", lw=0.9)
 
 
 def main() -> None:
     out = Path("outputs/figures/paper/fig_ood_summary.pdf")
     out.parent.mkdir(parents=True, exist_ok=True)
 
-    fig, axes = plt.subplots(3, 2, figsize=(10, 7), sharey="row")
+    fig, axes = plt.subplots(3, 2, figsize=(11.5, 8), sharey="row")
     fig.subplots_adjust(hspace=0.5, wspace=0.35)
 
     ind = ["Elec.", "Weath.", "ETTh1", "Traffic"]
@@ -40,15 +49,15 @@ def main() -> None:
     _grouped(axes[2, 1], ood, [0.02, -0.09], [-0.37, -0.38], "PDS  $\\rho_s$", add_zero=True)
 
     axes[0, 0].set_title("In-distribution", fontweight="bold")
-    axes[0, 1].set_title("OOD (equity)", fontweight="bold", color="#c0392b")
+    axes[0, 1].set_title("OOD (equity)", fontweight="bold", color=C.red)
     for r in range(3):
         for spine in axes[r, 1].spines.values():
-            spine.set_edgecolor("#c0392b")
+            spine.set_edgecolor(C.red)
             spine.set_linewidth(1.5)
 
-    axes[0, 0].legend(fontsize=8)
-    fig.suptitle("OOD validation: LTC and CSS transfer; PDS collapses", fontsize=10, fontweight="bold")
-    fig.savefig(out, bbox_inches="tight")
+    axes[0, 0].legend(fontsize=10)
+    fig.suptitle("OOD validation: LTC and CSS transfer; PDS collapses", fontsize=13, fontweight="bold")
+    paper_style.save_paper_figure(fig, out)
     plt.close(fig)
 
 

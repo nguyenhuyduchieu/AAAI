@@ -11,3 +11,16 @@ external/
 data/raw/long_horizon/
 notebooks/data/raw/long_horizon/
 outputs/logs/
+
+# Full dataset tree — keep local only (per project policy)
+data/
+
+# Ad-hoc local env clones
+.venv_*/
+conda_arm_py311/
+
+# LaTeX build noise at repo root
+/main.aux
+/main.log
+/main.pdf
+/texput.log
