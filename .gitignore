@@ -1,26 +1,17 @@
 .DS_Store
 .cache/
-.venv/
 __pycache__/
 *.pyc
 
 # avoid committing nested cloned repositories as broken gitlinks
 external/
 
-# optional heavy/generated artifacts
-data/raw/long_horizon/
-notebooks/data/raw/long_horizon/
-outputs/logs/
+# --- Chỉ loại dataset trong repo (thư mục gốc data/) ---
+/data/
 
-# Full dataset tree — keep local only (per project policy)
-data/
-
-# Ad-hoc local env clones
+# Python / Conda environments — never commit (large binaries, local paths).
+.venv/
+venv/
 .venv_*/
-conda_arm_py311/
-
-# LaTeX build noise at repo root
-/main.aux
-/main.log
-/main.pdf
-/texput.log
+/conda_*/
+.env/
