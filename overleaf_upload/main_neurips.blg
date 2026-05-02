@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main_neurips.aux
+The style file: plainnat.bst
+Database file #1: refs.bib
+Warning--can't use both volume and number fields in qiu2024tfb
+You've used 30 entries,
+            2773 wiz_defined-function locations,
+            740 strings with 11136 characters,
+and the built_in function-call counts, 17376 in all, are:
+= -- 1397
+> -- 1445
+< -- 22
++ -- 487
+- -- 456
+* -- 1514
+:= -- 2727
+add.period$ -- 96
+call.type$ -- 30
+change.case$ -- 231
+chr.to.int$ -- 29
+cite$ -- 61
+duplicate$ -- 714
+empty$ -- 1174
+format.name$ -- 491
+if$ -- 3581
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 34
+newline$ -- 161
+num.names$ -- 120
+pop$ -- 511
+preamble$ -- 1
+purify$ -- 205
+quote$ -- 0
+skip$ -- 602
+stack$ -- 0
+substring$ -- 335
+swap$ -- 119
+text.length$ -- 16
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 310
+warning$ -- 1
+while$ -- 109
+width$ -- 0
+write$ -- 394
+(There was 1 warning)

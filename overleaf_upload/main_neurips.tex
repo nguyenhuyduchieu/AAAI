@@ -553,8 +553,8 @@ we found that pretrained embeddings consistently produce richer, more directed
 trajectories than those of a randomly-initialised encoder of identical
 architecture ($\Delta{=}0.74$--$1.58$, $p{<}0.05$ Wilcoxon across datasets,
 Table~\ref{tab:ltc}), confirming Proposition~\ref{prop:ltc_pretraining}.
-At the same time, TimesFM sits $3.5\times$ below the per-dataset Transformer
-($\ltcstep{=}4.64$ vs.\ $16.16$ on Electricity), which occupies the
+At the same time, TimesFM sits ${\approx}2.1\times$ below the per-dataset Transformer
+($\ltcstep{=}4.64$ vs.\ $9.92$ on Electricity), which occupies the
 memorisation regime.
 This positions the pretrained encoder in a compact, structured zone between
 random scatter and dataset-specific over-fitting---consistent with the
@@ -602,8 +602,8 @@ model, reflecting higher directional consistency.
 \caption{\textbf{LTC step ($\ltcstep$) across datasets and model types.}
   \emph{Left}: pretrained TimesFM consistently exceeds the random-weight
   control across all four benchmarks.
-  \emph{Right}: on Electricity, TimesFM ($4.64$) sits $3.5\times$ below
-  the supervised Transformer ($16.16$) yet $19\%$ above the random encoder
+  \emph{Right}: on Electricity, TimesFM ($4.64$) sits ${\approx}2.1\times$ below
+  the supervised Transformer ($9.92$) yet $19\%$ above the random encoder
   ($3.90$)---the compact structured zone between scatter and memorisation.}
 \label{fig:ltc_profile}
 \end{figure}
@@ -618,8 +618,8 @@ This ETTh1-specific signature is consistent with verbatim inclusion of ETTh1
 in these models' pretraining corpora, and is invisible to held-out forecasting
 metrics.
 At the opposite extreme, Chronos-Small's value quantisation compressed
-trajectory richness to $\ltcstep{=}0.13$ on Electricity---a $124\times$
-reduction relative to the supervised Transformer---an encoding artefact
+trajectory richness to $\ltcstep{=}0.13$ on Electricity---a ${\approx}76\times$
+reduction relative to the supervised Transformer on that benchmark---an encoding artefact
 detectable from frozen embeddings alone.
 
 We next asked whether local embedding density carries a signal about
@@ -664,6 +664,8 @@ Theorem~\ref{thm:pds_main}(iii).
 \centering
 \captionof{table}{\textbf{$\ltcstep$ (higher = richer trajectory).}
 \textbf{Bold} ETTh1 $>15$: memorisation spike.
+$\Delta$: TimesFM (pre) $=$ mean (pre$-$rnd) across datasets; TimesFM (rnd) $=$ mean (rnd$-$pre);
+other rows $=$ mean (TimesFM pre $-$ row) across datasets.
 Full 14-model results: Table~\ref{tab:ltc_ext} (App.~\ref{app:ablations}).}
 \label{tab:ltc}
 \small\setlength{\tabcolsep}{3pt}
@@ -672,19 +674,19 @@ Full 14-model results: Table~\ref{tab:ltc_ext} (App.~\ref{app:ablations}).}
 \textbf{Model} & \textbf{Elec.} & \textbf{Wea.} & \textbf{ETTh1} & \textbf{Traf.} & $\Delta$\\
 \midrule
 TimesFM (pre) & 4.64 & 5.10 & 5.02 & 3.77 & $+$1.21\\
-TimesFM (rnd) & 3.90 & 3.52 & 3.70 & 2.55 & ---\\
-$\Delta$      & $+$0.74 & $+$1.58 & $+$1.32 & $+$1.22 & \\
+TimesFM (rnd) & 3.90 & 3.52 & 3.70 & 2.55 & $-$1.21\\
+$\Delta$      & $+$0.74 & $+$1.58 & $+$1.32 & $+$1.22 & $+$1.21\\
 \midrule
-LSTM   & 4.75  & --- & --- & --- & ---\\
-TCN    & 5.56  & --- & --- & --- & ---\\
-Trans. & 16.16 & --- & --- & --- & ---\\
+LSTM   & 0.18 & 0.19 & 0.14 & 0.11 & $+$4.48\\
+TCN    & 2.34 & 1.49 & 2.66 & 1.45 & $+$2.65\\
+Trans. & 9.92 & 11.77 & 11.16 & 6.44 & $-$5.19\\
 \midrule
 \multicolumn{6}{l}{\textit{ETTh1 spikes \& Chronos:}}\\
-OFA     & 1.00 & 1.68 & \textbf{17.69} & 1.62 & ---\\
-UniTime & 3.30 & 2.68 & \textbf{28.90} & 3.86 & ---\\
-TiRex   & 9.62 & 2.82 & \textbf{25.53} & 8.89 & ---\\
-Moirai  & 9.97 & 2.91 & \textbf{26.66} & 9.64 & ---\\
-Chronos-S & 0.13 & 0.19 & 0.21 & 0.15 & ---\\
+OFA     & 1.00 & 1.68 & \textbf{17.69} & 1.62 & $-$0.87\\
+UniTime & 3.30 & 2.68 & \textbf{28.90} & 3.86 & $-$5.05\\
+TiRex   & 9.62 & 2.82 & \textbf{25.53} & 8.89 & $-$7.08\\
+Moirai  & 9.97 & 2.91 & \textbf{26.66} & 9.64 & $-$7.66\\
+Chronos-S & 0.13 & 0.19 & 0.21 & 0.15 & $+$4.46\\
 \bottomrule
 \end{tabular}
 \end{minipage}%
@@ -857,8 +859,8 @@ Appendix~\ref{app:stock_ood}; ablation results in Appendix~\ref{app:ablations}.
 
 LGF reveals a compact, selective, and distribution-bounded geometric imprint
 from pretraining.
-TimesFM's manifold sits $3.5\times$ below the supervised Transformer
-($\ltcstep{=}4.64$ vs.\ $16.16$) yet $19\%$ above the random-weight encoder,
+TimesFM's manifold sits ${\approx}2.1\times$ below the supervised Transformer
+($\ltcstep{=}4.64$ vs.\ $9.92$) yet $19\%$ above the random-weight encoder,
 with lower intrinsic dimension directly tightening prediction risk.
 Frozen embeddings encode seasonality ($78.6\%$) and volatility ($70.9\%$)
 well above chance but not trend direction, which window-level normalisation
@@ -958,7 +960,7 @@ Pretrained TimesFM~2.0 consistently exceeds its random-weight control on
 every dataset (confirming Proposition~\ref{prop:ltc_pretraining}), and
 $\ltcstep$ varies with dataset structure: high-frequency Electricity and
 heterogeneous Traffic produce denser trajectories than Weather.
-The supervised Transformer achieves $\ltcstep{=}16.2$ on Electricity---$3.5\times$
+The supervised Transformer achieves $\ltcstep{=}9.92$ on Electricity---${\approx}2.1\times$
 larger than TimesFM ($4.64$)---yet this does not translate to better forecasts,
 showing pretraining selects for a compact, structured manifold rather than a
 maximally complex one.
@@ -1080,7 +1082,9 @@ horizons $H\in\{96,192,336,720\}$.
 \begin{table}[h]
 \centering
 \caption{\textbf{Full $\ltcstep$ results for all 14 TSFMs.}
-Supplement to Table~\ref{tab:ltc} (main text). \textbf{Bold}: ETTh1 $>15$.}
+Supplement to Table~\ref{tab:ltc} (main text). \textbf{Bold}: ETTh1 $>15$.
+$\Delta$: TimesFM (pre) $=$ mean (pre$-$rnd); TimesFM (rnd) $=$ mean (rnd$-$pre);
+other rows $=$ mean (TimesFM pre $-$ row) across the four datasets.}
 \label{tab:ltc_ext}
 \small
 \setlength{\tabcolsep}{3pt}
@@ -1089,24 +1093,24 @@ Supplement to Table~\ref{tab:ltc} (main text). \textbf{Bold}: ETTh1 $>15$.}
 \textbf{Model} & \textbf{Elec.} & \textbf{Weath.} & \textbf{ETTh1} & \textbf{Traffic} & $\Delta$\\
 \midrule
 TimesFM (pre)  & 4.64 & 5.10 & 5.02 & 3.77 & $+$1.21\\
-TimesFM (rand) & 3.90 & 3.52 & 3.70 & 2.55 & ---\\
-$\Delta$       & +0.74 & +1.58 & +1.32 & +1.22 & \\
+TimesFM (rand) & 3.90 & 3.52 & 3.70 & 2.55 & $-$1.21\\
+$\Delta$       & $+$0.74 & $+$1.58 & $+$1.32 & $+$1.22 & $+$1.21\\
 \midrule
-LSTM           &  4.75 & --- & --- & --- & ---\\
-TCN            &  5.56 & --- & --- & --- & ---\\
-Transformer    & 16.16 & --- & --- & --- & ---\\
+LSTM           & 0.18 & 0.19 & 0.14 & 0.11 & $+$4.48\\
+TCN            & 2.34 & 1.49 & 2.66 & 1.45 & $+$2.65\\
+Transformer    & 9.92 & 11.77 & 11.16 & 6.44 & $-$5.19\\
 \midrule
 \multicolumn{6}{l}{\textit{Additional TSFMs (no random-weight control)}}\\
-LightGTS      & 1.59 & 0.64 & 8.86  & 1.63 & ---\\
-OFA           & 1.00 & 1.68 & \textbf{17.69} & 1.62 & ---\\
-Sundial       & 4.00 & 5.60 & 3.00  & 6.77 & ---\\
-Time-MoE      & 0.77 & 1.40 & 4.09  & 1.77 & ---\\
-UniTime       & 3.30 & 2.68 & \textbf{28.90} & 3.86 & ---\\
-VisionTS      & 0.99 & 0.62 & 6.11  & 1.20 & ---\\
-TiRex         & 9.62 & 2.82 & \textbf{25.53} & 8.89 & ---\\
-MOMENT-Large  & 2.03 & 1.98 & 2.16  & 2.82 & ---\\
-Moirai        & 9.97 & 2.91 & \textbf{26.66} & 9.64 & ---\\
-Chronos-Small & 0.13 & 0.19 & 0.21  & 0.15 & ---\\
+LightGTS      & 1.59 & 0.64 & 8.86  & 1.63 & $+$1.45\\
+OFA           & 1.00 & 1.68 & \textbf{17.69} & 1.62 & $-$0.87\\
+Sundial       & 4.00 & 5.60 & 3.00  & 6.77 & $-$0.21\\
+Time-MoE      & 0.77 & 1.40 & 4.09  & 1.77 & $+$2.62\\
+UniTime       & 3.30 & 2.68 & \textbf{28.90} & 3.86 & $-$5.05\\
+VisionTS      & 0.99 & 0.62 & 6.11  & 1.20 & $+$2.40\\
+TiRex         & 9.62 & 2.82 & \textbf{25.53} & 8.89 & $-$7.08\\
+MOMENT-Large  & 2.03 & 1.98 & 2.16  & 2.82 & $+$2.38\\
+Moirai        & 9.97 & 2.91 & \textbf{26.66} & 9.64 & $-$7.66\\
+Chronos-Small & 0.13 & 0.19 & 0.21  & 0.15 & $+$4.46\\
 \bottomrule
 \end{tabular}
 \end{table}

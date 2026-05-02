@@ -1,0 +1,347 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{das2024timesfm}
+\citation{ansari2024chronos}
+\citation{goswami2024moment}
+\citation{woo2024moirai}
+\citation{shi2024timemoe}
+\citation{zeng2023transformers}
+\citation{ansuini2019intrinsic}
+\citation{reif2019visualizing}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\newlabel{sec:intro@cref}{{[section][1][]1}{[1][1][]1}{}{}{}}
+\citation{das2024timesfm,das2025timesfm2}
+\citation{liu2024timer}
+\citation{goswami2024moment}
+\citation{woo2024moirai}
+\citation{woo2024moiraimoe}
+\citation{ansari2024chronos}
+\citation{rasul2024lagllama}
+\citation{gruver2023llmts}
+\citation{shi2024timemoe}
+\citation{liang2024foundation,jin2023large,meyer2025tsfmreview}
+\citation{aksu2024gifteval,qiu2024tfb,li2025tsfmbench}
+\citation{zeng2023transformers}
+\citation{ansuini2019intrinsic}
+\citation{raghu2017svcca}
+\citation{reif2019visualizing}
+\citation{aghajanyan2021intrinsic}
+\citation{meyer2025tsfmreview}
+\citation{edwards2024scalinglaws}
+\citation{aksu2024gifteval}
+\citation{li2025tsfmbench}
+\citation{qiu2024tfb}
+\citation{ismail2020benchmarking,theissler2022explainable}
+\citation{alain2017probing}
+\citation{cleveland1990stl}
+\@writefile{toc}{\contentsline {paragraph}{Contributions.}{2}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{2}{Related Work}{section.2}{}}
+\newlabel{sec:related@cref}{{[section][2][]2}{[1][2][]2}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{TSFMs and the representation gap.}{2}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Geometric analysis of neural representations.}{2}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Evaluation integrity and data leakage.}{2}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Explainability for time series.}{2}{section*.5}\protected@file@percent }
+\citation{cleveland1990stl}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Preliminaries}{3}{subsection.2.1}\protected@file@percent }
+\newlabel{sec:prelim}{{2.1}{3}{Preliminaries}{subsection.2.1}{}}
+\newlabel{sec:prelim@cref}{{[subsection][1][2]2.1}{[1][3][]3}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Notation.}{3}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Temporal Representation Manifold.}{3}{section*.7}\protected@file@percent }
+\newlabel{def:trm}{{2.1}{3}{TRM}{theorem.2.1}{}}
+\newlabel{def:trm@cref}{{[theorem][1][2]2.1}{[1][3][]3}{}{}{}}
+\newlabel{asm:lipschitz}{{2.2}{3}{Lipschitz encoder}{theorem.2.2}{}}
+\newlabel{asm:lipschitz@cref}{{[theorem][2][2]2.2}{[1][3][]3}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Geometric view of pretraining.}{3}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Latent Geometry Framework}{3}{section.3}\protected@file@percent }
+\newlabel{sec:framework}{{3}{3}{Latent Geometry Framework}{section.3}{}}
+\newlabel{sec:framework@cref}{{[section][3][]3}{[1][3][]3}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Stage~1 --- Latent Trajectory Complexity (LTC)}{3}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:ltc}{{3.1}{3}{Stage~1 --- Latent Trajectory Complexity (LTC)}{subsection.3.1}{}}
+\newlabel{sec:ltc@cref}{{[subsection][1][3]3.1}{[1][3][]3}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Formal definition.}{3}{section*.10}\protected@file@percent }
+\newlabel{eq:ltc}{{1}{3}{Formal definition}{equation.1}{}}
+\newlabel{eq:ltc@cref}{{[equation][1][]1}{[1][3][]3}{}{}{}}
+\citation{cleveland1990stl}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces LGF four-stage pipeline. \emph  {Stage~1} (LTC): trajectory richness and directional consistency. \emph  {Stage~2} (Regularity): cluster structure and perturbation stability. \emph  {Stage~3} (Reliability): local neighbourhood density vs.\ forecast error. \emph  {Stage~4} (CSS): linear decodability of temporal concepts. All stages operate on frozen embeddings only.}}{4}{figure.caption.9}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:overview_main}{{1}{4}{LGF four-stage pipeline. \emph {Stage~1} (LTC): trajectory richness and directional consistency. \emph {Stage~2} (Regularity): cluster structure and perturbation stability. \emph {Stage~3} (Reliability): local neighbourhood density vs.\ forecast error. \emph {Stage~4} (CSS): linear decodability of temporal concepts. All stages operate on frozen embeddings only}{figure.caption.9}{}}
+\newlabel{fig:overview_main@cref}{{[figure][1][]1}{[1][3][]4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Stage~2 --- Manifold Regularity (LCS, TSI, GSP)}{4}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:regularity}{{3.2}{4}{Stage~2 --- Manifold Regularity (LCS, TSI, GSP)}{subsection.3.2}{}}
+\newlabel{sec:regularity@cref}{{[subsection][2][3]3.2}{[1][3][]4}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Trend labels.}{4}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Latent Cohesion Score (LCS).}{4}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Temporal Stability Index (TSI).}{4}{section*.13}\protected@file@percent }
+\newlabel{thm:tsi_main}{{3.2}{4}{Temporal Stability Index (TSI)}{section*.13}{}}
+\newlabel{thm:tsi_main@cref}{{[subsection][2][3]3.2}{[1][4][]4}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Generalised Stability under Perturbation (GSP).}{4}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Stage~3 --- Manifold Reliability Protocol (PDS and FSS)}{4}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:reliability}{{3.3}{4}{Stage~3 --- Manifold Reliability Protocol (PDS and FSS)}{subsection.3.3}{}}
+\newlabel{sec:reliability@cref}{{[subsection][3][3]3.3}{[1][4][]4}{}{}{}}
+\citation{das2024timesfm,das2025timesfm2}
+\citation{ansari2024chronos}
+\citation{goswami2024moment}
+\citation{woo2024moirai}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces LGF Analysis Pipeline}}{5}{algorithm.1}\protected@file@percent }
+\newlabel{alg:lgf}{{1}{5}{LGF Analysis Pipeline}{algorithm.1}{}}
+\newlabel{alg:lgf@cref}{{[algorithm][1][]1}{[1][5][]5}{}{}{}}
+\newlabel{thm:pds_main}{{3.1}{5}{PDS Positivity and OOD Collapse}{theorem.3.1}{}}
+\newlabel{thm:pds_main@cref}{{[theorem][1][3]3.1}{[1][5][]5}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Stage~4 --- Temporal Primitive Probing (CSS)}{5}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:css}{{3.4}{5}{Stage~4 --- Temporal Primitive Probing (CSS)}{subsection.3.4}{}}
+\newlabel{sec:css@cref}{{[subsection][4][3]3.4}{[1][5][]5}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Class Separation Score (CSS).}{5}{section*.15}\protected@file@percent }
+\newlabel{eq:css}{{2}{5}{Class Separation Score (CSS)}{equation.2}{}}
+\newlabel{eq:css@cref}{{[equation][2][]2}{[1][5][]5}{}{}{}}
+\newlabel{thm:css_main}{{3.2}{5}{CSS and Mutual Information}{theorem.3.2}{}}
+\newlabel{thm:css_main@cref}{{[theorem][2][3]3.2}{[1][5][]5}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Trend CSS and window normalisation.}{5}{section*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Algorithm summary.}{5}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experiments}{6}{section.4}\protected@file@percent }
+\newlabel{sec:experiments}{{4}{6}{Experiments}{section.4}{}}
+\newlabel{sec:experiments@cref}{{[section][4][]4}{[1][5][]6}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Setup}{6}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:setup_exp}{{4.1}{6}{Setup}{subsection.4.1}{}}
+\newlabel{sec:setup_exp@cref}{{[subsection][1][4]4.1}{[1][5][]6}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Models.}{6}{section*.18}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {TSFMs evaluated.} $D$: embed.\ dim.}}{6}{table.1}\protected@file@percent }
+\newlabel{tab:models}{{1}{6}{\textbf {TSFMs evaluated.} $D$: embed.\ dim}{table.1}{}}
+\newlabel{tab:models@cref}{{[table][1][]1}{[1][5][]6}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Datasets.}{6}{section*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Extraction protocol.}{6}{section*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Random-weight control.}{6}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Main Results}{6}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:results}{{4.2}{6}{Main Results}{subsection.4.2}{}}
+\newlabel{sec:results@cref}{{[subsection][2][4]4.2}{[1][6][]6}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {UMAP projections of frozen TimesFM~2.0 embeddings on Electricity (3{,}000 windows, coloured by temporal index).} Grey lines trace the time-ordered path; green circle = start, red X = end. The two clouds look broadly similar at this scale, which is expected: UMAP discards magnitude information and both models operate in the same 1{,}024-D space. The quantitative difference is in the trajectory statistics: $\ensuremath  {\mathrm  {LTC}_{\mathrm  {step}}}= 4.64$ (pretrained, a) vs.\ $3.90$ (random, b), a $+19\%$ gap significant at $p{<}0.05$ (Wilcoxon). Visually, the start and end anchors are notably closer in (a) than in (b), consistent with the higher directional consistency ($\ensuremath  {\mathrm  {LTC}_{\mathrm  {dir}}}$) of the pretrained trajectory.}}{7}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:umap_pretrained_vs_random}{{2}{7}{\textbf {UMAP projections of frozen TimesFM~2.0 embeddings on Electricity (3{,}000 windows, coloured by temporal index).} Grey lines trace the time-ordered path; green circle = start, red X = end. The two clouds look broadly similar at this scale, which is expected: UMAP discards magnitude information and both models operate in the same 1{,}024-D space. The quantitative difference is in the trajectory statistics: $\ltcstep = 4.64$ (pretrained, a) vs.\ $3.90$ (random, b), a $+19\%$ gap significant at $p{<}0.05$ (Wilcoxon). Visually, the start and end anchors are notably closer in (a) than in (b), consistent with the higher directional consistency ($\ltcdir $) of the pretrained trajectory}{figure.caption.22}{}}
+\newlabel{fig:umap_pretrained_vs_random@cref}{{[figure][2][]2}{[1][6][]7}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {LTC step ($\ensuremath  {\mathrm  {LTC}_{\mathrm  {step}}}$) across datasets and model types.} \emph  {Left}: pretrained TimesFM consistently exceeds the random-weight control across all four benchmarks. \emph  {Right}: on Electricity, TimesFM ($4.64$) sits ${\approx }2.1\times $ below the supervised Transformer ($9.92$) yet $19\%$ above the random encoder ($3.90$)---the compact structured zone between scatter and memorisation.}}{7}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:ltc_profile}{{3}{7}{\textbf {LTC step ($\ltcstep $) across datasets and model types.} \emph {Left}: pretrained TimesFM consistently exceeds the random-weight control across all four benchmarks. \emph {Right}: on Electricity, TimesFM ($4.64$) sits ${\approx }2.1\times $ below the supervised Transformer ($9.92$) yet $19\%$ above the random encoder ($3.90$)---the compact structured zone between scatter and memorisation}{figure.caption.23}{}}
+\newlabel{fig:ltc_profile@cref}{{[figure][3][]3}{[1][6][]7}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {PDS vs.\ FSS Spearman correlation per dataset at $H{=}96$.} \textbf  {Dark blue}: pretrained PDS (local neighbourhood density). \textbf  {Light blue}: pretrained FSS (global pairwise distance). \textbf  {Red/pink}: random-weight control. PDS substantially exceeds FSS on Electricity ($\Delta \rho {=}0.40$) and Traffic ($\Delta \rho {=}0.20$); the random-weight control shows no positive signal, confirming that local density is learned, not architectural. Error bars are 95\% bootstrap CIs.}}{8}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:geodesic}{{4}{8}{\textbf {PDS vs.\ FSS Spearman correlation per dataset at $H{=}96$.} \textbf {Dark blue}: pretrained PDS (local neighbourhood density). \textbf {Light blue}: pretrained FSS (global pairwise distance). \textbf {Red/pink}: random-weight control. PDS substantially exceeds FSS on Electricity ($\Delta \rho {=}0.40$) and Traffic ($\Delta \rho {=}0.20$); the random-weight control shows no positive signal, confirming that local density is learned, not architectural. Error bars are 95\% bootstrap CIs}{figure.caption.24}{}}
+\newlabel{fig:geodesic@cref}{{[figure][4][]4}{[1][7][]8}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {$\ensuremath  {\mathrm  {LTC}_{\mathrm  {step}}}$ (higher = richer trajectory).} \textbf  {Bold} ETTh1 $>15$: memorisation spike. $\Delta $: TimesFM (pre) $=$ mean (pre$-$rnd) across datasets; TimesFM (rnd) $=$ mean (rnd$-$pre); other rows $=$ mean (TimesFM pre $-$ row) across datasets. Full 14-model results: Table~\ref {tab:ltc_ext} (App.~\ref {app:ablations}).}}{8}{table.caption.25}\protected@file@percent }
+\newlabel{tab:ltc}{{2}{8}{\textbf {$\ltcstep $ (higher = richer trajectory).} \textbf {Bold} ETTh1 $>15$: memorisation spike. $\Delta $: TimesFM (pre) $=$ mean (pre$-$rnd) across datasets; TimesFM (rnd) $=$ mean (rnd$-$pre); other rows $=$ mean (TimesFM pre $-$ row) across datasets. Full 14-model results: Table~\ref {tab:ltc_ext} (App.~\ref {app:ablations})}{table.caption.25}{}}
+\newlabel{tab:ltc@cref}{{[table][2][]2}{[1][7][]8}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {PDS vs.\ FSS ($\ensuremath  {\rho _s}$) at $H{=}96$.} $^\dagger $$p{>}0.05$. Full 10-TSFM OOD results: Table~\ref {tab:geodesic_ext} (App.~\ref {app:ablations}).}}{8}{table.caption.25}\protected@file@percent }
+\newlabel{tab:geodesic}{{3}{8}{\textbf {PDS vs.\ FSS ($\rspear $) at $H{=}96$.} $^\dagger $$p{>}0.05$. Full 10-TSFM OOD results: Table~\ref {tab:geodesic_ext} (App.~\ref {app:ablations})}{table.caption.25}{}}
+\newlabel{tab:geodesic@cref}{{[table][3][]3}{[1][7][]8}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {CSS balanced accuracy (\%) over four datasets.} \textbf  {Bold}: $p{<}0.05$. $^\dagger $: not sig. Chance ${\approx }50\%$.}}{8}{table.4}\protected@file@percent }
+\newlabel{tab:probing}{{4}{8}{\textbf {CSS balanced accuracy (\%) over four datasets.} \textbf {Bold}: $p{<}0.05$. $^\dagger $: not sig. Chance ${\approx }50\%$}{table.4}{}}
+\newlabel{tab:probing@cref}{{[table][4][]4}{[1][7][]8}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Temporal primitive probing: balanced accuracy (\%)} of a linear classifier on frozen TimesFM~2.0 embeddings. Pretrained (\emph  {left}) consistently outperforms random-weight control (\emph  {right}) for seasonality and volatility across all four datasets.}}{9}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:probing}{{5}{9}{\textbf {Temporal primitive probing: balanced accuracy (\%)} of a linear classifier on frozen TimesFM~2.0 embeddings. Pretrained (\emph {left}) consistently outperforms random-weight control (\emph {right}) for seasonality and volatility across all four datasets}{figure.caption.26}{}}
+\newlabel{fig:probing@cref}{{[figure][5][]5}{[1][7][]9}{}{}{}}
+\citation{edwards2024scalinglaws}
+\citation{aksu2024gifteval,qiu2024tfb}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {OOD validation: LTC and CSS transfer; PDS collapses.} Each panel compares pretrained (blue) vs.\ random-weight (red) TimesFM. \emph  {Top row}: $\ensuremath  {\mathrm  {LTC}_{\mathrm  {step}}}$ --- pretrained exceeds random on all datasets, including OOD equity (right column, red border), confirming trajectory structure transfers. \emph  {Middle row}: CSS seasonality (\%) --- pretrained remains above chance and above random in both in-distribution and OOD settings. \emph  {Bottom row}: PDS $\ensuremath  {\rho _s}$ --- positive within distribution; collapses to near-zero on OOD equity, exactly as Theorem~\ref {thm:pds_main}(ii) predicts.}}{10}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:ood_summary}{{6}{10}{\textbf {OOD validation: LTC and CSS transfer; PDS collapses.} Each panel compares pretrained (blue) vs.\ random-weight (red) TimesFM. \emph {Top row}: $\ltcstep $ --- pretrained exceeds random on all datasets, including OOD equity (right column, red border), confirming trajectory structure transfers. \emph {Middle row}: CSS seasonality (\%) --- pretrained remains above chance and above random in both in-distribution and OOD settings. \emph {Bottom row}: PDS $\rspear $ --- positive within distribution; collapses to near-zero on OOD equity, exactly as Theorem~\ref {thm:pds_main}(ii) predicts}{figure.caption.27}{}}
+\newlabel{fig:ood_summary@cref}{{[figure][6][]6}{[1][9][]10}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {Neighbourhood isolation maps explaining PDS transfer vs.\ collapse.} Points show UMAP projections; colour encodes mean $k$-NN distance $\bar  {d}_i$ computed in the full 1{,}024-D embedding space (the figure's colorbar reads ``time / sample index''---a display artefact from the shared visualisation function; values here are $\bar  {d}_i$). The key difference is in the colour range, not the cloud shape: on Electricity (a), $\bar  {d}_i$ spans ${\approx }2$--$7$ (range $\approx 5$), creating the density contrast that yields $\ensuremath  {\rho _s}^{\ensuremath  {\mathrm  {PDS}}}{=}0.41$ ($p{<}10^{-20}$). On OOD CSI300 (b), the range compresses to ${\approx }2.25$--$4.0$ (range $\approx 1.75$): OOD windows distribute near-uniformly across the manifold, eliminating variance in $\bar  {d}_i$ and driving $\ensuremath  {\rho _s}^{\ensuremath  {\mathrm  {PDS}}}$ to $0.02$ ($p{>}0.3$), exactly as Theorem~\ref {thm:pds_main}(ii) predicts.}}{10}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:pds_density_comparison}{{7}{10}{\textbf {Neighbourhood isolation maps explaining PDS transfer vs.\ collapse.} Points show UMAP projections; colour encodes mean $k$-NN distance $\bar {d}_i$ computed in the full 1{,}024-D embedding space (the figure's colorbar reads ``time / sample index''---a display artefact from the shared visualisation function; values here are $\bar {d}_i$). The key difference is in the colour range, not the cloud shape: on Electricity (a), $\bar {d}_i$ spans ${\approx }2$--$7$ (range $\approx 5$), creating the density contrast that yields $\rspear ^{\pds }{=}0.41$ ($p{<}10^{-20}$). On OOD CSI300 (b), the range compresses to ${\approx }2.25$--$4.0$ (range $\approx 1.75$): OOD windows distribute near-uniformly across the manifold, eliminating variance in $\bar {d}_i$ and driving $\rspear ^{\pds }$ to $0.02$ ($p{>}0.3$), exactly as Theorem~\ref {thm:pds_main}(ii) predicts}{figure.caption.28}{}}
+\newlabel{fig:pds_density_comparison@cref}{{[figure][7][]7}{[1][9][]10}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}\protected@file@percent }
+\newlabel{sec:conclusion}{{5}{10}{Conclusion}{section.5}{}}
+\newlabel{sec:conclusion@cref}{{[section][5][]5}{[1][10][]10}{}{}{}}
+\bibstyle{plainnat}
+\bibdata{refs}
+\bibcite{aghajanyan2021intrinsic}{{1}{2021}{{Aghajanyan et~al.}}{{Aghajanyan, Gupta, and Zettlemoyer}}}
+\bibcite{aksu2024gifteval}{{2}{2024}{{Aksu et~al.}}{{Aksu, Woo, Liu, Liu, Liu, Hoi, and Sahoo}}}
+\bibcite{alain2017probing}{{3}{2017}{{Alain and Bengio}}{{}}}
+\bibcite{ansari2024chronos}{{4}{2024}{{Ansari et~al.}}{{Ansari, Stella, Turkmen, Zhang, Mercado, Shen, Shchur, Rangapuram, Pineda~Arango, Kapoor, et~al.}}}
+\bibcite{ansuini2019intrinsic}{{5}{2019}{{Ansuini et~al.}}{{Ansuini, Laio, Macke, and Zoccolan}}}
+\bibcite{cleveland1990stl}{{6}{1990}{{Cleveland et~al.}}{{Cleveland, Cleveland, McRae, and Terpenning}}}
+\bibcite{das2024timesfm}{{7}{2024}{{Das et~al.}}{{Das, Kong, Sen, and Zhou}}}
+\bibcite{das2025timesfm2}{{8}{2025}{{Das et~al.}}{{Das, Kong, Sen, Zhou, et~al.}}}
+\bibcite{edwards2024scalinglaws}{{9}{2024}{{Edwards et~al.}}{{Edwards, Bhatt, Drton, and Taeb}}}
+\bibcite{federer1969geometric}{{10}{1969}{{Federer}}{{}}}
+\bibcite{goswami2024moment}{{11}{2024}{{Goswami et~al.}}{{Goswami, Szafer, Choudhry, Cai, Li, and Dubrawski}}}
+\bibcite{gruver2023llmts}{{12}{2023}{{Gruver et~al.}}{{Gruver, Finzi, Qiu, and Wilson}}}
+\bibcite{ismail2020benchmarking}{{13}{2020}{{Ismail et~al.}}{{Ismail, Gunady, Bravo, and Feizi}}}
+\bibcite{jin2023large}{{14}{2023}{{Jin et~al.}}{{Jin, Wen, Liang, Zhang, Xue, Wang, Zhang, Wang, Chen, Li, et~al.}}}
+\newlabel{sec:limitations}{{5}{11}{Conclusion}{section.5}{}}
+\newlabel{sec:limitations@cref}{{[section][5][]5}{[1][10][]11}{}{}{}}
+\bibcite{ledoux2001concentration}{{15}{2001}{{Ledoux}}{{}}}
+\bibcite{li2025tsfmbench}{{16}{2025}{{Li et~al.}}{{}}}
+\bibcite{liang2024foundation}{{17}{2024}{{Liang et~al.}}{{Liang, Wen, Nie, Jiang, Jin, Song, Pan, and Wen}}}
+\bibcite{liu2024timer}{{18}{2024}{{Liu et~al.}}{{Liu, Hu, Zhang, Li, Wang, Long, and Wang}}}
+\bibcite{meyer2025tsfmreview}{{19}{2025}{{Meyer et~al.}}{{Meyer, Sch{\"a}fer, Ramamurthy, et~al.}}}
+\bibcite{penrose2003random}{{20}{2003}{{Penrose}}{{}}}
+\bibcite{qiu2024tfb}{{21}{2024}{{Qiu et~al.}}{{Qiu, Hu, Zhou, Wu, Du, Zhang, Peng, and Guo}}}
+\bibcite{raghu2017svcca}{{22}{2017}{{Raghu et~al.}}{{Raghu, Gilmer, Yosinski, and Sohl-Dickstein}}}
+\bibcite{rasul2024lagllama}{{23}{2024}{{Rasul et~al.}}{{Rasul, Ashok, Williams, Khorasani, Adamopoulos, Bhagwatkar, Bilo\v {s}, Ghonia, Hassen, Schneider, et~al.}}}
+\bibcite{reif2019visualizing}{{24}{2019}{{Reif et~al.}}{{Reif, Yuan, Wattenberg, Viegas, Coenen, Pearce, and Kim}}}
+\bibcite{shalev2014understanding}{{25}{2014}{{Shalev-Shwartz and Ben-David}}{{}}}
+\bibcite{shi2024timemoe}{{26}{2024}{{Shi et~al.}}{{Shi, Ye, Chen, Hu, Wan, Wen, et~al.}}}
+\bibcite{theissler2022explainable}{{27}{2022}{{Theissler et~al.}}{{Theissler, Spinnato, Schlegel, and Guidotti}}}
+\bibcite{woo2024moirai}{{28}{2024{a}}{{Woo et~al.}}{{Woo, Liu, Kumar, Xiong, Salehi, and Sahoo}}}
+\bibcite{woo2024moiraimoe}{{29}{2024{b}}{{Woo et~al.}}{{Woo, Liu, Kumar, Xiong, Savarese, and Sahoo}}}
+\bibcite{zeng2023transformers}{{30}{2023}{{Zeng et~al.}}{{Zeng, Chen, Zhang, and Xu}}}
+\citation{liang2024foundation,jin2023large,meyer2025tsfmreview}
+\citation{goswami2024moment}
+\citation{woo2024moirai}
+\citation{woo2024moiraimoe}
+\citation{das2024timesfm}
+\citation{liu2024timer}
+\citation{ansari2024chronos}
+\citation{rasul2024lagllama}
+\citation{gruver2023llmts}
+\citation{shi2024timemoe}
+\citation{edwards2024scalinglaws}
+\citation{meyer2025tsfmreview}
+\citation{aksu2024gifteval}
+\citation{li2025tsfmbench}
+\citation{qiu2024tfb}
+\citation{ansuini2019intrinsic}
+\citation{aghajanyan2021intrinsic}
+\citation{reif2019visualizing}
+\citation{raghu2017svcca}
+\citation{ismail2020benchmarking,theissler2022explainable}
+\citation{alain2017probing}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Extended Related Work}{13}{appendix.A}\protected@file@percent }
+\newlabel{app:related_full}{{A}{13}{Extended Related Work}{appendix.A}{}}
+\newlabel{app:related_full@cref}{{[section][1][]A}{[1][13][]13}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Time series foundation models.}{13}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Evaluation integrity and benchmarking.}{13}{section*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Geometric analysis of representations.}{13}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Explainability for time series.}{13}{section*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}LGF Framework: Intuition and Supporting Figures}{13}{appendix.B}\protected@file@percent }
+\newlabel{app:framework_figs}{{B}{13}{LGF Framework: Intuition and Supporting Figures}{appendix.B}{}}
+\newlabel{app:framework_figs@cref}{{[section][2][]B}{[1][13][]13}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}LTC: Temporal Trajectory Complexity}{13}{subsection.B.1}\protected@file@percent }
+\newlabel{app:ltc_fig}{{B.1}{13}{LTC: Temporal Trajectory Complexity}{subsection.B.1}{}}
+\newlabel{app:ltc_fig@cref}{{[subsection][1][2]B.1}{[1][13][]13}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces LTC intuition (schematic, 2D projection). \emph  {Left}: random encoder---short, undirected steps. \emph  {Right}: pretrained encoder---longer, directionally consistent path.}}{13}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:ltc_intuition}{{8}{13}{LTC intuition (schematic, 2D projection). \emph {Left}: random encoder---short, undirected steps. \emph {Right}: pretrained encoder---longer, directionally consistent path}{figure.caption.34}{}}
+\newlabel{fig:ltc_intuition@cref}{{[figure][8][]8}{[1][13][]13}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}Manifold Regularity: LCS Cluster Structure}{14}{subsection.B.2}\protected@file@percent }
+\newlabel{app:reg_figs}{{B.2}{14}{Manifold Regularity: LCS Cluster Structure}{subsection.B.2}{}}
+\newlabel{app:reg_figs@cref}{{[subsection][2][2]B.2}{[1][14][]14}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {LCS cluster organisation (2D PCA projection, schematic illustration).} The figure titles display \texttt  {LCS = 0.000} for both panels; this is a visualisation artefact from the schematic rendering, not a result from the held-out benchmarks. The schematic shows the concept: same-trend embeddings occupy distinct spatial regions in a well-organised embedding space (left, pretrained) vs.\ an intermixed cloud (right, random control). Empirical LCS values for pretrained TimesFM are positive on Traffic and Weather; ablation results are in Appendix~\ref {app:ablations}.}}{14}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:lcs_clusters}{{9}{14}{\textbf {LCS cluster organisation (2D PCA projection, schematic illustration).} The figure titles display \texttt {LCS = 0.000} for both panels; this is a visualisation artefact from the schematic rendering, not a result from the held-out benchmarks. The schematic shows the concept: same-trend embeddings occupy distinct spatial regions in a well-organised embedding space (left, pretrained) vs.\^^Man intermixed cloud (right, random control). Empirical LCS values for pretrained TimesFM are positive on Traffic and Weather; ablation results are in Appendix~\ref {app:ablations}}{figure.caption.35}{}}
+\newlabel{fig:lcs_clusters@cref}{{[figure][9][]9}{[1][14][]14}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.3}Reliability: PDS vs.\ FSS Concept}{14}{subsection.B.3}\protected@file@percent }
+\newlabel{app:rel_fig}{{B.3}{14}{Reliability: PDS vs.\ FSS Concept}{subsection.B.3}{}}
+\newlabel{app:rel_fig@cref}{{[subsection][3][2]B.3}{[1][14][]14}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.4}PDS vs.\ FSS Per Dataset}{14}{subsection.B.4}\protected@file@percent }
+\newlabel{app:geodesic_fig}{{B.4}{14}{PDS vs.\ FSS Per Dataset}{subsection.B.4}{}}
+\newlabel{app:geodesic_fig@cref}{{[subsection][4][2]B.4}{[1][14][]14}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.5}CSS Probing: Decoding Temporal Concepts}{14}{subsection.B.5}\protected@file@percent }
+\newlabel{app:css_fig}{{B.5}{14}{CSS Probing: Decoding Temporal Concepts}{subsection.B.5}{}}
+\newlabel{app:css_fig@cref}{{[subsection][5][2]B.5}{[1][14][]14}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces PDS and FSS concepts (schematic). \emph  {Left}: isolated embeddings predict larger errors; OOD collapse occurs when all points are equally isolated. \emph  {Right}: global pairwise distances miss local density structure.}}{15}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:pds_concept}{{10}{15}{PDS and FSS concepts (schematic). \emph {Left}: isolated embeddings predict larger errors; OOD collapse occurs when all points are equally isolated. \emph {Right}: global pairwise distances miss local density structure}{figure.caption.36}{}}
+\newlabel{fig:pds_concept@cref}{{[figure][10][]10}{[1][14][]15}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces CSS linear probing (schematic 2D PCA projection). \emph  {Left/Centre}: seasonality and volatility produce above-chance linear separation. \emph  {Right}: trend produces no separable boundary, consistent with Theorem~\ref {thm:css_main}(i).}}{15}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:css_probe}{{11}{15}{CSS linear probing (schematic 2D PCA projection). \emph {Left/Centre}: seasonality and volatility produce above-chance linear separation. \emph {Right}: trend produces no separable boundary, consistent with Theorem~\ref {thm:css_main}(i)}{figure.caption.37}{}}
+\newlabel{fig:css_probe@cref}{{[figure][11][]11}{[1][14][]15}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.6}OOD Validation: Three-Way Metric Split}{15}{subsection.B.6}\protected@file@percent }
+\newlabel{app:ood_fig}{{B.6}{15}{OOD Validation: Three-Way Metric Split}{subsection.B.6}{}}
+\newlabel{app:ood_fig@cref}{{[subsection][6][2]B.6}{[1][14][]15}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.7}Ablation Studies}{15}{subsection.B.7}\protected@file@percent }
+\newlabel{app:ablations}{{B.7}{15}{Ablation Studies}{subsection.B.7}{}}
+\newlabel{app:ablations@cref}{{[subsection][7][2]B.7}{[1][15][]15}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.8}Limitations and Future Directions}{15}{subsection.B.8}\protected@file@percent }
+\newlabel{app:limitations}{{B.8}{15}{Limitations and Future Directions}{subsection.B.8}{}}
+\newlabel{app:limitations@cref}{{[subsection][8][2]B.8}{[1][15][]15}{}{}{}}
+\citation{aksu2024gifteval,qiu2024tfb}
+\citation{edwards2024scalinglaws}
+\citation{federer1969geometric}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Full $\ensuremath  {\mathrm  {LTC}_{\mathrm  {step}}}$ results for all 14 TSFMs.} Supplement to Table~\ref {tab:ltc} (main text). \textbf  {Bold}: ETTh1 $>15$. $\Delta $: TimesFM (pre) $=$ mean (pre$-$rnd); TimesFM (rnd) $=$ mean (rnd$-$pre); other rows $=$ mean (TimesFM pre $-$ row) across the four datasets.}}{16}{table.caption.39}\protected@file@percent }
+\newlabel{tab:ltc_ext}{{5}{16}{\textbf {Full $\ltcstep $ results for all 14 TSFMs.} Supplement to Table~\ref {tab:ltc} (main text). \textbf {Bold}: ETTh1 $>15$. $\Delta $: TimesFM (pre) $=$ mean (pre$-$rnd); TimesFM (rnd) $=$ mean (rnd$-$pre); other rows $=$ mean (TimesFM pre $-$ row) across the four datasets}{table.caption.39}{}}
+\newlabel{tab:ltc_ext@cref}{{[table][5][]5}{[1][15][]16}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Full PDS/FSS results for all additional TSFMs.} Supplement to Table~\ref {tab:geodesic} (main text). $^\dagger $ $p{>}0.05$. $^\ddagger $ driven by ETTh1. $^\S  $ ETTh1-dominated.}}{16}{table.caption.40}\protected@file@percent }
+\newlabel{tab:geodesic_ext}{{6}{16}{\textbf {Full PDS/FSS results for all additional TSFMs.} Supplement to Table~\ref {tab:geodesic} (main text). $^\dagger $ $p{>}0.05$. $^\ddagger $ driven by ETTh1. $^\S $ ETTh1-dominated}{table.caption.40}{}}
+\newlabel{tab:geodesic_ext@cref}{{[table][6][]6}{[1][15][]16}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Full Theoretical Proofs}{16}{appendix.C}\protected@file@percent }
+\newlabel{app:proofs}{{C}{16}{Full Theoretical Proofs}{appendix.C}{}}
+\newlabel{app:proofs@cref}{{[section][3][]C}{[1][16][]16}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}Manifold Foundations}{16}{subsection.C.1}\protected@file@percent }
+\newlabel{app:manifold_proofs}{{C.1}{16}{Manifold Foundations}{subsection.C.1}{}}
+\newlabel{app:manifold_proofs@cref}{{[subsection][1][3]C.1}{[1][16][]16}{}{}{}}
+\newlabel{thm:trm_rect_app}{{C.1}{16}{TRM Compactness and Rectifiability}{theorem.C.1}{}}
+\newlabel{thm:trm_rect_app@cref}{{[theorem][1][3]C.1}{[1][16][]16}{}{}{}}
+\citation{ledoux2001concentration}
+\newlabel{thm:id_bound_app}{{C.2}{17}{Intrinsic Dimension Bound}{theorem.C.2}{}}
+\newlabel{thm:id_bound_app@cref}{{[theorem][2][3]C.2}{[1][16][]17}{}{}{}}
+\newlabel{thm:concentration_app}{{C.3}{17}{Concentration of Pairwise Distances}{theorem.C.3}{}}
+\newlabel{thm:concentration_app@cref}{{[theorem][3][3]C.3}{[1][17][]17}{}{}{}}
+\newlabel{prop:lcs_degenerate}{{C.4}{17}{LCS Degeneracy for Random Embeddings}{theorem.C.4}{}}
+\newlabel{prop:lcs_degenerate@cref}{{[theorem][4][3]C.4}{[1][17][]17}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}LTC Proofs}{17}{subsection.C.2}\protected@file@percent }
+\newlabel{app:ltc_proofs}{{C.2}{17}{LTC Proofs}{subsection.C.2}{}}
+\newlabel{app:ltc_proofs@cref}{{[subsection][2][3]C.2}{[1][17][]17}{}{}{}}
+\newlabel{prop:ltc_arc}{{C.5}{17}{LTC$_{\mathrm {step}}$ as Arc Length}{theorem.C.5}{}}
+\newlabel{prop:ltc_arc@cref}{{[theorem][5][3]C.5}{[1][17][]17}{}{}{}}
+\newlabel{prop:ltc_pretraining}{{C.6}{17}{Pretraining Amplifies LTC$_{\mathrm {step}}$}{theorem.C.6}{}}
+\newlabel{prop:ltc_pretraining@cref}{{[theorem][6][3]C.6}{[1][17][]17}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.3}Lipschitz Stability Proofs}{17}{subsection.C.3}\protected@file@percent }
+\newlabel{app:stability_proofs}{{C.3}{17}{Lipschitz Stability Proofs}{subsection.C.3}{}}
+\newlabel{app:stability_proofs@cref}{{[subsection][3][3]C.3}{[1][17][]17}{}{}{}}
+\newlabel{lem:residual_app}{{C.7}{17}{Residual Connection}{theorem.C.7}{}}
+\newlabel{lem:residual_app@cref}{{[theorem][7][3]C.7}{[1][17][]17}{}{}{}}
+\newlabel{thm:transformer_lip_app}{{C.8}{17}{Transformer Lipschitz Constant}{theorem.C.8}{}}
+\newlabel{thm:transformer_lip_app@cref}{{[theorem][8][3]C.8}{[1][17][]17}{}{}{}}
+\citation{penrose2003random}
+\newlabel{thm:gsp_bound_app}{{C.9}{18}{GSP Controlled by TSI Deficit}{theorem.C.9}{}}
+\newlabel{thm:gsp_bound_app@cref}{{[theorem][9][3]C.9}{[1][18][]18}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.4}CSS and Linear Probing Proofs}{18}{subsection.C.4}\protected@file@percent }
+\newlabel{app:probing_proofs}{{C.4}{18}{CSS and Linear Probing Proofs}{subsection.C.4}{}}
+\newlabel{app:probing_proofs@cref}{{[subsection][4][3]C.4}{[1][18][]18}{}{}{}}
+\newlabel{prop:permtest_app}{{C.10}{18}{Permutation Test Validity}{theorem.C.10}{}}
+\newlabel{prop:permtest_app@cref}{{[theorem][10][3]C.10}{[1][18][]18}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.5}Reliability Geometry Proofs}{18}{subsection.C.5}\protected@file@percent }
+\newlabel{app:reliability_proofs}{{C.5}{18}{Reliability Geometry Proofs}{subsection.C.5}{}}
+\newlabel{app:reliability_proofs@cref}{{[subsection][5][3]C.5}{[1][18][]18}{}{}{}}
+\newlabel{thm:knn_density_app}{{C.11}{18}{k-NN Distance and Manifold Density}{theorem.C.11}{}}
+\newlabel{thm:knn_density_app@cref}{{[theorem][11][3]C.11}{[1][18][]18}{}{}{}}
+\citation{shalev2014understanding}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.6}Generalisation Bounds}{19}{subsection.C.6}\protected@file@percent }
+\newlabel{app:gen_proofs}{{C.6}{19}{Generalisation Bounds}{subsection.C.6}{}}
+\newlabel{app:gen_proofs@cref}{{[subsection][6][3]C.6}{[1][18][]19}{}{}{}}
+\newlabel{thm:covering_app}{{C.12}{19}{Covering Number of TRM}{theorem.C.12}{}}
+\newlabel{thm:covering_app@cref}{{[theorem][12][3]C.12}{[1][18][]19}{}{}{}}
+\newlabel{thm:gen_bound_app}{{C.13}{19}{Generalisation Bound from Manifold Complexity}{theorem.C.13}{}}
+\newlabel{thm:gen_bound_app@cref}{{[theorem][13][3]C.13}{[1][19][]19}{}{}{}}
+\newlabel{cor:low_id_app}{{C.14}{19}{Compact TRM Implies Tighter OOD Generalisation}{theorem.C.14}{}}
+\newlabel{cor:low_id_app@cref}{{[theorem][14][3]C.14}{[1][19][]19}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Extended Experimental Details}{19}{appendix.D}\protected@file@percent }
+\newlabel{app:exp_details}{{D}{19}{Extended Experimental Details}{appendix.D}{}}
+\newlabel{app:exp_details@cref}{{[section][4][]D}{[1][19][]19}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.1}Datasets}{19}{subsection.D.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Datasets used in LGF analysis. CSI300/CSI800 are OOD validation only.}}{19}{table.caption.41}\protected@file@percent }
+\newlabel{tab:datasets}{{7}{19}{Datasets used in LGF analysis. CSI300/CSI800 are OOD validation only}{table.caption.41}{}}
+\newlabel{tab:datasets@cref}{{[table][7][]7}{[1][19][]19}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.2}Hyperparameters and Implementation}{19}{subsection.D.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Window extraction.}{19}{section*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Embedding extraction.}{19}{section*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{PDS and FSS.}{19}{section*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{CSS.}{19}{section*.45}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{STL decomposition.}{19}{section*.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.3}Supervised Baseline Training}{20}{subsection.D.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.4}Extended Manifold Regularity Results}{20}{subsection.D.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Full manifold regularity results (median). For TimesFM, TSI and GSP are averaged over three perturbation types (noise, mask, warp). For additional models, warp perturbation was not computed; TSI and GSP reflect noise and mask only (both give $\approx $1.000 and $\approx $0.000). $\times $: planned extension, not yet run.}}{20}{table.caption.47}\protected@file@percent }
+\newlabel{tab:regularity_full}{{8}{20}{Full manifold regularity results (median). For TimesFM, TSI and GSP are averaged over three perturbation types (noise, mask, warp). For additional models, warp perturbation was not computed; TSI and GSP reflect noise and mask only (both give $\approx $1.000 and $\approx $0.000). $\times $: planned extension, not yet run}{table.caption.47}{}}
+\newlabel{tab:regularity_full@cref}{{[table][8][]8}{[1][19][]20}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.5}Per-Dataset CSS (TimesFM 2.0)}{20}{subsection.D.5}\protected@file@percent }
+\newlabel{app:probing_detail}{{D.5}{20}{Per-Dataset CSS (TimesFM 2.0)}{subsection.D.5}{}}
+\newlabel{app:probing_detail@cref}{{[subsection][5][4]D.5}{[1][20][]20}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Per-dataset CSS for TimesFM~2.0 (pretrained vs.\ random-weight control). $^\dagger $ not significant ($p{>}0.05$, permutation test). Chance $\approx 50\%$.}}{20}{table.caption.48}\protected@file@percent }
+\newlabel{tab:probing_detail}{{9}{20}{Per-dataset CSS for TimesFM~2.0 (pretrained vs.\ random-weight control). $^\dagger $ not significant ($p{>}0.05$, permutation test). Chance $\approx 50\%$}{table.caption.48}{}}
+\newlabel{tab:probing_detail@cref}{{[table][9][]9}{[1][20][]20}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.6}Horizon-Resolved Reliability (PDS and FSS)}{20}{subsection.D.6}\protected@file@percent }
+\newlabel{app:horizon_pds}{{D.6}{20}{Horizon-Resolved Reliability (PDS and FSS)}{subsection.D.6}{}}
+\newlabel{app:horizon_pds@cref}{{[subsection][6][4]D.6}{[1][20][]20}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.7}OOD Equity Embedding Geometry}{20}{subsection.D.7}\protected@file@percent }
+\newlabel{app:stock_ood}{{D.7}{20}{OOD Equity Embedding Geometry}{subsection.D.7}{}}
+\newlabel{app:stock_ood@cref}{{[subsection][7][4]D.7}{[1][20][]20}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces OOD equity embedding geometry. \emph  {Left}: UMAP projections of TimesFM~2.0 embeddings for CSI300 and CSI800, coloured by neighbourhood isolation $\bar  {d}_i$. \emph  {Right}: PDS scatter plots ($\bar  {d}_i$ vs.\ $|e_i|$) for pretrained (blue) and random-weight (red) TimesFM. Unlike Electricity---where isolation varies substantially and tracks forecast error---equity embeddings show uniform high isolation across the entire projection, eliminating the variance in $\bar  {d}_i$ needed for a non-trivial Spearman correlation. This is the OOD collapse predicted by Theorem~\ref {thm:pds_main}(ii).}}{21}{figure.caption.49}\protected@file@percent }
+\newlabel{fig:stock_ood}{{12}{21}{OOD equity embedding geometry. \emph {Left}: UMAP projections of TimesFM~2.0 embeddings for CSI300 and CSI800, coloured by neighbourhood isolation $\bar {d}_i$. \emph {Right}: PDS scatter plots ($\bar {d}_i$ vs.\ $|e_i|$) for pretrained (blue) and random-weight (red) TimesFM. Unlike Electricity---where isolation varies substantially and tracks forecast error---equity embeddings show uniform high isolation across the entire projection, eliminating the variance in $\bar {d}_i$ needed for a non-trivial Spearman correlation. This is the OOD collapse predicted by Theorem~\ref {thm:pds_main}(ii)}{figure.caption.49}{}}
+\newlabel{fig:stock_ood@cref}{{[figure][12][]12}{[1][20][]21}{}{}{}}
+\gdef \@abspage@last{21}

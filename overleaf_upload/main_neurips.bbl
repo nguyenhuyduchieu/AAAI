@@ -1,0 +1,225 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Aghajanyan et~al.(2021)Aghajanyan, Gupta, and
+  Zettlemoyer]{aghajanyan2021intrinsic}
+Armen Aghajanyan, Sonal Gupta, and Luke Zettlemoyer.
+\newblock Intrinsic dimensionality explains the effectiveness of language model
+  fine-tuning.
+\newblock In \emph{Proceedings of the 59th Annual Meeting of the Association
+  for Computational Linguistics and the 11th International Joint Conference on
+  Natural Language Processing}, pages 7319--7329, 2021.
+\newblock \doi{10.18653/v1/2021.acl-long.568}.
+
+\bibitem[Aksu et~al.(2024)Aksu, Woo, Liu, Liu, Liu, Hoi, and
+  Sahoo]{aksu2024gifteval}
+Taha Aksu, Gerald Woo, Juncheng Liu, Xu~Liu, Chenghao Liu, Steven Hoi, and
+  Doyen Sahoo.
+\newblock {GIFT}-{E}val: A benchmark for general time series forecasting model
+  evaluation.
+\newblock \emph{arXiv preprint arXiv:2410.10393}, 2024.
+
+\bibitem[Alain and Bengio(2017)]{alain2017probing}
+Guillaume Alain and Yoshua Bengio.
+\newblock Understanding intermediate layers using linear classifier probes.
+\newblock In \emph{Proceedings of the 5th International Conference on Learning
+  Representations Workshop}, 2017.
+
+\bibitem[Ansari et~al.(2024)Ansari, Stella, Turkmen, Zhang, Mercado, Shen,
+  Shchur, Rangapuram, Pineda~Arango, Kapoor, et~al.]{ansari2024chronos}
+Abdul~Fatir Ansari, Lorenzo Stella, Caner Turkmen, Xiyuan Zhang, Pedro Mercado,
+  Huibin Shen, Oleksandr Shchur, Syama~Sundar Rangapuram, Sebastian
+  Pineda~Arango, Shubham Kapoor, et~al.
+\newblock Chronos: Learning the language of time series.
+\newblock \emph{arXiv preprint arXiv:2403.07815}, 2024.
+
+\bibitem[Ansuini et~al.(2019)Ansuini, Laio, Macke, and
+  Zoccolan]{ansuini2019intrinsic}
+Alessio Ansuini, Alessandro Laio, Jakob~H Macke, and Davide Zoccolan.
+\newblock Intrinsic dimensionality of data representations in deep neural
+  networks.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~32, 2019.
+
+\bibitem[Cleveland et~al.(1990)Cleveland, Cleveland, McRae, and
+  Terpenning]{cleveland1990stl}
+Robert~B Cleveland, William~S Cleveland, Jean~E McRae, and Irma Terpenning.
+\newblock {STL}: A seasonal-trend decomposition procedure based on {Loess}.
+\newblock \emph{Journal of Official Statistics}, 6\penalty0 (1):\penalty0
+  3--73, 1990.
+
+\bibitem[Das et~al.(2024)Das, Kong, Sen, and Zhou]{das2024timesfm}
+Abhimanyu Das, Weihao Kong, Rajat Sen, and Yichen Zhou.
+\newblock A decoder-only foundation model for time-series forecasting.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning}, volume 235 of \emph{Proceedings of Machine Learning Research},
+  pages 10025--10043. PMLR, 2024.
+
+\bibitem[Das et~al.(2025)Das, Kong, Sen, Zhou, et~al.]{das2025timesfm2}
+Abhimanyu Das, Weihao Kong, Rajat Sen, Yichen Zhou, et~al.
+\newblock {TimesFM} 2.0: An improved foundation model for time-series
+  forecasting.
+\newblock \emph{arXiv preprint arXiv:2501.08096}, 2025.
+
+\bibitem[Edwards et~al.(2024)Edwards, Bhatt, Drton, and
+  Taeb]{edwards2024scalinglaws}
+Hadley Edwards, Utkarsh Bhatt, Mathias Drton, and Armeen Taeb.
+\newblock Scaling laws for time series foundation models.
+\newblock \emph{arXiv preprint arXiv:2405.15075}, 2024.
+
+\bibitem[Federer(1969)]{federer1969geometric}
+Herbert Federer.
+\newblock \emph{Geometric Measure Theory}.
+\newblock Springer, 1969.
+
+\bibitem[Goswami et~al.(2024)Goswami, Szafer, Choudhry, Cai, Li, and
+  Dubrawski]{goswami2024moment}
+Mononito Goswami, Konrad Szafer, Arjun Choudhry, Yifu Cai, Shuo Li, and Artur
+  Dubrawski.
+\newblock {MOMENT}: A family of open time-series foundation models.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning}, volume 235 of \emph{Proceedings of Machine Learning Research}.
+  PMLR, 2024.
+
+\bibitem[Gruver et~al.(2023)Gruver, Finzi, Qiu, and Wilson]{gruver2023llmts}
+Nate Gruver, Marc Finzi, Shikai Qiu, and Andrew~Gordon Wilson.
+\newblock Large language models are zero-shot time series forecasters.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~36, 2023.
+
+\bibitem[Ismail et~al.(2020)Ismail, Gunady, Bravo, and
+  Feizi]{ismail2020benchmarking}
+Aya~Abdelsalam Ismail, Mohamed Gunady, Hector~Corrada Bravo, and Soheil Feizi.
+\newblock Benchmarking deep learning interpretability in time series
+  predictions.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~33, pages 6603--6615, 2020.
+
+\bibitem[Jin et~al.(2023)Jin, Wen, Liang, Zhang, Xue, Wang, Zhang, Wang, Chen,
+  Li, et~al.]{jin2023large}
+Ming Jin, Qingsong Wen, Yuxuan Liang, Chaoli Zhang, Jintao Xue, Xue Wang, James
+  Zhang, Yi~Wang, Haifeng Chen, Xiaoli Li, et~al.
+\newblock Large models for time series and spatio-temporal data: A survey and
+  outlook.
+\newblock \emph{arXiv preprint arXiv:2310.10716}, 2023.
+
+\bibitem[Ledoux(2001)]{ledoux2001concentration}
+Michel Ledoux.
+\newblock \emph{The Concentration of Measure Phenomenon}.
+\newblock American Mathematical Society, 2001.
+
+\bibitem[Li et~al.(2025)]{li2025tsfmbench}
+Yihang Li et~al.
+\newblock {TSFM}-bench: A comprehensive and unified benchmarking tool for time
+  series foundation models.
+\newblock \emph{arXiv preprint arXiv:2503.04110}, 2025.
+
+\bibitem[Liang et~al.(2024)Liang, Wen, Nie, Jiang, Jin, Song, Pan, and
+  Wen]{liang2024foundation}
+Yuxuan Liang, Haomin Wen, Yuqi Nie, Yushan Jiang, Ming Jin, Dongjin Song,
+  Shirui Pan, and Qingsong Wen.
+\newblock Foundation models for time series analysis: A tutorial and survey.
+\newblock \emph{arXiv preprint arXiv:2403.14735}, 2024.
+
+\bibitem[Liu et~al.(2024)Liu, Hu, Zhang, Li, Wang, Long, and
+  Wang]{liu2024timer}
+Yong Liu, Haoran Hu, Mingyue Zhang, Chenyu Li, Yuqi Wang, Mingsheng Long, and
+  Jianmin Wang.
+\newblock Timer: Generative pre-trained transformers are large time series
+  models.
+\newblock \emph{arXiv preprint arXiv:2402.02368}, 2024.
+
+\bibitem[Meyer et~al.(2025)Meyer, Sch{\"a}fer, Ramamurthy,
+  et~al.]{meyer2025tsfmreview}
+Lukas Meyer, Tilman Sch{\"a}fer, Raaghavi Ramamurthy, et~al.
+\newblock A review of time series foundation models.
+\newblock \emph{arXiv preprint arXiv:2502.13504}, 2025.
+
+\bibitem[Penrose(2003)]{penrose2003random}
+Mathew Penrose.
+\newblock \emph{Random Geometric Graphs}.
+\newblock Oxford University Press, 2003.
+
+\bibitem[Qiu et~al.(2024)Qiu, Hu, Zhou, Wu, Du, Zhang, Peng, and
+  Guo]{qiu2024tfb}
+Xiangfei Qiu, Jilin Hu, Lekui Zhou, Xingjian Wu, Ningyi Du, Guoyin Zhang,
+  Chenjuan Peng, and Bin Guo.
+\newblock {TFB}: Towards comprehensive and fair benchmarking of time series
+  forecasting methods.
+\newblock In \emph{Proceedings of the VLDB Endowment}, volume~17, pages
+  2363--2377, 2024.
+
+\bibitem[Raghu et~al.(2017)Raghu, Gilmer, Yosinski, and
+  Sohl-Dickstein]{raghu2017svcca}
+Maithra Raghu, Justin Gilmer, Jason Yosinski, and Jascha Sohl-Dickstein.
+\newblock {SVCCA}: Singular vector canonical correlation analysis for deep
+  learning dynamics and interpretability.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~30, 2017.
+
+\bibitem[Rasul et~al.(2024)Rasul, Ashok, Williams, Khorasani, Adamopoulos,
+  Bhagwatkar, Bilo\v{s}, Ghonia, Hassen, Schneider, et~al.]{rasul2024lagllama}
+Kashif Rasul, Arjun Ashok, Andrew~Robert Williams, Arian Khorasani, George
+  Adamopoulos, Rishika Bhagwatkar, Marin Bilo\v{s}, Hena Ghonia, Nadhir Hassen,
+  Anderson Schneider, et~al.
+\newblock Lag-{Llama}: Towards foundation models for probabilistic time series
+  forecasting.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~37, 2024.
+
+\bibitem[Reif et~al.(2019)Reif, Yuan, Wattenberg, Viegas, Coenen, Pearce, and
+  Kim]{reif2019visualizing}
+Emily Reif, Ann Yuan, Martin Wattenberg, Fernanda~B Viegas, Andy Coenen, Adam
+  Pearce, and Been Kim.
+\newblock Visualizing and measuring the geometry of {BERT}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~32, 2019.
+
+\bibitem[Shalev-Shwartz and Ben-David(2014)]{shalev2014understanding}
+Shai Shalev-Shwartz and Shai Ben-David.
+\newblock \emph{Understanding Machine Learning: From Theory to Algorithms}.
+\newblock Cambridge University Press, 2014.
+
+\bibitem[Shi et~al.(2024)Shi, Ye, Chen, Hu, Wan, Wen, et~al.]{shi2024timemoe}
+Xiaoming Shi, Shiyu Ye, Yuqi Chen, Kailai Hu, Zhixuan Wan, Qingsong Wen, et~al.
+\newblock Time-{MoE}: Billion-scale time series foundation models with mixture
+  of experts.
+\newblock \emph{arXiv preprint arXiv:2409.16040}, 2024.
+
+\bibitem[Theissler et~al.(2022)Theissler, Spinnato, Schlegel, and
+  Guidotti]{theissler2022explainable}
+Andreas Theissler, Francesco Spinnato, Udo Schlegel, and Riccardo Guidotti.
+\newblock Explainable {AI} for time series classification: A review, taxonomy
+  and research directions.
+\newblock \emph{IEEE Access}, 10:\penalty0 100700--100724, 2022.
+\newblock \doi{10.1109/ACCESS.2022.3207765}.
+
+\bibitem[Woo et~al.(2024{\natexlab{a}})Woo, Liu, Kumar, Xiong, Salehi, and
+  Sahoo]{woo2024moirai}
+Gerald Woo, Chenghao Liu, Akshat Kumar, Caiming Xiong, Silvio Salehi, and Doyen
+  Sahoo.
+\newblock Unified training of universal time series forecasting transformers.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning}, volume 235 of \emph{Proceedings of Machine Learning Research}.
+  PMLR, 2024{\natexlab{a}}.
+
+\bibitem[Woo et~al.(2024{\natexlab{b}})Woo, Liu, Kumar, Xiong, Savarese, and
+  Sahoo]{woo2024moiraimoe}
+Gerald Woo, Chenghao Liu, Akshat Kumar, Caiming Xiong, Silvio Savarese, and
+  Doyen Sahoo.
+\newblock {Moirai-MoE}: Empowering time series foundation models with sparse
+  mixture of experts.
+\newblock \emph{arXiv preprint arXiv:2410.10469}, 2024{\natexlab{b}}.
+
+\bibitem[Zeng et~al.(2023)Zeng, Chen, Zhang, and Xu]{zeng2023transformers}
+Ailing Zeng, Muxi Chen, Lei Zhang, and Qiang Xu.
+\newblock Are transformers effective for time series forecasting?
+\newblock In \emph{Proceedings of the Thirty-Seventh AAAI Conference on
+  Artificial Intelligence}, volume~37, pages 11121--11128, 2023.
+\newblock \doi{10.1609/aaai.v37i9.26317}.
+
+\end{thebibliography}
