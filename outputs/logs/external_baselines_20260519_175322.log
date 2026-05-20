@@ -1,0 +1,11 @@
+=== external baselines run started 2026-05-19T17:53:22.250172 ===
+log_file=/mnt/d/RMIT_Research/AAAI/outputs/logs/external_baselines_20260519_175322.log
+models=35 datasets=6 dry_run=False skip_missing=True
+stream_subprocess=True timeout_sec=600
+[progress 1/210] model=lightgts dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/baselines/LightGTS/zero_shot.py --help
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+[runner] KeyboardInterrupt — stopping; run log above is flushed to disk.
+
+=== run finished 2026-05-19T17:53:28.361116 ===
+total_runs=0 failures=0 interrupted=True

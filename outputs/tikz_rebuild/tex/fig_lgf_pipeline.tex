@@ -1,0 +1,8 @@
+\begin{tikzpicture}[>=Latex,node distance=7mm and 8mm]
+\node[draw,rounded corners,fill=papBlue!12] (a) {Input window $w_i$};
+\node[draw,rounded corners,fill=papTeal!12,right=of a] (b) {Encoder $f_\theta$ (frozen)};
+\node[draw,rounded corners,fill=papGreen!12,right=of b] (c) {Embeddings $Z\subset\mathbb{R}^D$};
+\node[draw,rounded corners,fill=papOrange!15,below=of c] (d) {Stage 1-4 metrics};
+\node[draw,rounded corners,fill=papPurple!15,below=of d] (e) {8 geometric metrics};
+\draw[->] (a)--(b);\draw[->] (b)--(c);\draw[->] (c)--(d);\draw[->] (d)--(e);
+\end{tikzpicture}

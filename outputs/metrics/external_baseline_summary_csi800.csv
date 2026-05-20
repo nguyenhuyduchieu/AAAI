@@ -1,0 +1,15 @@
+model,dataset,summary,env,command
+lightgts,csi800,ok,env_legacy,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/baselines/LightGTS/zero_shot.py --help
+neurips2023-one-fits-all,csi800,ok,env_legacy,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/baselines/NeurIPS2023-One-Fits-All/Long-term_Forecasting/main.py --help
+sundial,csi800,ok,env_foundation,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/bin/python scripts/sundial_infer.py --input /tmp/sundial_csi800_in.npy --output /tmp/sundial_csi800_out.npy --horizon 96
+time-moe,csi800,ok,env_uni2ts,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_uni2ts/bin/python external/baselines/Time-MoE/run_eval.py -d outputs/metrics/tmp_time_moe/csi800.csv -p 96
+chronos-forecasting,csi800,ok,env_uni2ts,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_uni2ts/bin/python external/baselines/uni2ts/project/benchmarks/run_chronos.py --model_path amazon/chronos-t5-small --dataset nn5_daily_without_missing --save_dir outputs/metrics/tmp_chronos --run_name csi800
+moment,csi800,ok,env_moment,"/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_moment/bin/python -c 'import torch; from momentfm import MOMENTPipeline; MOMENTPipeline.from_pretrained('""'""'AutonLab/MOMENT-1-small'""'""', model_kwargs={'""'""'task_name'""'""':'""'""'forecasting'""'""','""'""'forecast_horizon'""'""':96}); print('""'""'moment_loaded'""'""')'"
+unitime,csi800,ok,env_legacy,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/baselines/UniTime/run.py --help
+patchtst,csi800,ok,env_legacy,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/PatchTST/PatchTST_supervised/run_longExp.py --help
+time-series-library,csi800,ok,env_legacy,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/Time-Series-Library/run.py --help
+tslib,csi800,ok,env_legacy,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/TSLib/run.py --help
+itransformer,csi800,ok,env_legacy,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/iTransformer/run.py --help
+ltsf-linear,csi800,ok,env_legacy,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/LTSF-Linear/run_longExp.py --help
+neuralforecast,csi800,ok,env_legacy,"/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python -c 'import neuralforecast as nf; print('""'""'neuralforecast'""'""', nf.__version__)'"
+large-time-series-model,csi800,ok,env_legacy,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/Large-Time-Series-Model/run.py --help

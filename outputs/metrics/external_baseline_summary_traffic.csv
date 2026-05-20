@@ -1,0 +1,2 @@
+model,dataset,summary,env,command
+time-moe,traffic,ok,env_uni2ts,/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_uni2ts/bin/python external/baselines/Time-MoE/run_eval.py -d outputs/metrics/tmp_time_moe/traffic.csv -p 96

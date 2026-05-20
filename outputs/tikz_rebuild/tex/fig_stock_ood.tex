@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=3 by 1,horizontal sep=0.8cm},width=0.31\linewidth,height=0.27\linewidth,axis equal image,axis lines=none]
+\nextgroupplot[title={Pretrained UMAP}]\addplot+[only marks,mark=*,mark size=0.45pt,scatter,scatter src=x] coordinates {(-1,0.7) (-0.6,1.0) (0.2,1.4) (1.1,0.2) (1.5,-0.4) (0.4,-1.0) (-0.8,-0.7)};
+\nextgroupplot[title={Random UMAP}]\addplot+[only marks,mark=*,mark size=0.45pt,scatter,scatter src=x] coordinates {(-1.6,1.2) (-0.3,1.4) (0.8,1.1) (1.7,0.4) (1.1,-1.2) (-0.5,-1.5) (-1.7,-0.3)};
+\nextgroupplot[title={Error-colored UMAP}]\addplot+[only marks,mark=*,mark size=0.55pt,scatter,scatter src=y] coordinates {(-1,0.7) (-0.6,1.0) (0.2,1.4) (1.1,0.2) (1.5,-0.4) (0.4,-1.0) (-0.8,-0.7)};
+\end{groupplot}
+\end{tikzpicture}

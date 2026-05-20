@@ -1,0 +1,81 @@
+=== external baselines run started 2026-05-19T16:03:23.307910 ===
+log_file=/mnt/d/RMIT_Research/AAAI/outputs/logs/external_baselines_20260519_160323.log
+models=35 datasets=6 dry_run=False skip_missing=True
+stream_subprocess=True timeout_sec=600
+[progress 1/210] model=lightgts dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/baselines/LightGTS/zero_shot.py --help
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:126: SyntaxWarning: invalid escape sequence '\i'
+  """
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:145: SyntaxWarning: invalid escape sequence '\i'
+  """
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:178: SyntaxWarning: invalid escape sequence '\i'
+  """
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:214: SyntaxWarning: invalid escape sequence '\i'
+  """
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:245: SyntaxWarning: invalid escape sequence '\i'
+  """
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:307: SyntaxWarning: invalid escape sequence '\i'
+  """
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:423: SyntaxWarning: invalid escape sequence '\i'
+  """
+Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/zero_shot.py", line 10, in <module>
+    from src.learner import Learner, transfer_weights
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/learner.py", line 18, in <module>
+    from torchstat import stat
+ModuleNotFoundError: No module named 'torchstat'
+[done 1/210] FAIL model=lightgts dataset=weather elapsed_sec=14.28 env=env_legacy
+[fail_detail] /mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:126: SyntaxWarning: invalid escape sequence '\i'
+  """
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:145: SyntaxWarning: invalid escape sequence '\i'
+  """
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:178: SyntaxWarning: invalid escape sequence '\i'
+  """
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:214: SyntaxWarning: invalid escape sequence '\i'
+  """
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:245: SyntaxWarning: invalid escape sequence '\i'
+  """
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:307: SyntaxWarning: invalid escape sequence '\i'
+  """
+/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/utils/affiliation/_integral_interval.py:423: SyntaxWarning: invalid escape sequence '\i'
+  """
+Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/zero_shot.py", line 10, in <module>
+    from src.learner import Learner, transfer_weights
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/learner.py", line 18, in <module>
+    from torchstat import stat
+ModuleNotFoundError: No module named 'torchstat'
+[progress 2/210] model=neurips2023-one-fits-all dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/baselines/NeurIPS2023-One-Fits-All/Long-term_Forecasting/main.py --help
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/NeurIPS2023-One-Fits-All/Long-term_Forecasting/main.py", line 5, in <module>
+    from models.GPT4TS import GPT4TS
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/NeurIPS2023-One-Fits-All/Long-term_Forecasting/models/GPT4TS.py", line 6, in <module>
+    from transformers.models.gpt2.modeling_gpt2 import GPT2Model
+ModuleNotFoundError: No module named 'transformers'
+[done 2/210] FAIL model=neurips2023-one-fits-all dataset=weather elapsed_sec=11.35 env=env_legacy
+[fail_detail] Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/NeurIPS2023-One-Fits-All/Long-term_Forecasting/main.py", line 5, in <module>
+    from models.GPT4TS import GPT4TS
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/NeurIPS2023-One-Fits-All/Long-term_Forecasting/models/GPT4TS.py", line 6, in <module>
+    from transformers.models.gpt2.modeling_gpt2 import GPT2Model
+ModuleNotFoundError: No module named 'transformers'
+[progress 3/210] model=sundial dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/bin/python scripts/sundial_infer.py --input /tmp/sundial_weather_in.npy --output /tmp/sundial_weather_out.npy --horizon 96
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+A new version of the following files was downloaded from https://huggingface.co/thuml/sundial-base-128m:
+- configuration_sundial.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/thuml/sundial-base-128m:
+- flow_loss.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/thuml/sundial-base-128m:
+- ts_generation_mixin.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/thuml/sundial-base-128m:
+- modeling_sundial.py
+- flow_loss.py
+- ts_generation_mixin.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.

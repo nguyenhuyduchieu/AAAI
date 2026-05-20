@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+\begin{axis}[paperaxis,xmode=log,xmin=4,xmax=600,ymin=-5,ymax=25,xlabel={Model parameters (M)},ylabel={CSS gain (pp)},legend pos=north west,title={CSS gap vs model size}]
+\addplot+[only marks,mark=o,color=papBlue] coordinates {(500,10.139)};\addlegendentry{Seasonality}
+\addplot+[only marks,mark=square*,color=papOrange] coordinates {(500,7.815)};\addlegendentry{Volatility}
+\addplot+[only marks,mark=x,color=papGray] coordinates {(5,0) (46,0) (385,0) (311,0)};
+\node[font=\scriptsize] at (axis cs:500,11.339) {TimesFM};
+\addplot[dashed,color=papGray] coordinates {(4,0) (600,0)};
+\end{axis}
+\end{tikzpicture}

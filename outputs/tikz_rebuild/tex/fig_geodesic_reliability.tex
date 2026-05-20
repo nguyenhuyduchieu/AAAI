@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+\begin{axis}[paperaxis,ybar,bar width=5pt,xtick={0,1,2,3},xticklabels={Electricity,ETTh1,Weather,Traffic},x tick label style={rotate=20,anchor=east},ylabel={Spearman $\rho$},legend pos=north west,ymin=-0.5,ymax=0.55]
+\addplot[fill=papBlue] coordinates {(0,0.4064) (1,0.0387) (2,0.1142) (3,0.2502)};\addlegendentry{Pre PDS}
+\addplot[fill=papOrange] coordinates {(0,0.0128) (1,-0.0125) (2,0.0876) (3,0.0452)};\addlegendentry{Pre FSS}
+\addplot[fill=papTeal] coordinates {(0,-0.3376) (1,-0.2732) (2,0.1018) (3,0.0769)};\addlegendentry{Rand PDS}
+\addplot[fill=papGray] coordinates {(0,0.1271) (1,-0.0092) (2,0.1008) (3,0.1227)};\addlegendentry{Rand FSS}
+\addplot[dashed] coordinates {(0,0) (3,0)};
+\end{axis}
+\end{tikzpicture}

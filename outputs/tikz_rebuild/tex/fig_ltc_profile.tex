@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.0cm},width=0.46\linewidth,height=0.38\linewidth,ylabel={LTC\_step},symbolic x coords={electricity,weather,ett,traffic},xtick=data,xticklabel style={rotate=20,anchor=east}]
+\nextgroupplot[title={Across datasets},legend style={at={(0.5,1.15)},anchor=south,legend columns=2}]
+\addplot+[ybar,fill=papBlue] coordinates {(electricity,4.415) (weather,5.775) (ett,4.918) (traffic,3.871)};\addlegendentry{TimesFM}
+\addplot+[ybar,fill=papGray] coordinates {(electricity,0.127) (weather,0.186) (ett,0.139) (traffic,0.109)};\addlegendentry{LSTM}
+\addplot+[ybar,fill=papTeal] coordinates {(electricity,1.052) (weather,1.486) (ett,2.664) (traffic,1.451)};\addlegendentry{TCN}
+\addplot+[ybar,fill=papGold] coordinates {(electricity,9.697) (weather,11.767) (ett,11.156) (traffic,6.435)};\addlegendentry{Transformer}
+\nextgroupplot[title={Electricity (all models)},symbolic x coords={TimesFM,LSTM,TCN,Transformer},xtick=data]
+\addplot+[ybar,fill=papBlue] coordinates {(TimesFM,4.415) (LSTM,0.127) (TCN,1.052) (Transformer,9.697)};
+\end{groupplot}
+\end{tikzpicture}

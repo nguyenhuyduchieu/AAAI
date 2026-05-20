@@ -1,0 +1,6 @@
+\begin{tikzpicture}
+\begin{axis}[paperaxis,xlabel={Layer index},ylabel={CSS seasonality bal.acc},legend pos=south east,ymin=0.45,ymax=0.88]
+\addplot+[mark=o,color=papBlue,thick] coordinates {(0,0.53) (12,0.74) (25,0.78) (50,0.74)};\addlegendentry{Pretrained}
+\addplot+[mark=square*,color=papGray,dashed] coordinates {(0,0.68) (12,0.68) (25,0.68) (50,0.68)};\addlegendentry{Random baseline}
+\end{axis}
+\end{tikzpicture}

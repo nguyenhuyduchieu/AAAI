@@ -1,0 +1,6 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.0cm},width=0.46\linewidth,height=0.35\linewidth,axis equal image,axis lines=none]
+\nextgroupplot[title={Pretrained (LTC\_step=4.64)}]\addplot+[only marks,mark=*,mark size=0.45pt,scatter,scatter src=x] coordinates {(-1.2,0.8) (-0.6,1.1) (0.1,1.4) (1.1,-0.4) (0.5,-1.1)};
+\nextgroupplot[title={Random-reset (LTC\_step=3.90)}]\addplot+[only marks,mark=*,mark size=0.45pt,scatter,scatter src=x] coordinates {(-1.6,1.2) (-0.3,1.4) (0.8,1.1) (1.7,0.4) (1.1,-1.2)};
+\end{groupplot}
+\end{tikzpicture}

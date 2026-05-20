@@ -1,0 +1,5 @@
+- data=lsf_test
+- model=moirai_1.0_R_small
+- data.dataset_name=electricity
+- data.prediction_length=96
+- run_name=electricity

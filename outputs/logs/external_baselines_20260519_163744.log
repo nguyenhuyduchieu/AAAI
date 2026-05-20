@@ -1,0 +1,229 @@
+=== external baselines run started 2026-05-19T16:37:44.008707 ===
+log_file=/mnt/d/RMIT_Research/AAAI/outputs/logs/external_baselines_20260519_163744.log
+models=35 datasets=6 dry_run=False skip_missing=True
+stream_subprocess=True timeout_sec=600
+[progress 1/210] model=lightgts dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/baselines/LightGTS/zero_shot.py --help
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+usage: zero_shot.py [-h] [--is_finetune IS_FINETUNE]
+                    [--is_transfer IS_TRANSFER]
+                    [--dset_finetune DSET_FINETUNE]
+                    [--context_points CONTEXT_POINTS]
+                    [--target_points TARGET_POINTS] [--batch_size BATCH_SIZE]
+                    [--num_workers NUM_WORKERS] [--scaler SCALER]
+                    [--features FEATURES] [--img IMG] [--patch_len PATCH_LEN]
+                    [--stride STRIDE] [--revin REVIN] [--e_layers E_LAYERS]
+                    [--d_layers D_LAYERS] [--n_heads N_HEADS]
+                    [--d_model D_MODEL] [--d_ff D_FF] [--dropout DROPOUT]
+                    [--attn_dropout ATTN_DROPOUT]
+                    [--head_dropout HEAD_DROPOUT] [--alpha ALPHA]
+                    [--n_epochs_finetune N_EPOCHS_FINETUNE]
+                    [--n_epochs_freeze N_EPOCHS_FREEZE] [--patience PATIENCE]
+                    [--lr LR] [--pretrained_model PRETRAINED_MODEL]
+                    [--finetuned_model_id FINETUNED_MODEL_ID]
+                    [--model_type MODEL_TYPE] [--is_half IS_HALF]
+                    [--is_all IS_ALL] [--visual_stride VISUAL_STRIDE]
+                    [--visual_save_path VISUAL_SAVE_PATH]
+
+options:
+  -h, --help            show this help message and exit
+  --is_finetune IS_FINETUNE
+                        do finetuning or not
+  --is_transfer IS_TRANSFER
+                        do finetuning or not
+  --dset_finetune DSET_FINETUNE
+                        dataset name
+  --context_points CONTEXT_POINTS
+                        sequence length
+  --target_points TARGET_POINTS
+                        forecast horizon
+  --batch_size BATCH_SIZE
+                        batch size
+  --num_workers NUM_WORKERS
+                        number of workers for DataLoader
+  --scaler SCALER       scale the input data
+  --features FEATURES   for multivariate model or univariate model
+  --img IMG             if using the image loader
+  --patch_len PATCH_LEN
+                        patch length
+  --stride STRIDE       stride between patch
+  --revin REVIN         reversible instance normalization
+  --e_layers E_LAYERS   number of Transformer layers
+  --d_layers D_LAYERS   number of Transformer layers
+  --n_heads N_HEADS     number of Transformer heads
+  --d_model D_MODEL     Transformer d_model
+  --d_ff D_FF           Tranformer MLP dimension
+  --dropout DROPOUT     Transformer dropout
+  --attn_dropout ATTN_DROPOUT
+                        Transformer dropout
+  --head_dropout HEAD_DROPOUT
+                        head dropout
+  --alpha ALPHA         alpha for freq loss
+  --n_epochs_finetune N_EPOCHS_FINETUNE
+                        number of finetuning epochs
+  --n_epochs_freeze N_EPOCHS_FREEZE
+                        number of finetuning epochs
+  --patience PATIENCE   number of finetuning epochs
+  --lr LR               learning rate
+  --pretrained_model PRETRAINED_MODEL
+                        pretrained model name
+  --finetuned_model_id FINETUNED_MODEL_ID
+                        id of the saved finetuned model
+  --model_type MODEL_TYPE
+                        for multivariate model or univariate model
+  --is_half IS_HALF     half of the train_set
+  --is_all IS_ALL       half of the train_set
+  --visual_stride VISUAL_STRIDE
+                        the visual frequency
+  --visual_save_path VISUAL_SAVE_PATH
+                        the visual frequency
+[done 1/210] OK model=lightgts dataset=weather elapsed_sec=11.67 env=env_legacy
+[progress 2/210] model=neurips2023-one-fits-all dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/baselines/NeurIPS2023-One-Fits-All/Long-term_Forecasting/main.py --help
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+usage: main.py [-h] --model_id MODEL_ID [--checkpoints CHECKPOINTS]
+               [--root_path ROOT_PATH] [--data_path DATA_PATH] [--data DATA]
+               [--features FEATURES] [--freq FREQ] [--target TARGET]
+               [--embed EMBED] [--percent PERCENT] [--seq_len SEQ_LEN]
+               [--pred_len PRED_LEN] [--label_len LABEL_LEN]
+               [--decay_fac DECAY_FAC] [--learning_rate LEARNING_RATE]
+               [--batch_size BATCH_SIZE] [--num_workers NUM_WORKERS]
+               [--train_epochs TRAIN_EPOCHS] [--lradj LRADJ]
+               [--patience PATIENCE] [--gpt_layers GPT_LAYERS]
+               [--is_gpt IS_GPT] [--e_layers E_LAYERS] [--d_model D_MODEL]
+               [--n_heads N_HEADS] [--d_ff D_FF] [--dropout DROPOUT]
+               [--enc_in ENC_IN] [--c_out C_OUT] [--patch_size PATCH_SIZE]
+               [--kernel_size KERNEL_SIZE] [--loss_func LOSS_FUNC]
+               [--pretrain PRETRAIN] [--freeze FREEZE] [--model MODEL]
+               [--stride STRIDE] [--max_len MAX_LEN] [--hid_dim HID_DIM]
+               [--tmax TMAX] [--itr ITR] [--cos COS]
+
+GPT4TS
+
+options:
+  -h, --help            show this help message and exit
+  --model_id MODEL_ID
+  --checkpoints CHECKPOINTS
+  --root_path ROOT_PATH
+  --data_path DATA_PATH
+  --data DATA
+  --features FEATURES
+  --freq FREQ
+  --target TARGET
+  --embed EMBED
+  --percent PERCENT
+  --seq_len SEQ_LEN
+  --pred_len PRED_LEN
+  --label_len LABEL_LEN
+  --decay_fac DECAY_FAC
+  --learning_rate LEARNING_RATE
+  --batch_size BATCH_SIZE
+  --num_workers NUM_WORKERS
+  --train_epochs TRAIN_EPOCHS
+  --lradj LRADJ
+  --patience PATIENCE
+  --gpt_layers GPT_LAYERS
+  --is_gpt IS_GPT
+  --e_layers E_LAYERS
+  --d_model D_MODEL
+  --n_heads N_HEADS
+  --d_ff D_FF
+  --dropout DROPOUT
+  --enc_in ENC_IN
+  --c_out C_OUT
+  --patch_size PATCH_SIZE
+  --kernel_size KERNEL_SIZE
+  --loss_func LOSS_FUNC
+  --pretrain PRETRAIN
+  --freeze FREEZE
+  --model MODEL
+  --stride STRIDE
+  --max_len MAX_LEN
+  --hid_dim HID_DIM
+  --tmax TMAX
+  --itr ITR
+  --cos COS
+[done 2/210] OK model=neurips2023-one-fits-all dataset=weather elapsed_sec=21.45 env=env_legacy
+[progress 3/210] model=sundial dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/bin/python scripts/sundial_infer.py --input /tmp/sundial_weather_in.npy --output /tmp/sundial_weather_out.npy --horizon 96
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[done 3/210] OK model=sundial dataset=weather elapsed_sec=18.27 env=env_foundation
+[progress 4/210] model=time-moe dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_uni2ts/bin/python external/baselines/Time-MoE/run_eval.py -d outputs/metrics/tmp_time_moe/weather.csv -p 96
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/Time-MoE/run_eval.py", line 15, in <module>
+    from time_moe.datasets.benchmark_dataset import BenchmarkEvalDataset, GeneralEvalDataset
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/Time-MoE/time_moe/datasets/benchmark_dataset.py", line 7, in <module>
+    from sklearn.preprocessing import StandardScaler
+ModuleNotFoundError: No module named 'sklearn'
+[done 4/210] FAIL model=time-moe dataset=weather elapsed_sec=11.47 env=env_uni2ts
+[fail_detail] Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/Time-MoE/run_eval.py", line 15, in <module>
+    from time_moe.datasets.benchmark_dataset import BenchmarkEvalDataset, GeneralEvalDataset
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/Time-MoE/time_moe/datasets/benchmark_dataset.py", line 7, in <module>
+    from sklearn.preprocessing import StandardScaler
+ModuleNotFoundError: No module named 'sklearn'
+[progress 5/210] model=chronos-forecasting dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/bin/python external/baselines/uni2ts/project/benchmarks/run_chronos.py --model_path amazon/chronos-t5-small --dataset nn5_daily_without_missing --save_dir outputs/metrics/tmp_chronos --run_name weather
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/project/benchmarks/run_chronos.py", line 28, in <module>
+    from uni2ts.eval_util.data import get_gluonts_test_dataset, get_lsf_test_dataset
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/src/uni2ts/eval_util/data.py", line 8, in <module>
+    from uni2ts.data.builder.lotsa_v1.gluonts import get_dataset
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/src/uni2ts/data/builder/__init__.py", line 16, in <module>
+    from ._base import ConcatDatasetBuilder, DatasetBuilder
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/src/uni2ts/data/builder/_base.py", line 21, in <module>
+    from uni2ts.transform import Transformation
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/src/uni2ts/transform/__init__.py", line 17, in <module>
+    from .crop import EvalCrop, FinetunePatchCrop, PatchCrop
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/src/uni2ts/transform/crop.py", line 24, in <module>
+    from uni2ts.common.typing import UnivarTimeSeries
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/src/uni2ts/common/typing.py", line 21, in <module>
+    from jaxtyping import AbstractDtype, Num
+ModuleNotFoundError: No module named 'jaxtyping'
+[done 5/210] FAIL model=chronos-forecasting dataset=weather elapsed_sec=13.31 env=env_foundation
+[fail_detail] /mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/project/benchmarks/run_chronos.py", line 28, in <module>
+    from uni2ts.eval_util.data import get_gluonts_test_dataset, get_lsf_test_dataset
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/src/uni2ts/eval_util/data.py", line 8, in <module>
+    from uni2ts.data.builder.lotsa_v1.gluonts import get_dataset
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/src/uni2ts/data/builder/__init__.py", line 16, in <module>
+    from ._base import ConcatDatasetBuilder, DatasetBuilder
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/src/uni2ts/data/builder/_base.py", line 21, in <module>
+    from uni2ts.transform import Transformation
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/src/uni2ts/transform/__init__.py", line 17, in <module>
+    from .crop import EvalCrop, FinetunePatchCrop, PatchCrop
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/src/uni2ts/transform/crop.py", line 24, in <module>
+    from uni2ts.common.typing import UnivarTimeSeries
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/src/uni2ts/common/typing.py", line 21, in <module>
+    from jaxtyping import AbstractDtype, Num
+ModuleNotFoundError: No module named 'jaxtyping'
+[progress 6/210] model=chronos-2 dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/bin/python external/chronos-2/scripts/evaluation/evaluate.py --help
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/external/chronos-2/scripts/evaluation/evaluate.py", line 18, in <module>
+    from chronos import BaseChronosPipeline, Chronos2Pipeline, ChronosBoltPipeline, ChronosPipeline, ForecastType
+ImportError: cannot import name 'Chronos2Pipeline' from 'chronos' (/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/chronos/__init__.py). Did you mean: 'ChronosPipeline'?
+[done 6/210] FAIL model=chronos-2 dataset=weather elapsed_sec=13.47 env=env_foundation
+[fail_detail] /mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/external/chronos-2/scripts/evaluation/evaluate.py", line 18, in <module>
+    from chronos import BaseChronosPipeline, Chronos2Pipeline, ChronosBoltPipeline, ChronosPipeline, ForecastType
+ImportError: cannot import name 'Chronos2Pipeline' from 'chronos' (/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/chronos/__init__.py). Did you mean: 'ChronosPipeline'?
+[progress 7/210] model=chronos-bolt-small dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/bin/python external/chronos-bolt-small/scripts/evaluation/evaluate.py --help
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI

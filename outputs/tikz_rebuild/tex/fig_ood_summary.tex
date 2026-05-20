@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 3,horizontal sep=0.9cm,vertical sep=0.8cm},width=0.44\linewidth,height=0.23\linewidth,ybar,symbolic x coords={Elec,Weath,ETTh1,Traffic},xtick=data,xticklabel style={rotate=20,anchor=east}]
+\nextgroupplot[title={In-distribution},ylabel={LTC\_step}]\addplot[fill=papBlue] coordinates {(Elec,4.6) (Weath,5.2) (ETTh1,4.9) (Traffic,3.8)};\addplot[fill=papGray] coordinates {(Elec,3.9) (Weath,4.2) (ETTh1,4.1) (Traffic,3.2)};
+\nextgroupplot[title={OOD},symbolic x coords={CSI300,CSI800},xtick=data,title style={text=papRed}]\addplot[fill=papBlue] coordinates {(CSI300,3.4) (CSI800,3.1)};\addplot[fill=papGray] coordinates {(CSI300,2.9) (CSI800,2.7)};
+\nextgroupplot[ylabel={CSS Season (\%)}]\addplot[fill=papBlue] coordinates {(Elec,83) (Weath,72) (ETTh1,78) (Traffic,83)};\addplot[fill=papGray] coordinates {(Elec,64) (Weath,66) (ETTh1,73) (Traffic,71)};
+\nextgroupplot[symbolic x coords={CSI300,CSI800},xtick=data]\addplot[fill=papBlue] coordinates {(CSI300,69) (CSI800,66)};\addplot[fill=papGray] coordinates {(CSI300,60) (CSI800,58)};
+\nextgroupplot[ylabel={PDS $\rho_s$}]\addplot[fill=papBlue] coordinates {(Elec,0.41) (Weath,0.11) (ETTh1,0.04) (Traffic,0.25)};\addplot[fill=papGray] coordinates {(Elec,-0.34) (Weath,0.10) (ETTh1,-0.27) (Traffic,0.08)};
+\nextgroupplot[symbolic x coords={CSI300,CSI800},xtick=data]\addplot[fill=papBlue] coordinates {(CSI300,0.15) (CSI800,0.10)};\addplot[fill=papGray] coordinates {(CSI300,0.04) (CSI800,0.03)};
+\end{groupplot}
+\end{tikzpicture}

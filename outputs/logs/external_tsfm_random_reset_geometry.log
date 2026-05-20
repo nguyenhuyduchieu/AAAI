@@ -1,0 +1,377 @@
+
+=== run_external_tsfm_random_reset_geometry 2026-05-05T00:44:58.598513 ===
+[device] cpu
+[ok] electricity lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2SdpaAttention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+[ok] electricity neurips2023-one-fits-all_random-reset
+[ok] electricity sundial_random-reset
+[ok] electricity time-moe_random-reset
+/Users/hieuduc/Downloads/AAAI/external/baselines/UniTime/models/unitime.py:76: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.dec_transformer = nn.TransformerEncoder(dec_trans_layer, num_layers=args.dec_trans_layer_num)
+[ok] electricity unitime_random-reset
+[ok] electricity visionts_random-reset
+[ok] electricity chronos-forecasting_random-reset
+INFO:root:Setting d_model to 512
+INFO:root:Initializing pre-trained transformer from google/flan-t5-small.
+INFO:root:Enabling gradient checkpointing.
+[ok] electricity moment_random-reset
+[ok] electricity tirex_random-reset
+/Users/hieuduc/Downloads/AAAI/.venv/lib/python3.11/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+[fail] electricity uni2ts: No module named 'jaxtyping'
+[saved] outputs/metrics/timesfm_geometry_missing_validations_electricity.csv (+54 rows)
+[ok] ett lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2SdpaAttention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+[ok] ett neurips2023-one-fits-all_random-reset
+[ok] ett sundial_random-reset
+[ok] ett time-moe_random-reset
+/Users/hieuduc/Downloads/AAAI/external/baselines/UniTime/models/unitime.py:76: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.dec_transformer = nn.TransformerEncoder(dec_trans_layer, num_layers=args.dec_trans_layer_num)
+[ok] ett unitime_random-reset
+[ok] ett visionts_random-reset
+[ok] ett chronos-forecasting_random-reset
+INFO:root:Setting d_model to 512
+INFO:root:Initializing pre-trained transformer from google/flan-t5-small.
+INFO:root:Enabling gradient checkpointing.
+[ok] ett moment_random-reset
+[ok] ett tirex_random-reset
+[fail] ett uni2ts: No module named 'jaxtyping'
+[saved] outputs/metrics/timesfm_geometry_missing_validations_ett.csv (+54 rows)
+[ok] traffic lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2SdpaAttention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+[ok] traffic neurips2023-one-fits-all_random-reset
+[ok] traffic sundial_random-reset
+[ok] traffic time-moe_random-reset
+/Users/hieuduc/Downloads/AAAI/external/baselines/UniTime/models/unitime.py:76: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.dec_transformer = nn.TransformerEncoder(dec_trans_layer, num_layers=args.dec_trans_layer_num)
+[ok] traffic unitime_random-reset
+[ok] traffic visionts_random-reset
+[ok] traffic chronos-forecasting_random-reset
+INFO:root:Setting d_model to 512
+INFO:root:Initializing pre-trained transformer from google/flan-t5-small.
+INFO:root:Enabling gradient checkpointing.
+=== finished 2026-05-05T00:47:05.023302 ===
+
+
+=== run_external_tsfm_random_reset_geometry 2026-05-05T00:47:31.280060 ===
+[device] cpu
+[ok] electricity lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2SdpaAttention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+[ok] electricity neurips2023-one-fits-all_random-reset
+[ok] electricity sundial_random-reset
+[ok] electricity time-moe_random-reset
+/Users/hieuduc/Downloads/AAAI/external/baselines/UniTime/models/unitime.py:76: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.dec_transformer = nn.TransformerEncoder(dec_trans_layer, num_layers=args.dec_trans_layer_num)
+[ok] electricity unitime_random-reset
+[ok] electricity visionts_random-reset
+[ok] electricity chronos-forecasting_random-reset
+INFO:root:Setting d_model to 512
+INFO:root:Initializing pre-trained transformer from google/flan-t5-small.
+INFO:root:Enabling gradient checkpointing.
+[ok] electricity moment_random-reset
+[ok] electricity tirex_random-reset
+/Users/hieuduc/Downloads/AAAI/.venv/lib/python3.11/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+[fail] electricity uni2ts: 'numpy.ndarray' object has no attribute 'float'
+[saved] outputs/metrics/timesfm_geometry_missing_validations_electricity.csv (+54 rows)
+[ok] ett lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2SdpaAttention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+[ok] ett neurips2023-one-fits-all_random-reset
+[ok] ett sundial_random-reset
+[ok] ett time-moe_random-reset
+/Users/hieuduc/Downloads/AAAI/external/baselines/UniTime/models/unitime.py:76: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.dec_transformer = nn.TransformerEncoder(dec_trans_layer, num_layers=args.dec_trans_layer_num)
+[ok] ett unitime_random-reset
+=== finished 2026-05-05T00:48:41.489863 ===
+
+
+=== run_external_tsfm_random_reset_geometry 2026-05-05T00:53:02.892106 ===
+[device] cpu
+[ok] electricity lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2SdpaAttention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+[ok] electricity neurips2023-one-fits-all_random-reset
+[ok] electricity sundial_random-reset
+[ok] electricity time-moe_random-reset
+/Users/hieuduc/Downloads/AAAI/external/baselines/UniTime/models/unitime.py:76: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.dec_transformer = nn.TransformerEncoder(dec_trans_layer, num_layers=args.dec_trans_layer_num)
+[ok] electricity unitime_random-reset
+[ok] electricity visionts_random-reset
+[ok] electricity chronos-forecasting_random-reset
+INFO:root:Setting d_model to 512
+INFO:root:Initializing pre-trained transformer from google/flan-t5-small.
+INFO:root:Enabling gradient checkpointing.
+[ok] electricity moment_random-reset
+[ok] electricity tirex_random-reset
+/Users/hieuduc/Downloads/AAAI/.venv/lib/python3.11/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+[ok] electricity uni2ts_random-reset
+[saved] outputs/metrics/timesfm_geometry_missing_validations_electricity.csv (+60 rows)
+[ok] ett lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2SdpaAttention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+[ok] ett neurips2023-one-fits-all_random-reset
+[ok] ett sundial_random-reset
+[ok] ett time-moe_random-reset
+/Users/hieuduc/Downloads/AAAI/external/baselines/UniTime/models/unitime.py:76: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.dec_transformer = nn.TransformerEncoder(dec_trans_layer, num_layers=args.dec_trans_layer_num)
+[ok] ett unitime_random-reset
+[ok] ett visionts_random-reset
+[ok] ett chronos-forecasting_random-reset
+INFO:root:Setting d_model to 512
+INFO:root:Initializing pre-trained transformer from google/flan-t5-small.
+INFO:root:Enabling gradient checkpointing.
+[ok] ett moment_random-reset
+[ok] ett tirex_random-reset
+[ok] ett uni2ts_random-reset
+[saved] outputs/metrics/timesfm_geometry_missing_validations_ett.csv (+60 rows)
+[ok] traffic lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2SdpaAttention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+[ok] traffic neurips2023-one-fits-all_random-reset
+[ok] traffic sundial_random-reset
+[ok] traffic time-moe_random-reset
+/Users/hieuduc/Downloads/AAAI/external/baselines/UniTime/models/unitime.py:76: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.dec_transformer = nn.TransformerEncoder(dec_trans_layer, num_layers=args.dec_trans_layer_num)
+[ok] traffic unitime_random-reset
+[ok] traffic visionts_random-reset
+[ok] traffic chronos-forecasting_random-reset
+INFO:root:Setting d_model to 512
+INFO:root:Initializing pre-trained transformer from google/flan-t5-small.
+INFO:root:Enabling gradient checkpointing.
+[ok] traffic moment_random-reset
+[ok] traffic tirex_random-reset
+[ok] traffic uni2ts_random-reset
+[saved] outputs/metrics/timesfm_geometry_missing_validations_traffic.csv (+60 rows)
+[ok] weather lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2SdpaAttention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+[ok] weather neurips2023-one-fits-all_random-reset
+[ok] weather sundial_random-reset
+[ok] weather time-moe_random-reset
+/Users/hieuduc/Downloads/AAAI/external/baselines/UniTime/models/unitime.py:76: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.dec_transformer = nn.TransformerEncoder(dec_trans_layer, num_layers=args.dec_trans_layer_num)
+[ok] weather unitime_random-reset
+[ok] weather visionts_random-reset
+[ok] weather chronos-forecasting_random-reset
+INFO:root:Setting d_model to 512
+INFO:root:Initializing pre-trained transformer from google/flan-t5-small.
+INFO:root:Enabling gradient checkpointing.
+[ok] weather moment_random-reset
+[ok] weather tirex_random-reset
+[ok] weather uni2ts_random-reset
+[saved] outputs/metrics/timesfm_geometry_missing_validations_weather.csv (+60 rows)
+=== finished 2026-05-05T00:56:45.752667 ===
+

@@ -1,0 +1,12 @@
+\begin{tikzpicture}[>=Latex,node distance=7mm and 8mm]
+\node[draw,rounded corners,fill=papBlue!12] (r) {TSFMs};
+\node[draw,rounded corners,fill=papOrange!15,below left=10mm and 22mm of r] (a) {Masked Enc-Dec};
+\node[draw,rounded corners,fill=papTeal!15,below=10mm of r] (b) {Decoder-only AR};
+\node[draw,rounded corners,fill=papGreen!15,below right=10mm and 22mm of r] (c) {Language-inspired};
+\node[draw,rounded corners,fill=papPurple!15,below=26mm of b] (d) {Efficient / MoE};
+\node[font=\scriptsize,below=2mm of a] {PatchTST, iTransformer};
+\node[font=\scriptsize,below=2mm of b] {TimesFM, Chronos};
+\node[font=\scriptsize,below=2mm of c] {MOMENT, Lag-Llama};
+\node[font=\scriptsize,below=2mm of d] {Sparse routing};
+\draw[->] (r)--(a);\draw[->] (r)--(b);\draw[->] (r)--(c);\draw[->] (b)--(d);
+\end{tikzpicture}

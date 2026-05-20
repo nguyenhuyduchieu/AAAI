@@ -132,20 +132,20 @@ hydra:
         item_sep: ','
         exclude_keys: []
   runtime:
-    version: 1.3.2
+    version: 1.3.0
     version_base: '1.3'
-    cwd: /Users/hieuduc/Downloads/AAAI
+    cwd: /mnt/d/RMIT_Research/AAAI
     config_sources:
     - path: hydra.conf
       schema: pkg
       provider: hydra
-    - path: /Users/hieuduc/Downloads/AAAI/external/baselines/uni2ts/cli/conf/eval
+    - path: /mnt/d/RMIT_Research/AAAI/external/baselines/uni2ts/cli/conf/eval
       schema: file
       provider: main
     - path: ''
       schema: structured
       provider: schema
-    output_dir: /Users/hieuduc/Downloads/AAAI/outputs/eval/lsf_test/ETTh1/S/prediction_length=96/ett
+    output_dir: /mnt/d/RMIT_Research/AAAI/outputs/eval/lsf_test/ETTh1/S/prediction_length=96/ett
     choices:
       data: lsf_test
       model: moirai_1.0_R_small

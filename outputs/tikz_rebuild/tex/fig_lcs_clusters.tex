@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.0cm},width=0.45\linewidth,height=0.34\linewidth,axis equal image,axis lines=none]
+\nextgroupplot[title={Pretrained clusters (LCS=0.089)}]
+\addplot+[only marks,mark=*,mark size=0.6pt,color=papBlue] coordinates {(-2,1.3) (-1.8,1.7) (-2.2,1.8) (-1.6,1.2)};
+\addplot+[only marks,mark=*,mark size=0.6pt,color=papOrange] coordinates {(0.1,-1.2) (-0.4,-1.0) (0.2,-1.4) (-0.2,-0.8)};
+\addplot+[only marks,mark=*,mark size=0.6pt,color=papGreen] coordinates {(2.1,1.0) (1.8,1.4) (2.4,0.8) (1.6,0.9)};
+\nextgroupplot[title={Random-reset clusters (LCS=0.038)}]
+\addplot+[only marks,mark=*,mark size=0.6pt,color=papBlue] coordinates {(-2,1.3) (0.2,-0.7) (1.4,1.2) (-0.8,-1.6)};
+\addplot+[only marks,mark=*,mark size=0.6pt,color=papOrange] coordinates {(1.0,0.2) (-1.0,0.2) (0.3,1.6) (-0.4,-0.9)};
+\addplot+[only marks,mark=*,mark size=0.6pt,color=papGreen] coordinates {(2.2,-0.8) (-1.9,0.4) (0.8,1.7) (0.3,-1.7)};
+\end{groupplot}
+\end{tikzpicture}

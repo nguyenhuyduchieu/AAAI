@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.0cm},width=0.45\linewidth,height=0.34\linewidth]
+\nextgroupplot[title={PDS - local density},axis equal image,xlabel={$z_1$},ylabel={$z_2$}]
+\addplot+[only marks,mark=*,mark size=1.2pt,color=papBlue] coordinates {(-1.1,0.2) (-0.8,0.5) (-0.5,0.1) (-0.7,-0.2) (-1.2,-0.3)};
+\addplot+[only marks,mark=*,mark size=2pt,color=papRed] coordinates {(2.2,1.8) (2.4,2.1) (1.9,1.7)};
+\nextgroupplot[title={FSS - global proximity},axis equal image,xlabel={$z_1$},ylabel={$z_2$}]
+\addplot+[only marks,mark=*,mark size=1.2pt,color=papBlue] coordinates {(0,0) (2.3,0.2) (1.2,1.9)};
+\draw[<->,thick] (axis cs:0,0)--(axis cs:2.3,0.2);
+\draw[<->,thick] (axis cs:0,0)--(axis cs:1.2,1.9);
+\end{groupplot}
+\end{tikzpicture}

@@ -1,0 +1,487 @@
+=== external baselines run started 2026-05-19T16:14:58.107808 ===
+log_file=/mnt/d/RMIT_Research/AAAI/outputs/logs/external_baselines_20260519_161458.log
+models=35 datasets=6 dry_run=False skip_missing=True
+stream_subprocess=True timeout_sec=600
+[progress 1/210] model=lightgts dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/baselines/LightGTS/zero_shot.py --help
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/zero_shot.py", line 10, in <module>
+    from src.learner import Learner, transfer_weights
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/learner.py", line 28, in <module>
+    import thop
+ModuleNotFoundError: No module named 'thop'
+[done 1/210] FAIL model=lightgts dataset=weather elapsed_sec=30.20 env=env_legacy
+[fail_detail] Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/zero_shot.py", line 10, in <module>
+    from src.learner import Learner, transfer_weights
+  File "/mnt/d/RMIT_Research/AAAI/external/baselines/LightGTS/src/learner.py", line 28, in <module>
+    import thop
+ModuleNotFoundError: No module named 'thop'
+[progress 2/210] model=neurips2023-one-fits-all dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_legacy/bin/python external/baselines/NeurIPS2023-One-Fits-All/Long-term_Forecasting/main.py --help
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+usage: main.py [-h] --model_id MODEL_ID [--checkpoints CHECKPOINTS]
+               [--root_path ROOT_PATH] [--data_path DATA_PATH] [--data DATA]
+               [--features FEATURES] [--freq FREQ] [--target TARGET]
+               [--embed EMBED] [--percent PERCENT] [--seq_len SEQ_LEN]
+               [--pred_len PRED_LEN] [--label_len LABEL_LEN]
+               [--decay_fac DECAY_FAC] [--learning_rate LEARNING_RATE]
+               [--batch_size BATCH_SIZE] [--num_workers NUM_WORKERS]
+               [--train_epochs TRAIN_EPOCHS] [--lradj LRADJ]
+               [--patience PATIENCE] [--gpt_layers GPT_LAYERS]
+               [--is_gpt IS_GPT] [--e_layers E_LAYERS] [--d_model D_MODEL]
+               [--n_heads N_HEADS] [--d_ff D_FF] [--dropout DROPOUT]
+               [--enc_in ENC_IN] [--c_out C_OUT] [--patch_size PATCH_SIZE]
+               [--kernel_size KERNEL_SIZE] [--loss_func LOSS_FUNC]
+               [--pretrain PRETRAIN] [--freeze FREEZE] [--model MODEL]
+               [--stride STRIDE] [--max_len MAX_LEN] [--hid_dim HID_DIM]
+               [--tmax TMAX] [--itr ITR] [--cos COS]
+
+GPT4TS
+
+options:
+  -h, --help            show this help message and exit
+  --model_id MODEL_ID
+  --checkpoints CHECKPOINTS
+  --root_path ROOT_PATH
+  --data_path DATA_PATH
+  --data DATA
+  --features FEATURES
+  --freq FREQ
+  --target TARGET
+  --embed EMBED
+  --percent PERCENT
+  --seq_len SEQ_LEN
+  --pred_len PRED_LEN
+  --label_len LABEL_LEN
+  --decay_fac DECAY_FAC
+  --learning_rate LEARNING_RATE
+  --batch_size BATCH_SIZE
+  --num_workers NUM_WORKERS
+  --train_epochs TRAIN_EPOCHS
+  --lradj LRADJ
+  --patience PATIENCE
+  --gpt_layers GPT_LAYERS
+  --is_gpt IS_GPT
+  --e_layers E_LAYERS
+  --d_model D_MODEL
+  --n_heads N_HEADS
+  --d_ff D_FF
+  --dropout DROPOUT
+  --enc_in ENC_IN
+  --c_out C_OUT
+  --patch_size PATCH_SIZE
+  --kernel_size KERNEL_SIZE
+  --loss_func LOSS_FUNC
+  --pretrain PRETRAIN
+  --freeze FREEZE
+  --model MODEL
+  --stride STRIDE
+  --max_len MAX_LEN
+  --hid_dim HID_DIM
+  --tmax TMAX
+  --itr ITR
+  --cos COS
+[done 2/210] OK model=neurips2023-one-fits-all dataset=weather elapsed_sec=20.32 env=env_legacy
+[progress 3/210] model=sundial dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/bin/python scripts/sundial_infer.py --input /tmp/sundial_weather_in.npy --output /tmp/sundial_weather_out.npy --horizon 96
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+The `seen_tokens` attribute is deprecated and will be removed in v4.41. Use the `cache_position` model input instead.
+`get_max_cache()` is deprecated for all Cache classes. Use `get_max_cache_shape()` instead. Calling `get_max_cache()` will raise error from v4.48
+Traceback (most recent call last):
+  File "/mnt/d/RMIT_Research/AAAI/scripts/sundial_infer.py", line 37, in <module>
+    main()
+  File "/mnt/d/RMIT_Research/AAAI/scripts/sundial_infer.py", line 27, in main
+    out = model.generate(seqs, max_new_tokens=args.horizon, num_samples=args.num_samples)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/.cache/huggingface/modules/transformers_modules/thuml/sundial-base-128m/3212e42564493f520593e5414af4367fc4b49226/ts_generation_mixin.py", line 34, in generate
+    outputs = super().generate(inputs=inputs, generation_config=generation_config, logits_processor=logits_processor, stopping_criteria=stopping_criteria, prefix_allowed_tokens_fn=prefix_allowed_tokens_fn, synced_gpus=synced_gpus, assistant_model=assistant_model, streamer=streamer, negative_prompt_ids=negative_prompt_ids, negative_prompt_attention_mask=negative_prompt_attention_mask, num_samples=num_samples, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/transformers/generation/utils.py", line 2252, in generate
+    result = self._sample(
+             ^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/transformers/generation/utils.py", line 3251, in _sample
+    outputs = self(**model_inputs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/.cache/huggingface/modules/transformers_modules/thuml/sundial-base-128m/3212e42564493f520593e5414af4367fc4b49226/modeling_sundial.py", line 443, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/.cache/huggingface/modules/transformers_modules/thuml/sundial-base-128m/3212e42564493f520593e5414af4367fc4b49226/modeling_sundial.py", line 327, in forward
+    attention_mask = _prepare_4d_causal_attention_mask(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/transformers/modeling_attn_mask_utils.py", line 327, in _prepare_4d_causal_attention_mask
+    attention_mask = attn_mask_converter.to_4d(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/transformers/modeling_attn_mask_utils.py", line 139, in to_4d
+    expanded_attn_mask = causal_4d_mask.masked_fill(expanded_attn_mask.bool(), torch.finfo(dtype).min)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: The size of tensor a (96) must match the size of tensor b (6) at non-singleton dimension 3
+[done 3/210] FAIL model=sundial dataset=weather elapsed_sec=79.75 env=env_foundation
+[fail_detail]    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/.cache/huggingface/modules/transformers_modules/thuml/sundial-base-128m/3212e42564493f520593e5414af4367fc4b49226/modeling_sundial.py", line 443, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/.cache/huggingface/modules/transformers_modules/thuml/sundial-base-128m/3212e42564493f520593e5414af4367fc4b49226/modeling_sundial.py", line 327, in forward
+    attention_mask = _prepare_4d_causal_attention_mask(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/transformers/modeling_attn_mask_utils.py", line 327, in _prepare_4d_causal_attention_mask
+    attention_mask = attn_mask_converter.to_4d(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/lib/python3.12/site-packages/transformers/modeling_attn_mask_utils.py", line 139, in to_4d
+    expanded_attn_mask = causal_4d_mask.masked_fill(expanded_attn_mask.bool(), torch.finfo(dtype).min)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: The size of tensor a (96) must match the size of tensor b (6) at non-singleton dimension 3
+[progress 4/210] model=time-moe dataset=weather
+[subprocess] cmd=/mnt/d/RMIT_Research/AAAI/.venv_baselines/env_foundation/bin/python external/baselines/Time-MoE/run_eval.py -d outputs/metrics/tmp_time_moe/weather.csv -p 96
+[subprocess] cwd=/mnt/d/RMIT_Research/AAAI
+2026-05-19 16:17:49,140 - log_util.py[pid:36494;line:52:log_in_local_rank_0] - INFO: >>> Split test data from 2020-12-21 12:10:00 to 2021-01-01 00:00:00, and evaluation start date is: 2020-12-25 01:30:00
+
+  0%|          | 0/594 [00:00<?, ?it/s]
+  0%|          | 1/594 [00:01<11:35,  1.17s/it]
+  0%|          | 2/594 [00:01<05:26,  1.81it/s]
+  1%|          | 3/594 [00:01<03:28,  2.84it/s]
+  1%|          | 4/594 [00:01<02:32,  3.88it/s]
+  1%|          | 5/594 [00:01<02:01,  4.85it/s]
+  1%|          | 6/594 [00:01<01:42,  5.73it/s]
+  1%|          | 7/594 [00:01<01:30,  6.47it/s]
+  1%|▏         | 8/594 [00:01<01:22,  7.07it/s]
+  2%|▏         | 9/594 [00:02<01:17,  7.51it/s]
+  2%|▏         | 10/594 [00:02<01:13,  7.89it/s]
+  2%|▏         | 11/594 [00:02<01:11,  8.15it/s]
+  2%|▏         | 12/594 [00:02<01:09,  8.36it/s]
+  2%|▏         | 13/594 [00:02<01:08,  8.50it/s]
+  2%|▏         | 14/594 [00:02<01:07,  8.58it/s]
+  3%|▎         | 15/594 [00:02<01:06,  8.64it/s]
+  3%|▎         | 16/594 [00:02<01:06,  8.70it/s]
+  3%|▎         | 17/594 [00:02<01:06,  8.73it/s]
+  3%|▎         | 18/594 [00:03<01:05,  8.78it/s]
+  3%|▎         | 19/594 [00:03<01:05,  8.75it/s]
+  3%|▎         | 20/594 [00:03<01:05,  8.70it/s]
+  4%|▎         | 21/594 [00:03<01:05,  8.70it/s]
+  4%|▎         | 22/594 [00:03<01:06,  8.63it/s]
+  4%|▍         | 23/594 [00:03<01:06,  8.58it/s]
+  4%|▍         | 24/594 [00:03<01:05,  8.64it/s]
+  4%|▍         | 25/594 [00:03<01:05,  8.64it/s]
+  4%|▍         | 26/594 [00:04<01:05,  8.65it/s]
+  5%|▍         | 27/594 [00:04<01:05,  8.64it/s]
+  5%|▍         | 28/594 [00:04<01:05,  8.67it/s]
+  5%|▍         | 29/594 [00:04<01:04,  8.71it/s]
+  5%|▌         | 30/594 [00:04<01:04,  8.77it/s]
+  5%|▌         | 31/594 [00:04<01:03,  8.81it/s]
+  5%|▌         | 32/594 [00:04<01:03,  8.83it/s]
+  6%|▌         | 33/594 [00:04<01:03,  8.87it/s]
+  6%|▌         | 34/594 [00:04<01:03,  8.86it/s]
+  6%|▌         | 35/594 [00:05<01:03,  8.84it/s]
+  6%|▌         | 36/594 [00:05<01:02,  8.87it/s]
+  6%|▌         | 37/594 [00:05<01:02,  8.87it/s]
+  6%|▋         | 38/594 [00:05<01:02,  8.88it/s]
+  7%|▋         | 39/594 [00:05<01:02,  8.85it/s]
+  7%|▋         | 40/594 [00:05<01:02,  8.86it/s]
+  7%|▋         | 41/594 [00:05<01:02,  8.85it/s]
+  7%|▋         | 42/594 [00:05<01:03,  8.74it/s]
+  7%|▋         | 43/594 [00:05<01:03,  8.65it/s]
+  7%|▋         | 44/594 [00:06<01:04,  8.56it/s]
+  8%|▊         | 45/594 [00:06<01:04,  8.51it/s]
+  8%|▊         | 46/594 [00:06<01:04,  8.50it/s]
+  8%|▊         | 47/594 [00:06<01:04,  8.46it/s]
+  8%|▊         | 48/594 [00:08<05:28,  1.66it/s]
+  8%|▊         | 49/594 [00:08<04:09,  2.19it/s]
+  8%|▊         | 50/594 [00:08<03:13,  2.81it/s]
+  9%|▊         | 51/594 [00:08<02:34,  3.51it/s]
+  9%|▉         | 52/594 [00:08<02:07,  4.24it/s]
+  9%|▉         | 53/594 [00:08<01:48,  4.97it/s]
+  9%|▉         | 54/594 [00:08<01:35,  5.68it/s]
+  9%|▉         | 55/594 [00:09<01:25,  6.28it/s]
+  9%|▉         | 56/594 [00:09<01:19,  6.76it/s]
+ 10%|▉         | 57/594 [00:09<01:15,  7.13it/s]
+ 10%|▉         | 58/594 [00:09<01:12,  7.44it/s]
+ 10%|▉         | 59/594 [00:09<01:09,  7.71it/s]
+ 10%|█         | 60/594 [00:09<01:07,  7.90it/s]
+ 10%|█         | 61/594 [00:09<01:06,  7.99it/s]
+ 10%|█         | 62/594 [00:09<01:06,  8.03it/s]
+ 11%|█         | 63/594 [00:09<01:05,  8.15it/s]
+ 11%|█         | 64/594 [00:10<01:04,  8.19it/s]
+ 11%|█         | 65/594 [00:10<01:04,  8.19it/s]
+ 11%|█         | 66/594 [00:10<01:04,  8.13it/s]
+ 11%|█▏        | 67/594 [00:10<01:05,  8.08it/s]
+ 11%|█▏        | 68/594 [00:10<01:04,  8.10it/s]
+ 12%|█▏        | 69/594 [00:10<01:04,  8.14it/s]
+ 12%|█▏        | 70/594 [00:10<01:03,  8.20it/s]
+ 12%|█▏        | 71/594 [00:10<01:03,  8.22it/s]
+ 12%|█▏        | 72/594 [00:11<01:03,  8.25it/s]
+ 12%|█▏        | 73/594 [00:11<01:02,  8.27it/s]
+ 12%|█▏        | 74/594 [00:11<01:03,  8.25it/s]
+ 13%|█▎        | 75/594 [00:11<01:02,  8.28it/s]
+ 13%|█▎        | 76/594 [00:11<01:02,  8.26it/s]
+ 13%|█▎        | 77/594 [00:11<01:02,  8.25it/s]
+ 13%|█▎        | 78/594 [00:11<01:02,  8.32it/s]
+ 13%|█▎        | 79/594 [00:11<01:00,  8.48it/s]
+ 13%|█▎        | 80/594 [00:12<00:59,  8.62it/s]
+ 14%|█▎        | 81/594 [00:12<00:58,  8.70it/s]
+ 14%|█▍        | 82/594 [00:12<00:58,  8.75it/s]
+ 14%|█▍        | 83/594 [00:12<00:57,  8.84it/s]
+ 14%|█▍        | 84/594 [00:12<00:57,  8.82it/s]
+ 14%|█▍        | 85/594 [00:12<00:57,  8.82it/s]
+ 14%|█▍        | 86/594 [00:12<00:57,  8.85it/s]
+ 15%|█▍        | 87/594 [00:12<00:57,  8.89it/s]
+ 15%|█▍        | 88/594 [00:12<00:56,  8.91it/s]
+ 15%|█▍        | 89/594 [00:13<00:56,  8.92it/s]
+ 15%|█▌        | 90/594 [00:13<00:56,  8.92it/s]
+ 15%|█▌        | 91/594 [00:13<00:56,  8.91it/s]
+ 15%|█▌        | 92/594 [00:13<00:56,  8.91it/s]
+ 16%|█▌        | 93/594 [00:13<00:56,  8.90it/s]
+ 16%|█▌        | 94/594 [00:13<00:55,  8.93it/s]
+ 16%|█▌        | 95/594 [00:13<00:56,  8.87it/s]
+ 16%|█▌        | 96/594 [00:13<00:56,  8.89it/s]
+ 16%|█▋        | 97/594 [00:13<00:56,  8.87it/s]
+ 16%|█▋        | 98/594 [00:14<00:56,  8.83it/s]
+ 17%|█▋        | 99/594 [00:14<00:56,  8.75it/s]
+ 17%|█▋        | 100/594 [00:14<00:56,  8.80it/s]
+ 17%|█▋        | 101/594 [00:14<00:55,  8.83it/s]
+ 17%|█▋        | 102/594 [00:14<00:55,  8.84it/s]
+ 17%|█▋        | 103/594 [00:14<00:55,  8.87it/s]
+ 18%|█▊        | 104/594 [00:14<00:55,  8.86it/s]
+ 18%|█▊        | 105/594 [00:14<00:55,  8.85it/s]
+ 18%|█▊        | 106/594 [00:14<00:55,  8.87it/s]
+ 18%|█▊        | 107/594 [00:15<00:54,  8.92it/s]
+ 18%|█▊        | 108/594 [00:15<00:55,  8.83it/s]
+ 18%|█▊        | 109/594 [00:15<00:56,  8.62it/s]
+ 19%|█▊        | 110/594 [00:15<00:55,  8.65it/s]
+ 19%|█▊        | 111/594 [00:15<00:55,  8.74it/s]
+ 19%|█▉        | 112/594 [00:15<00:54,  8.79it/s]
+ 19%|█▉        | 113/594 [00:15<00:54,  8.88it/s]
+ 19%|█▉        | 114/594 [00:15<00:53,  8.94it/s]
+ 19%|█▉        | 115/594 [00:15<00:53,  9.00it/s]
+ 20%|█▉        | 116/594 [00:16<00:53,  8.99it/s]
+ 20%|█▉        | 117/594 [00:16<00:52,  9.01it/s]
+ 20%|█▉        | 118/594 [00:16<00:52,  9.03it/s]
+ 20%|██        | 119/594 [00:16<00:52,  9.04it/s]
+ 20%|██        | 120/594 [00:16<00:52,  9.03it/s]
+ 20%|██        | 121/594 [00:16<00:52,  9.06it/s]
+ 21%|██        | 122/594 [00:16<00:51,  9.10it/s]
+ 21%|██        | 123/594 [00:16<00:51,  9.13it/s]
+ 21%|██        | 124/594 [00:16<00:51,  9.15it/s]
+ 21%|██        | 125/594 [00:17<00:51,  9.12it/s]
+ 21%|██        | 126/594 [00:17<00:51,  9.04it/s]
+ 21%|██▏       | 127/594 [00:17<00:51,  9.02it/s]
+ 22%|██▏       | 128/594 [00:17<00:51,  8.96it/s]
+ 22%|██▏       | 129/594 [00:17<00:53,  8.74it/s]
+ 22%|██▏       | 130/594 [00:17<00:53,  8.63it/s]
+ 22%|██▏       | 131/594 [00:17<00:53,  8.60it/s]
+ 22%|██▏       | 132/594 [00:17<00:53,  8.57it/s]
+ 22%|██▏       | 133/594 [00:18<00:54,  8.49it/s]
+ 23%|██▎       | 134/594 [00:18<00:53,  8.52it/s]
+ 23%|██▎       | 135/594 [00:18<00:53,  8.50it/s]
+ 23%|██▎       | 136/594 [00:18<00:54,  8.48it/s]
+ 23%|██▎       | 137/594 [00:18<00:54,  8.41it/s]
+ 23%|██▎       | 138/594 [00:18<00:54,  8.33it/s]
+ 23%|██▎       | 139/594 [00:18<00:54,  8.35it/s]
+ 24%|██▎       | 140/594 [00:18<00:54,  8.38it/s]
+ 24%|██▎       | 141/594 [00:18<00:55,  8.23it/s]
+ 24%|██▍       | 142/594 [00:19<00:55,  8.13it/s]
+ 24%|██▍       | 143/594 [00:19<00:54,  8.21it/s]
+ 24%|██▍       | 144/594 [00:19<00:55,  8.08it/s]
+ 24%|██▍       | 145/594 [00:19<00:55,  8.14it/s]
+ 25%|██▍       | 146/594 [00:19<00:54,  8.29it/s]
+ 25%|██▍       | 147/594 [00:19<00:53,  8.36it/s]
+ 25%|██▍       | 148/594 [00:19<00:53,  8.39it/s]
+ 25%|██▌       | 149/594 [00:19<00:53,  8.31it/s]
+ 25%|██▌       | 150/594 [00:20<00:53,  8.28it/s]
+ 25%|██▌       | 151/594 [00:20<00:53,  8.33it/s]
+ 26%|██▌       | 152/594 [00:20<00:52,  8.40it/s]
+ 26%|██▌       | 153/594 [00:20<00:52,  8.42it/s]
+ 26%|██▌       | 154/594 [00:20<00:52,  8.40it/s]
+ 26%|██▌       | 155/594 [00:20<00:52,  8.31it/s]
+ 26%|██▋       | 156/594 [00:20<00:52,  8.37it/s]
+ 26%|██▋       | 157/594 [00:20<00:52,  8.39it/s]
+ 27%|██▋       | 158/594 [00:21<00:51,  8.41it/s]
+ 27%|██▋       | 159/594 [00:21<00:51,  8.43it/s]
+ 27%|██▋       | 160/594 [00:21<00:50,  8.52it/s]
+ 27%|██▋       | 161/594 [00:21<00:51,  8.48it/s]
+ 27%|██▋       | 162/594 [00:21<00:51,  8.42it/s]
+ 27%|██▋       | 163/594 [00:21<00:50,  8.60it/s]
+ 28%|██▊       | 164/594 [00:21<00:49,  8.76it/s]
+ 28%|██▊       | 165/594 [00:21<00:48,  8.88it/s]
+ 28%|██▊       | 166/594 [00:21<00:47,  8.94it/s]
+ 28%|██▊       | 167/594 [00:22<00:47,  9.01it/s]
+ 28%|██▊       | 168/594 [00:22<00:47,  9.04it/s]
+ 28%|██▊       | 169/594 [00:22<00:46,  9.07it/s]
+ 29%|██▊       | 170/594 [00:22<00:46,  9.09it/s]
+ 29%|██▉       | 171/594 [00:22<00:46,  9.10it/s]
+ 29%|██▉       | 172/594 [00:22<00:46,  9.14it/s]
+ 29%|██▉       | 173/594 [00:22<00:46,  9.09it/s]
+ 29%|██▉       | 174/594 [00:22<00:46,  9.07it/s]
+ 29%|██▉       | 175/594 [00:22<00:46,  9.08it/s]
+ 30%|██▉       | 176/594 [00:23<00:45,  9.12it/s]
+ 30%|██▉       | 177/594 [00:23<00:45,  9.10it/s]
+ 30%|██▉       | 178/594 [00:23<00:45,  9.14it/s]
+ 30%|███       | 179/594 [00:23<00:45,  9.14it/s]
+ 30%|███       | 180/594 [00:23<00:44,  9.22it/s]
+ 30%|███       | 181/594 [00:23<00:44,  9.32it/s]
+ 31%|███       | 182/594 [00:23<00:44,  9.30it/s]
+ 31%|███       | 183/594 [00:23<00:44,  9.30it/s]
+ 31%|███       | 184/594 [00:23<00:43,  9.36it/s]
+ 31%|███       | 185/594 [00:23<00:43,  9.30it/s]
+ 31%|███▏      | 186/594 [00:24<00:43,  9.35it/s]
+ 31%|███▏      | 187/594 [00:24<00:43,  9.36it/s]
+ 32%|███▏      | 188/594 [00:24<00:43,  9.39it/s]
+ 32%|███▏      | 189/594 [00:24<00:43,  9.38it/s]
+ 32%|███▏      | 190/594 [00:24<00:43,  9.32it/s]
+ 32%|███▏      | 191/594 [00:24<00:43,  9.31it/s]
+ 32%|███▏      | 192/594 [00:24<00:43,  9.27it/s]
+ 32%|███▏      | 193/594 [00:24<00:43,  9.17it/s]
+ 33%|███▎      | 194/594 [00:24<00:43,  9.25it/s]
+ 33%|███▎      | 195/594 [00:25<00:43,  9.28it/s]
+ 33%|███▎      | 196/594 [00:25<00:42,  9.33it/s]
+ 33%|███▎      | 197/594 [00:25<00:42,  9.36it/s]
+ 33%|███▎      | 198/594 [00:25<00:42,  9.35it/s]
+ 34%|███▎      | 199/594 [00:25<00:42,  9.33it/s]
+ 34%|███▎      | 200/594 [00:25<00:42,  9.31it/s]
+ 34%|███▍      | 201/594 [00:25<00:42,  9.34it/s]
+ 34%|███▍      | 202/594 [00:25<00:41,  9.39it/s]
+ 34%|███▍      | 203/594 [00:25<00:41,  9.40it/s]
+ 34%|███▍      | 204/594 [00:26<00:41,  9.31it/s]
+ 35%|███▍      | 205/594 [00:26<00:41,  9.27it/s]
+ 35%|███▍      | 206/594 [00:26<00:41,  9.25it/s]
+ 35%|███▍      | 207/594 [00:26<00:41,  9.34it/s]
+ 35%|███▌      | 208/594 [00:26<00:41,  9.38it/s]
+ 35%|███▌      | 209/594 [00:26<00:40,  9.40it/s]
+ 35%|███▌      | 210/594 [00:26<00:40,  9.38it/s]
+ 36%|███▌      | 211/594 [00:26<00:41,  9.30it/s]
+ 36%|███▌      | 212/594 [00:26<00:40,  9.34it/s]
+ 36%|███▌      | 213/594 [00:26<00:40,  9.39it/s]
+ 36%|███▌      | 214/594 [00:27<00:40,  9.40it/s]
+ 36%|███▌      | 215/594 [00:27<00:40,  9.39it/s]
+ 36%|███▋      | 216/594 [00:27<00:40,  9.40it/s]
+ 37%|███▋      | 217/594 [00:27<00:40,  9.38it/s]
+ 37%|███▋      | 218/594 [00:27<00:40,  9.35it/s]
+ 37%|███▋      | 219/594 [00:27<00:40,  9.34it/s]
+ 37%|███▋      | 220/594 [00:27<00:40,  9.34it/s]
+ 37%|███▋      | 221/594 [00:27<00:39,  9.40it/s]
+ 37%|███▋      | 222/594 [00:27<00:39,  9.37it/s]
+ 38%|███▊      | 223/594 [00:28<00:39,  9.30it/s]
+ 38%|███▊      | 224/594 [00:28<00:39,  9.32it/s]
+ 38%|███▊      | 225/594 [00:28<00:39,  9.36it/s]
+ 38%|███▊      | 226/594 [00:28<00:39,  9.30it/s]
+ 38%|███▊      | 227/594 [00:28<00:39,  9.33it/s]
+ 38%|███▊      | 228/594 [00:28<00:39,  9.34it/s]
+ 39%|███▊      | 229/594 [00:28<00:39,  9.28it/s]
+ 39%|███▊      | 230/594 [00:28<00:38,  9.34it/s]
+ 39%|███▉      | 231/594 [00:28<00:38,  9.37it/s]
+ 39%|███▉      | 232/594 [00:29<00:38,  9.40it/s]
+ 39%|███▉      | 233/594 [00:29<00:38,  9.33it/s]
+ 39%|███▉      | 234/594 [00:29<00:38,  9.27it/s]
+ 40%|███▉      | 235/594 [00:29<00:38,  9.23it/s]
+ 40%|███▉      | 236/594 [00:29<00:38,  9.22it/s]
+ 40%|███▉      | 237/594 [00:29<00:38,  9.24it/s]
+ 40%|████      | 238/594 [00:29<00:38,  9.30it/s]
+ 40%|████      | 239/594 [00:29<00:38,  9.32it/s]
+ 40%|████      | 240/594 [00:29<00:38,  9.21it/s]
+ 41%|████      | 241/594 [00:29<00:38,  9.16it/s]
+ 41%|████      | 242/594 [00:30<00:38,  9.08it/s]
+ 41%|████      | 243/594 [00:30<00:38,  9.03it/s]
+ 41%|████      | 244/594 [00:30<00:38,  9.02it/s]
+ 41%|████      | 245/594 [00:30<00:38,  8.96it/s]
+ 41%|████▏     | 246/594 [00:30<00:38,  8.94it/s]
+ 42%|████▏     | 247/594 [00:30<00:38,  8.93it/s]
+ 42%|████▏     | 248/594 [00:30<00:38,  8.96it/s]
+ 42%|████▏     | 249/594 [00:30<00:38,  8.92it/s]
+ 42%|████▏     | 250/594 [00:30<00:38,  8.93it/s]
+ 42%|████▏     | 251/594 [00:31<00:38,  8.86it/s]
+ 42%|████▏     | 252/594 [00:31<00:38,  8.87it/s]
+ 43%|████▎     | 253/594 [00:31<00:38,  8.83it/s]
+ 43%|████▎     | 254/594 [00:31<00:38,  8.83it/s]
+ 43%|████▎     | 255/594 [00:31<00:38,  8.85it/s]
+ 43%|████▎     | 256/594 [00:31<00:38,  8.85it/s]
+ 43%|████▎     | 257/594 [00:31<00:38,  8.82it/s]
+ 43%|████▎     | 258/594 [00:31<00:38,  8.82it/s]
+ 44%|████▎     | 259/594 [00:32<00:37,  8.87it/s]
+ 44%|████▍     | 260/594 [00:32<00:37,  8.85it/s]
+ 44%|████▍     | 261/594 [00:32<00:37,  8.85it/s]
+ 44%|████▍     | 262/594 [00:32<00:37,  8.89it/s]
+ 44%|████▍     | 263/594 [00:32<00:37,  8.92it/s]
+ 44%|████▍     | 264/594 [00:32<00:36,  8.92it/s]
+ 45%|████▍     | 265/594 [00:32<00:36,  8.93it/s]
+ 45%|████▍     | 266/594 [00:32<00:36,  8.96it/s]
+ 45%|████▍     | 267/594 [00:32<00:36,  8.95it/s]
+ 45%|████▌     | 268/594 [00:33<00:36,  8.91it/s]
+ 45%|████▌     | 269/594 [00:33<00:36,  8.94it/s]
+ 45%|████▌     | 270/594 [00:33<00:36,  8.87it/s]
+ 46%|████▌     | 271/594 [00:33<00:36,  8.90it/s]
+ 46%|████▌     | 272/594 [00:33<00:36,  8.88it/s]
+ 46%|████▌     | 273/594 [00:33<00:36,  8.87it/s]
+ 46%|████▌     | 274/594 [00:33<00:36,  8.82it/s]
+ 46%|████▋     | 275/594 [00:33<00:36,  8.77it/s]
+ 46%|████▋     | 276/594 [00:33<00:36,  8.71it/s]
+ 47%|████▋     | 277/594 [00:34<00:36,  8.73it/s]
+ 47%|████▋     | 278/594 [00:34<00:36,  8.67it/s]
+ 47%|████▋     | 279/594 [00:34<00:36,  8.66it/s]
+ 47%|████▋     | 280/594 [00:34<00:36,  8.67it/s]
+ 47%|████▋     | 281/594 [00:34<00:35,  8.76it/s]
+ 47%|████▋     | 282/594 [00:34<00:35,  8.81it/s]
+ 48%|████▊     | 283/594 [00:34<00:35,  8.82it/s]
+ 48%|████▊     | 284/594 [00:34<00:34,  8.86it/s]
+ 48%|████▊     | 285/594 [00:34<00:34,  8.86it/s]
+ 48%|████▊     | 286/594 [00:35<00:34,  8.85it/s]
+ 48%|████▊     | 287/594 [00:35<00:34,  8.85it/s]
+ 48%|████▊     | 288/594 [00:35<00:34,  8.87it/s]
+ 49%|████▊     | 289/594 [00:35<00:34,  8.89it/s]
+ 49%|████▉     | 290/594 [00:35<00:34,  8.90it/s]
+ 49%|████▉     | 291/594 [00:35<00:33,  8.92it/s]
+ 49%|████▉     | 292/594 [00:35<00:33,  8.94it/s]
+ 49%|████▉     | 293/594 [00:35<00:33,  8.95it/s]
+ 49%|████▉     | 294/594 [00:35<00:33,  8.94it/s]
+ 50%|████▉     | 295/594 [00:36<00:33,  8.92it/s]
+ 50%|████▉     | 296/594 [00:36<00:33,  8.88it/s]
+ 50%|█████     | 297/594 [00:36<00:33,  8.93it/s]
+ 50%|█████     | 298/594 [00:36<00:33,  8.92it/s]
+ 50%|█████     | 299/594 [00:36<00:32,  8.97it/s]
+ 51%|█████     | 300/594 [00:36<00:32,  8.95it/s]
+ 51%|█████     | 301/594 [00:36<00:32,  8.95it/s]
+ 51%|█████     | 302/594 [00:36<00:32,  8.95it/s]
+ 51%|█████     | 303/594 [00:36<00:32,  8.94it/s]
+ 51%|█████     | 304/594 [00:37<00:32,  8.97it/s]
+ 51%|█████▏    | 305/594 [00:37<00:32,  8.95it/s]
+ 52%|█████▏    | 306/594 [00:37<00:32,  8.96it/s]
+ 52%|█████▏    | 307/594 [00:37<00:32,  8.93it/s]
+ 52%|█████▏    | 308/594 [00:37<00:31,  8.97it/s]
+ 52%|█████▏    | 309/594 [00:37<00:31,  8.95it/s]
+ 52%|█████▏    | 310/594 [00:37<00:31,  8.95it/s]
+ 52%|█████▏    | 311/594 [00:37<00:31,  8.92it/s]
+ 53%|█████▎    | 312/594 [00:37<00:31,  8.90it/s]
+ 53%|█████▎    | 313/594 [00:38<00:31,  8.86it/s]
+ 53%|█████▎    | 314/594 [00:38<00:31,  8.86it/s]
+ 53%|█████▎    | 315/594 [00:38<00:31,  8.85it/s]
+ 53%|█████▎    | 316/594 [00:38<00:31,  8.84it/s]
+ 53%|█████▎    | 317/594 [00:38<00:31,  8.86it/s]
+ 54%|█████▎    | 318/594 [00:38<00:31,  8.76it/s]
+ 54%|█████▎    | 319/594 [00:38<00:31,  8.72it/s]
+ 54%|█████▍    | 320/594 [00:38<00:31,  8.71it/s]

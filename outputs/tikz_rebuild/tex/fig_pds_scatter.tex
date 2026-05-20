@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=3 by 2,horizontal sep=0.8cm,vertical sep=0.9cm},width=0.31\linewidth,height=0.24\linewidth]
+\nextgroupplot[title={Electricity\ $\rho=0.41$ ***},xlabel={$\bar d_i$},ylabel={$|e_i|$}]\addplot+[only marks,mark=*,mark size=0.4pt,color=papBlue] coordinates {(0.1,0.2) (0.2,0.3) (0.4,0.35) (0.6,0.5) (0.8,0.6)};\addplot+[domain=0:1,samples=2,color=papRed] {0.41*x+0.18};
+\nextgroupplot[title={ETT\ $\rho=0.04$ (n.s.)}]\addplot+[only marks,mark=*,mark size=0.4pt,color=papBlue] coordinates {(0.1,0.2) (0.2,0.4) (0.4,0.33) (0.6,0.5) (0.8,0.42)};\addplot+[domain=0:1,samples=2,color=papRed] {0.04*x+0.30};
+\nextgroupplot[title={Weather\ $\rho=0.11$ *}]\addplot+[only marks,mark=*,mark size=0.4pt,color=papBlue] coordinates {(0.1,0.3) (0.2,0.25) (0.4,0.48) (0.6,0.46) (0.8,0.62)};\addplot+[domain=0:1,samples=2,color=papRed] {0.11*x+0.26};
+\nextgroupplot[title={Traffic\ $\rho=0.25$ **},xlabel={$\bar d_i$},ylabel={$|e_i|$}]\addplot+[only marks,mark=*,mark size=0.4pt,color=papBlue] coordinates {(0.1,0.2) (0.2,0.22) (0.4,0.4) (0.6,0.46) (0.8,0.55)};\addplot+[domain=0:1,samples=2,color=papRed] {0.25*x+0.20};
+\nextgroupplot[title={CSI300\ $\rho=0.15$ *}]\addplot+[only marks,mark=*,mark size=0.4pt,color=papBlue] coordinates {(0.1,0.2) (0.2,0.27) (0.4,0.35) (0.6,0.44) (0.8,0.49)};\addplot+[domain=0:1,samples=2,color=papRed] {0.15*x+0.22};
+\nextgroupplot[title={CSI800\ $\rho=0.10$ *}]\addplot+[only marks,mark=*,mark size=0.4pt,color=papBlue] coordinates {(0.1,0.2) (0.2,0.23) (0.4,0.34) (0.6,0.40) (0.8,0.48)};\addplot+[domain=0:1,samples=2,color=papRed] {0.10*x+0.22};
+\end{groupplot}
+\end{tikzpicture}
