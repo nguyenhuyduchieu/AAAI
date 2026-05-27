@@ -1,0 +1,414 @@
+
+=== run_external_tsfm_random_reset_geometry 2026-05-27T17:42:18.485193 ===
+[device] cpu
+[ok] weather lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+)
+[ok] weather neurips2023-one-fits-all_random-reset
+[fail] weather sundial: [Errno 13] Permission denied: '/home/user/.cache/huggingface/modules/transformers_modules/thuml/sundial_hyphen_base_hyphen_128m'
+[fail] weather time-moe: 403 Forbidden
+[fail] weather unitime: 403 Forbidden
+[fail] weather visionts: No module named 'timm'
+[fail] weather chronos-forecasting: No module named 'chronos'
+[fail] weather moment: No module named 'momentfm'
+[fail] weather tirex: No module named 'tirex'
+[fail] weather uni2ts: No module named 'gluonts'
+[saved] outputs/metrics/timesfm_geometry_missing_validations_weather.csv (+12 rows)
+/mnt/d/RMIT_Research/AAAI/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:1074: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+[ok] electricity lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+)
+/mnt/d/RMIT_Research/AAAI/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:1074: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+[ok] electricity neurips2023-one-fits-all_random-reset
+[fail] electricity sundial: [Errno 13] Permission denied: '/home/user/.cache/huggingface/modules/transformers_modules/thuml/sundial_hyphen_base_hyphen_128m'
+[fail] electricity time-moe: 403 Forbidden
+[fail] electricity unitime: 403 Forbidden
+[fail] electricity visionts: No module named 'timm'
+[fail] electricity chronos-forecasting: No module named 'chronos'
+[fail] electricity moment: No module named 'momentfm'
+[fail] electricity tirex: No module named 'tirex'
+[fail] electricity uni2ts: No module named 'gluonts'
+[saved] outputs/metrics/timesfm_geometry_missing_validations_electricity.csv (+12 rows)
+/mnt/d/RMIT_Research/AAAI/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:1074: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+[ok] ett lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+)
+/mnt/d/RMIT_Research/AAAI/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:1074: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+[ok] ett neurips2023-one-fits-all_random-reset
+[fail] ett sundial: [Errno 13] Permission denied: '/home/user/.cache/huggingface/modules/transformers_modules/thuml/sundial_hyphen_base_hyphen_128m'
+[fail] ett time-moe: 403 Forbidden
+[fail] ett unitime: 403 Forbidden
+[fail] ett visionts: No module named 'timm'
+[fail] ett chronos-forecasting: No module named 'chronos'
+[fail] ett moment: No module named 'momentfm'
+[fail] ett tirex: No module named 'tirex'
+[fail] ett uni2ts: No module named 'gluonts'
+[saved] outputs/metrics/timesfm_geometry_missing_validations_ett.csv (+12 rows)
+/mnt/d/RMIT_Research/AAAI/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:1074: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+[ok] traffic lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+)
+/mnt/d/RMIT_Research/AAAI/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:1074: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+[ok] traffic neurips2023-one-fits-all_random-reset
+[fail] traffic sundial: [Errno 13] Permission denied: '/home/user/.cache/huggingface/modules/transformers_modules/thuml/sundial_hyphen_base_hyphen_128m'
+[fail] traffic time-moe: 403 Forbidden
+[fail] traffic unitime: 403 Forbidden
+[fail] traffic visionts: No module named 'timm'
+[fail] traffic chronos-forecasting: No module named 'chronos'
+[fail] traffic moment: No module named 'momentfm'
+[fail] traffic tirex: No module named 'tirex'
+[fail] traffic uni2ts: No module named 'gluonts'
+[saved] outputs/metrics/timesfm_geometry_missing_validations_traffic.csv (+12 rows)
+/mnt/d/RMIT_Research/AAAI/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:1074: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+[ok] csi300 lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+)
+/mnt/d/RMIT_Research/AAAI/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:1074: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+[ok] csi300 neurips2023-one-fits-all_random-reset
+[fail] csi300 sundial: [Errno 13] Permission denied: '/home/user/.cache/huggingface/modules/transformers_modules/thuml/sundial_hyphen_base_hyphen_128m'
+[fail] csi300 time-moe: 403 Forbidden
+[fail] csi300 unitime: 403 Forbidden
+[fail] csi300 visionts: No module named 'timm'
+[fail] csi300 chronos-forecasting: No module named 'chronos'
+[fail] csi300 moment: No module named 'momentfm'
+[fail] csi300 tirex: No module named 'tirex'
+[fail] csi300 uni2ts: No module named 'gluonts'
+[saved] outputs/metrics/timesfm_geometry_missing_validations_csi300.csv (+12 rows)
+/mnt/d/RMIT_Research/AAAI/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:1074: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+[ok] csi800 lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+)
+/mnt/d/RMIT_Research/AAAI/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:1074: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+[ok] csi800 neurips2023-one-fits-all_random-reset
+[fail] csi800 sundial: [Errno 13] Permission denied: '/home/user/.cache/huggingface/modules/transformers_modules/thuml/sundial_hyphen_base_hyphen_128m'
+[fail] csi800 time-moe: 403 Forbidden
+[fail] csi800 unitime: 403 Forbidden
+[fail] csi800 visionts: No module named 'timm'
+[fail] csi800 chronos-forecasting: No module named 'chronos'
+[fail] csi800 moment: No module named 'momentfm'
+[fail] csi800 tirex: No module named 'tirex'
+[fail] csi800 uni2ts: No module named 'gluonts'
+[saved] outputs/metrics/timesfm_geometry_missing_validations_csi800.csv (+12 rows)
+=== finished 2026-05-27T17:43:17.591239 ===
+
+
+=== run_external_tsfm_random_reset_geometry 2026-05-27T17:46:50.840097 ===
+[device] cuda
+[ok] weather lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+)
+[ok] weather neurips2023-one-fits-all_random-reset
+[saved] outputs/metrics/timesfm_geometry_missing_validations_weather.csv (+12 rows)
+[ok] electricity lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+)
+[ok] electricity neurips2023-one-fits-all_random-reset
+[saved] outputs/metrics/timesfm_geometry_missing_validations_electricity.csv (+12 rows)
+[ok] ett lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+)
+[ok] ett neurips2023-one-fits-all_random-reset
+[saved] outputs/metrics/timesfm_geometry_missing_validations_ett.csv (+12 rows)
+[ok] traffic lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+)
+[ok] traffic neurips2023-one-fits-all_random-reset
+[saved] outputs/metrics/timesfm_geometry_missing_validations_traffic.csv (+12 rows)
+[ok] csi300 lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+)
+[ok] csi300 neurips2023-one-fits-all_random-reset
+[saved] outputs/metrics/timesfm_geometry_missing_validations_csi300.csv (+12 rows)
+[ok] csi800 lightgts_random-reset
+------------------no pretrain------------------
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-2): 3 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True, bias=True)
+)
+[ok] csi800 neurips2023-one-fits-all_random-reset
+[saved] outputs/metrics/timesfm_geometry_missing_validations_csi800.csv (+12 rows)
+=== finished 2026-05-27T17:47:42.844275 ===
+
